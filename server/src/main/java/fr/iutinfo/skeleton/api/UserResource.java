@@ -1,7 +1,6 @@
 package fr.iutinfo.skeleton.api;
 
 import fr.iutinfo.skeleton.common.dto.UserDto;
-import fr.ulille.iut.Pizza;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
