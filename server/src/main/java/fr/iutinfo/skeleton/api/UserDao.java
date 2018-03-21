@@ -21,6 +21,9 @@ public interface UserDao {
     @SqlQuery("select * from users where search like :name")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<User> search(@Bind("name") String name);
+    
+    @SqlUpdate("update users set name = :user.name, alias = :user.alias, email = :user.email, passwdHash = :user.passwdHash, salt = :user.salt, search = :user.search")
+    void update(@BindBean() User user);
 
     @SqlUpdate("drop table if exists users")
     void dropUserTable();
