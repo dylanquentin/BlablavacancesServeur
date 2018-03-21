@@ -2,6 +2,9 @@ package fr.iutinfo.skeleton.api;
 
 import java.util.Calendar;
 
+import fr.iutinfo.skeleton.common.dto.UserDto;
+import fr.iutinfo.skeleton.common.dto.VoyageDto;
+
 public class Voyage {
 
 	private int id;
@@ -9,98 +12,93 @@ public class Voyage {
 	private String name;
 	private String ville;
 	private String description;
-	private Calendar depart ;
-	private Calendar retour ; 
+	private Calendar depart;
+	private Calendar retour;
 	private int capacite;
 
-	public Voyage(int id2, int idUser2,String name, String ville2) {
+	public Voyage() {
+	}
+
+	public Voyage(int id2, int idUser2, String name, String ville2) {
 		this.id = id2;
 		this.name = name;
 		idUser = idUser2;
 		ville = ville2;
-		
+
 	}
-	
-	
-	public Voyage(int id, int idUser,String name, String ville, String description, Calendar depart, Calendar retour,
+
+	public Voyage(int id, int idUser, String name, String ville, String description, Calendar depart, Calendar retour,
 			int capacite) {
-		this(id,idUser,name,ville);
+		this(id, idUser, name, ville);
 		this.description = description;
 		this.depart = depart;
 		this.retour = retour;
 		this.capacite = capacite;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public int getIdUser() {
 		return idUser;
 	}
 
-
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
-
 
 	public String getVille() {
 		return ville;
 	}
 
-
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-
 
 	public String getDescription() {
 		return description;
 	}
 
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 
 	public Calendar getDepart() {
 		return depart;
 	}
 
-
 	public void setDepart(Calendar depart) {
 		this.depart = depart;
 	}
-
 
 	public Calendar getRetour() {
 		return retour;
 	}
 
-
 	public void setRetour(Calendar retour) {
 		this.retour = retour;
 	}
-
 
 	public int getCapacite() {
 		return capacite;
 	}
 
-
 	public void setCapacite(int capacite) {
 		this.capacite = capacite;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -111,12 +109,13 @@ public class Voyage {
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		result = prime * result + idUser;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((retour == null) ? 0 : retour.hashCode());
 		result = prime * result + ((ville == null) ? 0 : ville.hashCode());
 		return result;
 	}
 
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -142,6 +141,11 @@ public class Voyage {
 			return false;
 		if (idUser != other.idUser)
 			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
 		if (retour == null) {
 			if (other.retour != null)
 				return false;
@@ -155,11 +159,24 @@ public class Voyage {
 		return true;
 	}
 	
+	public void initFromDto(VoyageDto dto) {
+		this.setName(dto.getName());
+		this.setVille(dto.getVille());
+		this.setId(dto.getId());
+		this.setIdUser(dto.getIdUser());
+		this.setDescription(dto.getDescription());
+		this.setCapacite(dto.getCapacite());
+	}
 	
+	public VoyageDto convertToDto() {
+        VoyageDto dto = new VoyageDto();
+        dto.setName(this.getName());
+        dto.setVille(this.getVille());
+        dto.setId(this.getId());
+        dto.setIdUser(this.getIdUser());
+        dto.setDescription(this.getDescription());
+        dto.setCapacite(this.getCapacite());
+        return dto;
+    }
 
-
-	
-	
-	
-	
 }

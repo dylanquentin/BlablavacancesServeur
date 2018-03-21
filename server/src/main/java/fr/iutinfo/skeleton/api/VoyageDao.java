@@ -6,7 +6,7 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 import java.util.List;
 
-public interface VoyageDAO {
+public interface VoyageDao {
 
 	// ATTENTION format des dates en sqlite ("YYYY-MM-DD HH:MM:SS.SSS")
 	@SqlUpdate("create table voyages (id integer primary key autoincrement, iduser integer foreign key references user(id) ,name varchar(1024), ville varchar(100), description text, dateD text, dateF text, capacite integer)")
