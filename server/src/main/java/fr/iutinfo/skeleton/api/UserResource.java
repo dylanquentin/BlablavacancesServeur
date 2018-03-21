@@ -1,11 +1,15 @@
 package fr.iutinfo.skeleton.api;
 
 import fr.iutinfo.skeleton.common.dto.UserDto;
+import fr.ulille.iut.Pizza;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,7 +26,7 @@ public class UserResource {
 
     public UserResource() throws SQLException {
         if (!tableExist("users")) {
-            logger.debug("Crate table users");
+            logger.debug("Create table users");
             dao.createUserTable();
             dao.insert(new User(0, "Margaret Thatcher", "la Dame de fer"));
         }
@@ -64,6 +68,19 @@ public class UserResource {
     @Path("/{id}")
     public void deleteUser(@PathParam("id") int id) {
         dao.delete(id);
+    }
+    
+	@PUT
+    @Path("/{id}")
+    public Response modifyUser(@PathParam("id") int id, User user) {
+        // Si l'utilisateur est inconnu, on renvoie 404
+        if (id != user.getId()) {
+	    throw new NotFoundException();
+        }
+        else {
+        	dao.update(id, user);
+	    return Response.status(Response.Status.NO_CONTENT).build();
+        }
     }
 
 }
