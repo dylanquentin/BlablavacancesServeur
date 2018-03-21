@@ -6,23 +6,25 @@ public class Voyage {
 
 	private int id;
 	private int idUser;
+	private String name;
 	private String ville;
 	private String description;
 	private Calendar depart ;
 	private Calendar retour ; 
 	private int capacite;
 
-	public Voyage(int id2, int idUser2, String ville2) {
+	public Voyage(int id2, int idUser2,String name, String ville2) {
 		this.id = id2;
+		this.name = name;
 		idUser = idUser2;
 		ville = ville2;
-	
+		
 	}
 	
 	
-	public Voyage(int id, int idUser, String ville, String description, Calendar depart, Calendar retour,
+	public Voyage(int id, int idUser,String name, String ville, String description, Calendar depart, Calendar retour,
 			int capacite) {
-		this(id,idUser,ville);
+		this(id,idUser,name,ville);
 		this.description = description;
 		this.depart = depart;
 		this.retour = retour;

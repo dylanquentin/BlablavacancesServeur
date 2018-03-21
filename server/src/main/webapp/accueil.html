@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PartEnS - Partir Ensemble Senior</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom-styles.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css" >
+  <script src='jquery-2.1.3.js'></script>
+  <script>
+    var min = 18;
+    var max = 32;
+
+    function increaseFontSize() {
+      var p = document.getElementsByTagName('p');
+      for (i = 0; i < p.length; i++) {
+        if (p[i].style.fontSize) {
+          var s = parseInt(p[i].style.fontSize.replace("px", ""));
+        } else {
+
+          var s = 18;
+        }
+        if (s != max) {
+          s += 1;
+        }
+        p[i].style.fontSize = s + "px"
+      }
+      var a = document.getElementsByTagName('a');
+      for (i = 0; i < a.length; i++) {
+        if (a[i].style.fontSize) {
+          var s = parseInt(a[i].style.fontSize.replace("px", ""));
+        } else {
+
+          var s = 18;
+        }
+        if (s != max) {
+          s += 1;
+        }
+        a[i].style.fontSize = s + "px"
+      }
+
+    }
+
+    function decreaseFontSize() {
+      var p = document.getElementsByTagName('p');
+      for (i = 0; i < p.length; i++) {
+
+        if (p[i].style.fontSize) {
+          var s = parseInt(p[i].style.fontSize.replace("px", ""));
+        } else {
+          var s = 18;
+        }
+        if (s != min) {
+          s -= 1;
+        }
+        p[i].style.fontSize = s + "px"
+      }
+      var a = document.getElementsByTagName('a');
+      for (i = 0; i < a.length; i++) {
+
+        if (a[i].style.fontSize) {
+          var s = parseInt(a[i].style.fontSize.replace("px", ""));
+        } else {
+          var s = 18;
+        }
+        if (s != min) {
+          s -= 1;
+        }
+        a[i].style.fontSize = s + "px"
+      }
+    }
+
+    $(document).ready(function(){
+      var accueil = true;
+      var charte=false;
+      var tuto=false;
+      $(".tuto").hide();
+      $(".charte").hide();
+      $(".inscription").hide();
+      $("#charte").click(function(){
+
+        $(".charte").show();
+        $(".accueil").hide();
+        $(".tuto").hide();
+        $(".inscription").hide();
+
+        $( "#charte").classList.add("#menu li:hover");
+
+        
+
+      });
+      $("#accueil").click(function(){
+
+
+
+        $(".charte").hide();
+        $(".accueil").show();
+        $(".tuto").hide();
+        $(".inscription").hide();
+        
+
+      });
+      $("#tuto").click(function(){
+
+
+        $(".charte").hide();
+        $(".accueil").hide();
+        $(".inscription").hide();
+        $(".tuto").show();
+
+
+      });
+      $("#inscription").click(function(){
+
+        $(".charte").hide();
+        $(".accueil").hide();
+        $(".inscription").show();
+        $("#inscription").hide();
+        $(".tuto").hide();
+
+
+      });
+
+    });
+  </script>
+  <!--javascript pour carousel-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <script type='text/javascript'>
+  //  $('.carousel').carousel({
+    //  interval: 6000
+  //})
+</script>
+<!---Fin javascript-->
+</head>
+<body>
+
+
+  <!-- header  -->
+  <!-- ligne du haut -->
+  <div class="container b-radius-top">
+
+    <div class="top-bar b-radius"style="height:10px;"> 
+    </div>
+
+    <div class="site-header">
+
+     <!-- Nom du site dans le header -->
+
+     <div class="site-name">
+      <div class="logo">
+       <div class="col-md-1">
+        <a href="index.html"><a href="index.html"><img src="images/logo/logo.png" class="img-responsive"></a></a>
+      </div>
+      <div class="col-md-9">
+        <h2>Envie de vacances ? Mais personne avec qui partir...</h2>
+        <h1>BlablaVacances</h1>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Nom du site et logo dans le header -->
+
+  <!--Bouton Connexion-->
+  <div class="row">
+   <div class="col-md-2 col-md-offset-10">
+
+    <div class="right">
+     <a href="tableau_de_bord.html" class="btn btn-lg btn-voyage">Se connecter</a>
+   </div>
+   <a id="inscription">inscription</a>
+ </div>
+</div>
+<!--Fin Bouton Connexion-->	
+
+
+<!-- Début du menu -->
+<div class="menu">
+  <div class="navbar">
+    <!--Balise de navigation-->
+    <div nav id="menu" role="navigation"> 
+      <ul>
+       <li id="accueil" > Accueil</li>
+       <li id="charte"> Charte des Co-Vacanciers</li>
+       <li id="tuto"> Comment ça marche</li>
+       <li id="contact"> Contact</li>
+
+     </ul>    
+   </div>
+   <!--Fin Balise de navigation-->
+ </div>
+</div>
+
+<!-- Fin du menu -->
+</div>
+<!-- Fin du header-->
+<!-- Contenu principal --> 
+<!---carousel-->
+<div class="accueil">
+  <div class="bs-example">
+    <div id="myCarousel" class="carousel slide" data-interval="10000" data-ride="carousel">
+    	<!-- Carousel indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+        <li data-target="#myCarousel" data-slide-to="8"></li>
+      </ol>   
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="active item">
+          <img src="images/sldp/persona1.png" alt="François">
+          <div class="carousel-caption">                                   
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/sldp/persona2.png" alt="Maryse">
+          <div class="carousel-caption">                                  
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/sldp/persona3.png" alt="Cécile">
+          <div class="carousel-caption">                               
+          </div>
+        </div>
+        <div class="item">
+         <img src="images/sldp/persona4.png" alt="Anne">
+         <div class="carousel-caption">                                   
+         </div>
+       </div>
+       <div class="item">
+         <img src="images/sldp/persona5.png" alt="Lise, Yves et Anne">
+         <div class="carousel-caption">                                  
+         </div>
+       </div>
+       <div class="item">
+         <img src="images/sldp/persona6.png" alt="Hélène">
+         <div class="carousel-caption">                                   
+         </div>
+       </div>
+       <div class="item">
+         <img src="images/sldp/persona7.png" alt="René">
+         <div class="carousel-caption">                                   
+         </div>
+       </div>
+       <div class="item">
+         <img src="images/sldp/persona8.png" alt="Sylviane">
+         <div class="carousel-caption">                                 
+         </div>
+       </div>
+<!--			<div class="item">
+               <img src="images/sldp/persona9.png" alt="Pierre">
+                <div class="carousel-caption">                                   
+                </div>
+              </div>  -->
+              <div class="item">
+               <img src="images/sldp/persona10.png" alt="Nelly">
+               <div class="carousel-caption">                                   
+               </div>
+             </div>
+           </div>
+           <!-- Carousel nav -->
+           <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+          </a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="icon-next" ></span>
+          </a>
+        </div>
+      </div>
+
+      <!--carousel-->
+      <main>
+
+        <!--				 <h1>PartEnS</h1>   -->
+
+
+        <div class="col-md-8 col-md-offset-2">
+
+         <p>Envie de vacances, mais personne avec qui partir... <strong>PartEnS</strong> est fait pour vous !</p>
+
+         <p><strong>PartEnS</strong> est un dispositif gratuit mettant en relation des seniors ayant des envies de vacances compatibles.</p>
+
+         <p>Le principe est le suivant : vous définissez vos préférences de vacances et si une ou des personnes ont des intérêts similaires aux vôtres, vous serez averti(e). Libre à vous ensuite d'entamer un dialogue pour co-construire votre projet commun de vacances. <strong>PartEnS</strong> vous permettra donc de rencontrer de nouvelles personnes, ayant les mêmes centres d'intérêt que vous, et de partir ensemble vers la destination de votre choix.</p>
+
+         <p>L'inscription est gratuite et sécurisée. Avec <strong>PartEnS</strong>, vous rencontrerez des co-vacanciers dont l'identité a été vérifiée par un agent assermenté du Service PASS Seniors. Vos données personnelles sont sécurisées et aucune utilisation à des fins commerciales n'en sera faite.</p>
+
+         <p>Vous n'avez plus qu'à découvrir <a href="qui-sommes-nous.html"><strong>PartEnS</strong></a> !</p>
+
+         <br><br>
+
+         <div  class="rect">
+
+          <p style="text-align:center">
+            Vous n'habitez pas à Lille ? Patience ... PartEnS se déploiera prochainement dans d'autres villes, n'hésitez pas à <a href="mailto:janick.naveteur@univ-lille1.fr">prendre contact</a> pour être informé de l'évolution du projet.
+          </p>
+<!--			<p style="text-align:center"><font color="red">/!\</font> <strong>PartEnS</strong> n’est accessible qu’aux personnes habitant à Lille <font color="red">/!\</font></p>
+-->
+</div>
+
+</div>
+
+
+<!--Fin du footer--> 
+
+</main>
+<!--Fin du contenu principal -->
+</div>   
+</div>
+<div class="charte">
+  <h1>Charte des co-vacanciers </h1>
+  <p>Nous espérons que vous profiterez, dans les meilleures conditions possibles, des vacances initiées par <strong>PartEnS</strong>. Leur succès suppose le respect, à chaque étape, de quelques règles de bon sens et de bonne conduite (respect, tolérance et communication) afin d’éviter les déceptions, les discordes ou les ressentiments.</p>
+  <p>Avec <strong>PartEnS</strong>, les vacances s’organisent en groupe ; il est donc nécessaire de trouver une base d’entente commune pour que chacun soit pleinement satisfait.</p>
+
+  <h2>Pour remplir le questionnaire</h2>
+
+  <ul>
+    <li>Je vérifie au préalable que mes souhaits sont en adéquation avec mes possibilités physiques (autonomie, santé) et financières.</li>
+
+    <li>Je sollicite les conseils de mon médecin traitant pour tout type de vacances nécessitant des précautions particulières.
+      Je vérifie que je dispose d’une couverture suffisante (assurance, mutuelle, tiers pouvant apporter de l’aide) pour faire face à d’éventuelles difficultés.</li>
+
+      <li>J’évalue le montant des dépenses non incluses dans les frais directs de trajet et d’hébergement (ex. : dépenses dévolues à l’alimentation, aux loisirs, etc.). 
+        Tant que possible, je planifie les “extras” et précise ce que je suis prêt(e) à dépenser. Je me renseigne sur les prix pratiqués sur le lieu de séjour.</li>
+
+        <li>Je répond avec sincérité et objectivité aux questions qui me concernent.</li>
+      </ul>
+
+      <h2>Lors d’échanges avant le départ</h2>
+      <ul>
+        <li>Si mon état de santé ou certains choix de vie imposent des contraintes, qui peuvent impacter le quotidien (ex. : régime alimentaire), j’en fais état dès les premiers échanges. C’est important qu’il y ait de la transparence à ce sujet.</li>
+        <li>La répartition des tâches assumées par chacun doit être satisfaisante. Il peut être utile de garder une trace écrite des engagements pris afin de les matérialiser.</li>
+        <li>Je veille à ce que les échanges soient plaisants et je ne montre ni curiosité ni indifférence excessives.</li>
+        <li>Si je ne souhaite pas m’engager avec une personne, je lui signifie avec diplomatie ; je ne me contente pas de ne plus lui répondre.</li>
+        <li>Je veille à ce que les accords financiers soient clairement définis et me conviennent. </li>
+      </ul>
+
+      <h3>L'équité financière</h3>
+
+      <p>La règle de l’équité financière doit prévaloir. Chaque apport doit être comptabilisé et son coût réparti entre les co-vacanciers. La gestion des finances est une partie importante dans l’organisation du voyage et elle peut être à l’origine de conflits.</p>
+
+      <h3>En cas de déséquilibre financier</h3>
+
+      <p>S’il est envisagé que j’assume davantage de dépenses que les autres, je dois y consentir pleinement et librement. Ce déséquilibre doit être justifié et rester en adéquation avec mes moyens financiers.</p>
+      <p>S’il est envisagé que j’assume moins de dépenses que les autres, je ne dois pas compenser par une suractivité qui pourrait nuire à ma santé. S’il m’est pénible de me sentir redevable, je dois l’exprimer clairement.</p>
+
+      <h3>Le choix des activités</h3>
+
+      <p>Les choix d’activités doivent répondre le plus possible à des envies partagées. Si je consens à faire des concessions, elles doivent rester dans des limites qui ne compromettront pas la réussite de mon séjour.</p>
+
+      <h2>Durant le séjour</h2>
+      <ul>
+        <li>Je respecte les engagements initiaux. S’ils doivent impérativement être reconsidérés, les principes de savoir-vivre s’appliquent de nouveau.</li>
+        <li>Je respecte l’intimité d’autrui et la propreté des lieux de vie partagés.</li>
+        <li>Je facilite le “bien-vivre ensemble” et je fais en sorte que mon comportement ne nuise pas à la (aux) personne(s) qui m’accompagne(nt).</li>
+        <li>La survenue d’un problème de santé est l’affaire de tous. Par souci de ne pas gâcher le séjour d’autrui, je ne dissimule pas un problème de santé au risque de le voir s’aggraver.</li>
+        <li>Je reste courtois(e) et aimable en toutes circonstances.</li>
+        <li>En groupe, je veille à ce qu’aucun vacancier ne se trouve marginalisé ou exclu.</li>
+      </ul>
+      <br>
+      <br>
+    </div>  
+    <div class="tuto">
+      <h1>Voici le tuto </h1>
+    </div>
+
+    <div class="inscription">
+   <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <h1>Utilisateur :</h1>
+                <input type="text" name="userdb" id="user" placeholder="Nom ?" class="form-control"/>
+                <input type="text" name="user" id="alias" placeholder="Surnom ?" class="form-control"/>
+                <input type="text" name="email" id="email" placeholder="Email ?" class="form-control"/>
+                <input type="password" name="user" id="passwd" placeholder="Mot de passe ?" class="form-control"/>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" id="get" class="btn btn-default">Lire</button>
+                <button type="button" id="post" class="btn btn-primary">Sauver</button>
+                <button type="button" id="list" class="btn btn-warning">Lister</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h1>S'identifier :</h1>
+            <div id="login_form">
+                <input type="text" name="user" id="userlogin" placeholder="Login" class="form-control"/>
+                <input type="password" name="password" id="passwdlogin" placeholder="Password" class="form-control"/>
+                <br/>
+                <button id="login" class="btn btn-default">Login</button>
+                <br/>
+            </div>
+            <button id="profile" class="btn btn-default">Profile</button>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+    </div>
+
+    </div>
+  </body>
+  </html>
