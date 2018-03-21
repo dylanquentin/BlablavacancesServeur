@@ -22,8 +22,8 @@ public interface UserDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<User> search(@Bind("name") String name);
     
-    @SqlUpdate("update users set name = :user.name, alias = :user.alias, email = :user.email, passwdHash = :user.passwdHash, salt = :user.salt, search = :user.search")
-    void update(@BindBean() User user);
+    @SqlUpdate("update users set name = :user.name, alias = :user.alias, email = :user.email, passwdHash = :user.passwdHash, salt = :user.salt, search = :user.search where id = :user.id")
+    void update(@Bind("id") int id, @BindBean() User user);
 
     @SqlUpdate("drop table if exists users")
     void dropUserTable();
