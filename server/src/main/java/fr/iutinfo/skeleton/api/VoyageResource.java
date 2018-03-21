@@ -3,53 +3,66 @@ package fr.iutinfo.skeleton.api;
 import static fr.iutinfo.skeleton.api.BDDFactory.getDbi;
 import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 
+import java.net.URI;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import fr.iutinfo.skeleton.common.dto.UserDto;
-
 @Path("/voyage")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class VoyageResource {
-  /*  final static Logger logger = LoggerFactory.getLogger(VoyageResource.class);
-    private static VoyageDAO dao = getDbi().open(VoyageDAO.class);
 
+public class VoyageResource {
+    final static Logger logger = LoggerFactory.getLogger(VoyageResource.class);
+    private static VoyageDAO dao = getDbi().open(VoyageDAO.class);
+	private static Map<Integer, Voyage> voyages = new HashMap<>();
+	@Context
+	public UriInfo uriInfo;
     public VoyageResource() throws SQLException {
         if (!tableExist("voyage")) {
             logger.debug("Create table voyage");
             dao.createVoyageTable();
-            dao.insert(new Voyage(0, 0 , "Paris"));
+
+            dao.insert(new Voyage(1, 1 , "Petit weekend à Paris","Paris"));
+
         }
     }
 
     @POST
-    public UserDto createUser(UserDto dto) {
-        Voyage voyage = new Voyage();
-        int id = dao.insert(user);
-        dto.setId(id);
-        return dto;
-    }
+    public Response createVoyage(Voyage voyage) {      
+    	   if ( voyages.containsKey(voyage.getId()) ) {
+               return Response.status(Response.Status.CONFLICT).build();
+           }
+           else {
+               voyages.put(voyage.getId(), voyage);
 
-    @GET
+               // On renvoie 201 et l'instance de la ressource dans le Header HTTP 'Location'
+               String tp = "" + voyage.getId();
+               URI instanceURI = uriInfo.getAbsolutePathBuilder().path(tp).build();
+               return Response.created(instanceURI).build();
+           }
+    }
+	@GET
+	public List<Voyage> getPizzas() {
+		return new ArrayList<Voyage>(voyages.values());
+	}
+
+  /*  @GET
     @Path("/{ville}")
     public UserDto getVille(@PathParam("ville") String name) {
         Voyage voyage = dao.findByName(name);

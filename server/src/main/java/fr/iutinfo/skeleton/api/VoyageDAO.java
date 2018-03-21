@@ -9,10 +9,10 @@ import java.util.List;
 public interface VoyageDAO {
 
 	// ATTENTION format des dates en sqlite ("YYYY-MM-DD HH:MM:SS.SSS")
-	@SqlUpdate("create table voyages (id integer primary key autoincrement, iduser integer foreign key references user(id) ,name varchar(1024), ville varchar(100), description text, dateD text, dateF text, capacite integer)")
+	@SqlUpdate("create table voyages (id integer primary key autoincrement, iduser integer ,name varchar(1024), ville varchar(100), description text, dateD text, dateF text, capacite integer)")
 	void createVoyageTable();
 
-	@SqlUpdate("insert into voyages (name,ville,description, dateD, dateF, capacite) values (:name, :ville, :description, :dateD, :dateF, :capacite)")
+	@SqlUpdate("insert into voyages (iduser,name,ville,description, dateD, dateF, capacite) values (:idUser, :name, :ville, :description, :dateD, :dateF, :capacite)")
 	@GetGeneratedKeys
 	int insert(@BindBean() Voyage voyage);
 

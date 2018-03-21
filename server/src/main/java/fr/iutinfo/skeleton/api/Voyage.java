@@ -2,7 +2,11 @@ package fr.iutinfo.skeleton.api;
 
 import java.util.Calendar;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Voyage {
+    final static Logger logger = LoggerFactory.getLogger(Voyage.class);
 
 	private int id;
 	private int idUser;
@@ -12,7 +16,9 @@ public class Voyage {
 	private Calendar depart ;
 	private Calendar retour ; 
 	private int capacite;
-
+	
+	public Voyage() {}
+	
 	public Voyage(int id2, int idUser2,String name, String ville2) {
 		this.id = id2;
 		this.name = name;
