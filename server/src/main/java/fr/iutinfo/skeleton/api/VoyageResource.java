@@ -37,7 +37,7 @@ public class VoyageResource {
 	@Context
 	public UriInfo uriInfo;
     public VoyageResource() throws SQLException {
-        if (!tableExist("voyage")) {
+        if (!tableExist("voyages")) {
             logger.debug("Create table voyage");
             dao.createVoyageTable();
 
