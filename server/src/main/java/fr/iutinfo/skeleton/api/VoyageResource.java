@@ -26,14 +26,13 @@ import org.slf4j.LoggerFactory;
 import fr.iutinfo.skeleton.common.dto.UserDto;
 import fr.iutinfo.skeleton.common.dto.VoyageDto;
 
-@Path("/voyage")
+@Path("/voyages")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 
 public class VoyageResource {
     final static Logger logger = LoggerFactory.getLogger(VoyageResource.class);
     private static VoyageDao dao = getDbi().open(VoyageDao.class);
-	private static Map<Integer, Voyage> voyages = new HashMap<>();
 	@Context
 	public UriInfo uriInfo;
     public VoyageResource() throws SQLException {
@@ -60,9 +59,9 @@ public class VoyageResource {
         return voyages.stream().map(Voyage::convertToDto).collect(Collectors.toList());
     }
     @GET
-    @Path("/{ville}")
-    public VoyageDto getVoyageVille(@PathParam("ville") String ville) {
-        Voyage voyage = dao.findByCity(ville);
+    @Path("/{name}")
+    public VoyageDto getVoyageName(@PathParam("name") String name) {
+        Voyage voyage = dao.findByName(name);
         if (voyage == null) {
             throw new WebApplicationException(404);
         }
@@ -143,7 +142,7 @@ public class VoyageResource {
     @Path("/{id}")
     public Response modifVoyage(@PathParam("id") int id, Voyage voyage) {
         // Si l'utilisateur est inconnu, on renvoie 404
-        if (!voyages.containsKey(id)) {
+        if (dao.findById(id) == null) {
         	throw new NotFoundException();
         }
         else {

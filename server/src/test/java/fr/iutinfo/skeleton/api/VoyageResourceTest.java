@@ -19,7 +19,7 @@ import org.junit.Test;
 import fr.iutinfo.skeleton.common.dto.VoyageDto;
 
 public class VoyageResourceTest extends JerseyTest {
-    private static final String PATH = "/voyage";
+    private static final String PATH = "/voyages";
     private VoyageDao dao = BDDFactory.getDbi().open(VoyageDao.class);
 
     @Override
@@ -31,7 +31,7 @@ public class VoyageResourceTest extends JerseyTest {
     public void init() {
         Helper.initDb();
     }
-/*
+
    @Test
     public void read_should_return_a_Voyage_as_object() {
         createVoyageWithName("test", "Lille");
@@ -45,7 +45,7 @@ public class VoyageResourceTest extends JerseyTest {
         Voyage voyage = new Voyage(0, 1,"test","Lille");
         Entity<Voyage> voyageEntity = Entity.entity(voyage, MediaType.APPLICATION_JSON);
         String json = target(PATH).request().post(voyageEntity).readEntity(String.class);
-        assertEquals("{\"id\":1,\"name\":\"test\"", json.substring(0, 45));
+        assertEquals("\"id\":1,\"idUser\":1,\"name\":\"test\"", json.substring(14, 45));
     }
 
     @Test
@@ -84,7 +84,7 @@ public class VoyageResourceTest extends JerseyTest {
         int status = target(PATH + "/unexisting").request().delete().getStatus();
         assertEquals(404, status);
     }
-
+/*
     @Test
     public void list_should_search_in_name_field() {
         createVoyageWithName("test", "Lille");
@@ -93,7 +93,7 @@ public class VoyageResourceTest extends JerseyTest {
         List<VoyageDto> voyages = target(PATH + "/").queryParam("q", "do").request().get(listVoyageResponseType);
         assertEquals("done", voyages.get(0).getName());
     }
-
+*/
 
     
     @Test
