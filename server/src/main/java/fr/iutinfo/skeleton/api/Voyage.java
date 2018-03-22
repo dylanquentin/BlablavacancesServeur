@@ -27,10 +27,6 @@ public class Voyage {
 		this.name = name;
 		idUser = idUser2;
 		ville = ville2;
-		depart = null;
-		retour = null;
-		description = "";
-		capacite = 10;
 	}
 
 	public Voyage(int id, int idUser, String name, String ville, String description, Calendar depart, Calendar retour,
