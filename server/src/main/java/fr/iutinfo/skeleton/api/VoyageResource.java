@@ -69,7 +69,7 @@ public class VoyageResource {
         return voyage.convertToDto();
     }	
     
- /*   @POST
+    @POST
     public Response createVoyage(Voyage voyage) {      
     	   if ( voyages.containsKey(voyage.getId()) ) {
                return Response.status(Response.Status.CONFLICT).build();
@@ -82,6 +82,7 @@ public class VoyageResource {
                return Response.created(instanceURI).build();
            }
     }
+    /*
   
 	@GET
 	public List<Voyage> getVoyage() {
