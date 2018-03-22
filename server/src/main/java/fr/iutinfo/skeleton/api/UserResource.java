@@ -75,7 +75,7 @@ public class UserResource {
     @Path("/{id}")
     public Response modifyUser(@PathParam("id") int id, User user) {
         // Si l'utilisateur est inconnu, on renvoie 404
-        if (id != user.getId()) {
+        if (dao.findById(id) == null) {
 	    throw new NotFoundException();
         }
         else {

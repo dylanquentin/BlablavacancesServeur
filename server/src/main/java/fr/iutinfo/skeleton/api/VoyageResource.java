@@ -69,7 +69,17 @@ public class VoyageResource {
         return voyage.convertToDto();
     }	
     
- /*   @POST
+    @POST
+    public VoyageDto createVoyage(VoyageDto dto) {
+        Voyage voyage = new Voyage();
+        voyage.initFromDto(dto);
+        int id = dao.insert(voyage);
+        dto.setId(id);
+        return dto;
+    }
+    
+    
+    /*@POST
     public Response createVoyage(Voyage voyage) {      
     	   if ( voyages.containsKey(voyage.getId()) ) {
                return Response.status(Response.Status.CONFLICT).build();
@@ -82,6 +92,7 @@ public class VoyageResource {
                return Response.created(instanceURI).build();
            }
     }
+    /*
   
 	@GET
 	public List<Voyage> getVoyage() {
@@ -132,7 +143,7 @@ public class VoyageResource {
     @Path("/{id}")
     public Response modifVoyage(@PathParam("id") int id, Voyage voyage) {
         // Si l'utilisateur est inconnu, on renvoie 404
-        if (id != voyage.getId()) {
+        if (!voyages.containsKey(id)) {
         	throw new NotFoundException();
         }
         else {

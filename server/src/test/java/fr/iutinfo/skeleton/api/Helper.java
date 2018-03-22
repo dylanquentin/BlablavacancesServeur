@@ -29,7 +29,7 @@ public class Helper {
 	}
 
 	static Voyage createVoyageWithName(String name, String ville) {
-		Voyage voyage = new Voyage(0, 2, name, ville);
+		Voyage voyage = new Voyage(0, 0, name, ville);
 		return createVoyage(voyage);
 	}
 
