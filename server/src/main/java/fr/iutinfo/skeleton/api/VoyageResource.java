@@ -9,12 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -25,6 +22,8 @@ import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import fr.iutinfo.skeleton.common.dto.VoyageDto;
 
 @Path("/voyage")
 @Produces(MediaType.APPLICATION_JSON)
@@ -53,7 +52,6 @@ public class VoyageResource {
            }
            else {
                voyages.put(voyage.getId(), voyage);
-
                // On renvoie 201 et l'instance de la ressource dans le Header HTTP 'Location'
                String tp = "" + voyage.getId();
                URI instanceURI = uriInfo.getAbsolutePathBuilder().path(tp).build();
@@ -61,49 +59,59 @@ public class VoyageResource {
            }
     }
 	@GET
-	public List<Voyage> getPizzas() {
+	public List<Voyage> getVoyage() {
 		return new ArrayList<Voyage>(voyages.values());
 	}
 
-  /*  @GET
+  @GET
     @Path("/{ville}")
-    public UserDto getVille(@PathParam("ville") String name) {
-        Voyage voyage = dao.findByName(name);
-        if (user == null) {
+    public VoyageDto getVoyageVille(@PathParam("ville") String ville) {
+        Voyage voyage = dao.findByName(ville);
+        if (ville == null) {
             throw new WebApplicationException(404);
         }
-        return user.convertToDto();
+        return voyage.convertToDto();
     }
-
+    
     @GET
-    public List<UserDto> getAllUsers(@QueryParam("q") String query) {
-        List<User> users;
-        if (query == null) {
-            users = dao.all();
-        } else {
-            logger.debug("Search users with query: " + query);
-            users = dao.search("%" + query + "%");
-        }
-        return users.stream().map(User::convertToDto).collect(Collectors.toList());
-    }
+	@Path("/{name}")
+	    public VoyageDto getVoyage(@PathParam("name") String name) {
+	        Voyage voyage = dao.findByName(name);
+	        if (voyage == null) {
+	            throw new WebApplicationException(404);
+	        }
+	        return voyage.convertToDto();
+	    }
+
+   @GET
+	    public List<VoyageDto> getAllVoyages(@QueryParam("q") String query) {
+	        List<Voyage> voyages;
+	        if (query == null) {
+	            voyages = dao.all();
+	        } else {
+	            logger.debug("Search voyages with query: " + query);
+	            voyages = dao.search("%" + query + "%");
+	        }
+	        return voyages.stream().map(Voyage::convertToDto).collect(Collectors.toList());
+	    }
 
     @DELETE
     @Path("/{id}")
-    public void deleteUser(@PathParam("id") int id) {
+    public void deleteVoyage(@PathParam("id") int id) {
         dao.delete(id);
     }
     
 	@PUT
     @Path("/{id}")
-    public Response modifyUser(@PathParam("id") int id, User user) {
+    public Response modifVoyage(@PathParam("id") int id, Voyage voyage) {
         // Si l'utilisateur est inconnu, on renvoie 404
-        if (id != user.getId()) {
+        if (id != voyage.getId()) {
 	    throw new NotFoundException();
         }
         else {
-        	dao.update(id, user);
+        	dao.update(id, voyage);
 	    return Response.status(Response.Status.NO_CONTENT).build();
         }
-    }*/
+    }
 
 }

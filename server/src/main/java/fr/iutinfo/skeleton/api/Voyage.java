@@ -4,6 +4,8 @@ import java.util.Calendar;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import fr.iutinfo.skeleton.common.dto.VoyageDto;
+
 public class Voyage {
     final static Logger logger = LoggerFactory.getLogger(Voyage.class);
 
@@ -159,8 +161,9 @@ public class Voyage {
 			return false;
 		return true;
 	}
+
 	
-/*	public void initFromDto(VoyageDto dto) {
+public void initFromDto(VoyageDto dto) {
 		this.setName(dto.getName());
 		this.setVille(dto.getVille());
 		this.setId(dto.getId());
@@ -178,6 +181,6 @@ public class Voyage {
         dto.setDescription(this.getDescription());
         dto.setCapacite(this.getCapacite());
         return dto;
-    }*/
+    }
 
 }
