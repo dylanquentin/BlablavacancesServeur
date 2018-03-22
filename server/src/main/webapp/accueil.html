@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/custom-styles.css">
   <link rel="stylesheet" type="text/css" href="css/style.css" >
   <script src='jquery-2.1.3.js'></script>
+  <script src="accueilJs.js"></script>
+  <script src="all.js"></script>
+
   <script>
     var min = 18;
     var max = 32;
@@ -72,58 +75,96 @@
       }
     }
 
-    $(document).ready(function(){
-      var accueil = true;
-      var charte=false;
-      var tuto=false;
-      $(".tuto").hide();
-      $(".charte").hide();
-      $(".inscription").hide();
-      $("#charte").click(function(){
+    // $(document).ready(function(){
+    //   var accueil = true;
+    //   var charte=false;
+    //   var tuto=false;
+    //   $(".tuto").hide();
+    //   $(".charte").hide();
+    //   $(".inscription").hide();
+    //   $(".contact").hide();
+    //           $(".connexion").hide();
 
-        $(".charte").show();
-        $(".accueil").hide();
-        $(".tuto").hide();
-        $(".inscription").hide();
+    //   $("#charte").click(function(){
 
-        $( "#charte").classList.add("#menu li:hover");
-
-        
-
-      });
-      $("#accueil").click(function(){
-
-
-
-        $(".charte").hide();
-        $(".accueil").show();
-        $(".tuto").hide();
-        $(".inscription").hide();
-        
-
-      });
-      $("#tuto").click(function(){
+    //     $(".charte").show();
+    //     $(".accueil").hide();
+    //     $(".tuto").hide();
+    //     $(".inscription").hide();
+    //     $("#inscription").show();
+    //     $( "#charte").classList.add("#menu li:hover");
+    //     $(".contact").hide();
+    //             $(".connexion").hide();
 
 
-        $(".charte").hide();
-        $(".accueil").hide();
-        $(".inscription").hide();
-        $(".tuto").show();
+    //   });
+    //   $("#accueil").click(function(){
 
 
-      });
-      $("#inscription").click(function(){
 
-        $(".charte").hide();
-        $(".accueil").hide();
-        $(".inscription").show();
-        $("#inscription").hide();
-        $(".tuto").hide();
+    //     $(".charte").hide();
+    //     $(".accueil").show();
+    //     $(".tuto").hide();
+    //     $(".inscription").hide();
+    //     $("#inscription").show();
+    //     $(".contact").hide();
+    //             $(".connexion").hide();
+
+    //   });
+    //   $("#tuto").click(function(){
 
 
-      });
+    //     $(".charte").hide();
+    //     $(".accueil").hide();
+    //     $(".inscription").hide();
+    //     $(".tuto").show();
+    //     $("#inscription").show();
+    //     $(".contact").hide();
+    //     $(".connexion").hide();
 
-    });
+
+    //   });
+    //   $("#inscription").click(function(){
+
+    //     $(".charte").hide();
+    //     $(".accueil").hide();
+    //     $(".inscription").show();
+    //     $("#inscription").hide();
+    //     $(".tuto").hide();
+    //     $(".contact").hide();
+    //     $(".connexion").hide();
+
+
+    //   });
+
+    //   $("#contact").click(function(){
+
+    //     $(".charte").hide();
+    //     $(".accueil").hide();
+    //     $(".inscription").hide();
+    //     $("#inscription").show();
+    //     $(".tuto").hide();
+    //     $(".contact").show();
+    //     $(".connexion").hide();
+
+
+
+    //   });
+    //   $("#connexion").click(function(){
+
+    //     $(".charte").hide();
+    //     $(".accueil").hide();
+    //     $(".inscription").hide();
+    //     $("#inscription").show();
+    //     $(".tuto").hide();
+    //     $(".contact").hide();
+    //     $(".connexion").show();
+
+
+
+    //   });
+
+    // });
   </script>
   <!--javascript pour carousel-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -155,7 +196,7 @@
         <a href="index.html"><a href="index.html"><img src="images/logo/logo.png" class="img-responsive"></a></a>
       </div>
       <div class="col-md-9">
-        <h2>Envie de vacances ? Mais personne avec qui partir...</h2>
+        <h4 style="text-align: center;">Envie de vacances ? Mais personne avec qui partir...</h4>
         <h1>BlablaVacances</h1>
       </div>
     </div>
@@ -167,7 +208,7 @@
    <div class="col-md-2 col-md-offset-10">
 
     <div class="right">
-     <a href="tableau_de_bord.html" class="btn btn-lg btn-voyage">Se connecter</a>
+     <a class="btn btn-lg btn-voyage" id="connexion">Se connecter</a>
    </div>
    <a id="inscription">inscription</a>
  </div>
@@ -283,15 +324,15 @@
 
         <div class="col-md-8 col-md-offset-2">
 
-         <p>Envie de vacances, mais personne avec qui partir... <strong>PartEnS</strong> est fait pour vous !</p>
+         <p>Envie de vacances, mais personne avec qui partir... <strong>BlablaVacances</strong> est fait pour vous !</p>
 
          <p><strong>PartEnS</strong> est un dispositif gratuit mettant en relation des seniors ayant des envies de vacances compatibles.</p>
 
-         <p>Le principe est le suivant : vous définissez vos préférences de vacances et si une ou des personnes ont des intérêts similaires aux vôtres, vous serez averti(e). Libre à vous ensuite d'entamer un dialogue pour co-construire votre projet commun de vacances. <strong>PartEnS</strong> vous permettra donc de rencontrer de nouvelles personnes, ayant les mêmes centres d'intérêt que vous, et de partir ensemble vers la destination de votre choix.</p>
+         <p>Le principe est le suivant : vous définissez vos préférences de vacances et si une ou des personnes ont des intérêts similaires aux vôtres, vous serez averti(e). Libre à vous ensuite d'entamer un dialogue pour co-construire votre projet commun de vacances. <strong>BlablaVacances</strong> vous permettra donc de rencontrer de nouvelles personnes, ayant les mêmes centres d'intérêt que vous, et de partir ensemble vers la destination de votre choix.</p>
 
-         <p>L'inscription est gratuite et sécurisée. Avec <strong>PartEnS</strong>, vous rencontrerez des co-vacanciers dont l'identité a été vérifiée par un agent assermenté du Service PASS Seniors. Vos données personnelles sont sécurisées et aucune utilisation à des fins commerciales n'en sera faite.</p>
+         <p>L'inscription est gratuite et sécurisée. Avec <strong>BlablaVacances</strong>, vous rencontrerez des co-vacanciers dont l'identité a été vérifiée par un agent assermenté du Service PASS Seniors. Vos données personnelles sont sécurisées et aucune utilisation à des fins commerciales n'en sera faite.</p>
 
-         <p>Vous n'avez plus qu'à découvrir <a href="qui-sommes-nous.html"><strong>PartEnS</strong></a> !</p>
+         <p>Vous n'avez plus qu'à découvrir <strong>BlablaVacances</strong> !</p>
 
          <br><br>
 
@@ -314,94 +355,183 @@
 </div>   
 </div>
 <div class="charte">
-  <h1>Charte des co-vacanciers </h1>
-  <p>Nous espérons que vous profiterez, dans les meilleures conditions possibles, des vacances initiées par <strong>PartEnS</strong>. Leur succès suppose le respect, à chaque étape, de quelques règles de bon sens et de bonne conduite (respect, tolérance et communication) afin d’éviter les déceptions, les discordes ou les ressentiments.</p>
-  <p>Avec <strong>PartEnS</strong>, les vacances s’organisent en groupe ; il est donc nécessaire de trouver une base d’entente commune pour que chacun soit pleinement satisfait.</p>
+  <div id="charte1">
+   <h1>Charte des co-vacanciers</h1>
 
-  <h2>Pour remplir le questionnaire</h2>
+   <p>Nous espérons que vous profiterez, dans les meilleures conditions possibles, des vacances initiées par <strong>BlablaVacances</strong>. Leur succès suppose le respect, à chaque étape, de quelques règles de bon sens et de bonne conduite (respect, tolérance et communication) afin d’éviter les déceptions, les discordes ou les ressentiments.</p>
+   <p>Avec <strong>BlablaVacances</strong>, les vacances s’organisent en groupe ; il est donc nécessaire de trouver une base d’entente commune pour que chacun soit pleinement satisfait.</p>
 
-  <ul>
-    <li>Je vérifie au préalable que mes souhaits sont en adéquation avec mes possibilités physiques (autonomie, santé) et financières.</li>
+   <h2>Pour remplir le questionnaire</h2>
 
-    <li>Je sollicite les conseils de mon médecin traitant pour tout type de vacances nécessitant des précautions particulières.
-      Je vérifie que je dispose d’une couverture suffisante (assurance, mutuelle, tiers pouvant apporter de l’aide) pour faire face à d’éventuelles difficultés.</li>
+   <ul id="ul_questionnaire">
+    <li id="ul_li_questionnaire">Je vérifie au préalable que mes souhaits sont en adéquation avec mes possibilités physiques (autonomie, santé) et financières.</li><br>
 
-      <li>J’évalue le montant des dépenses non incluses dans les frais directs de trajet et d’hébergement (ex. : dépenses dévolues à l’alimentation, aux loisirs, etc.). 
-        Tant que possible, je planifie les “extras” et précise ce que je suis prêt(e) à dépenser. Je me renseigne sur les prix pratiqués sur le lieu de séjour.</li>
+    <li id="ul_li_questionnaire">Je sollicite les conseils de mon médecin traitant pour tout type de vacances nécessitant des précautions particulières.
+      Je vérifie que je dispose d’une couverture suffisante (assurance, mutuelle, tiers pouvant apporter de l’aide) pour faire face à d’éventuelles difficultés.</li><br>
 
-        <li>Je répond avec sincérité et objectivité aux questions qui me concernent.</li>
+      <li id="ul_li_questionnaire">J’évalue le montant des dépenses non incluses dans les frais directs de trajet et d’hébergement (ex. : dépenses dévolues à l’alimentation, aux loisirs, etc.). 
+        Tant que possible, je planifie les “extras” et précise ce que je suis prêt(e) à dépenser. Je me renseigne sur les prix pratiqués sur le lieu de séjour.</li><br>
+
+        <li id="ul_li_questionnaire">Je répond avec sincérité et objectivité aux questions qui me concernent.</li>
       </ul>
 
       <h2>Lors d’échanges avant le départ</h2>
-      <ul>
-        <li>Si mon état de santé ou certains choix de vie imposent des contraintes, qui peuvent impacter le quotidien (ex. : régime alimentaire), j’en fais état dès les premiers échanges. C’est important qu’il y ait de la transparence à ce sujet.</li>
-        <li>La répartition des tâches assumées par chacun doit être satisfaisante. Il peut être utile de garder une trace écrite des engagements pris afin de les matérialiser.</li>
-        <li>Je veille à ce que les échanges soient plaisants et je ne montre ni curiosité ni indifférence excessives.</li>
-        <li>Si je ne souhaite pas m’engager avec une personne, je lui signifie avec diplomatie ; je ne me contente pas de ne plus lui répondre.</li>
-        <li>Je veille à ce que les accords financiers soient clairement définis et me conviennent. </li>
+
+      <ul id="ul_hdep">
+        <li id="ul_li_hdep">Si mon état de santé ou certains choix de vie imposent des contraintes, qui peuvent impacter le quotidien (ex. : régime alimentaire), j’en fais état dès les premiers échanges. C’est important qu’il y ait de la transparence à ce sujet.</li><br>
+        <li id="ul_li_hdep">La répartition des tâches assumées par chacun doit être satisfaisante. Il peut être utile de garder une trace écrite des engagements pris afin de les matérialiser.</li><br>
+        <li id="ul_li_hdep">Je veille à ce que les échanges soient plaisants et je ne montre ni curiosité ni indifférence excessives.</li><br>
+        <li id="ul_li_hdep">Si je ne souhaite pas m’engager avec une personne, je lui signifie avec diplomatie ; je ne me contente pas de ne plus lui répondre.</li><br>
+        <li id="ul_li_hdep">Je veille à ce que les accords financiers soient clairement définis et me conviennent. </li>
       </ul>
 
       <h3>L'équité financière</h3>
 
-      <p>La règle de l’équité financière doit prévaloir. Chaque apport doit être comptabilisé et son coût réparti entre les co-vacanciers. La gestion des finances est une partie importante dans l’organisation du voyage et elle peut être à l’origine de conflits.</p>
+      <p id="p_equi_fi">La règle de l’équité financière doit prévaloir. Chaque apport doit être comptabilisé et son coût réparti entre les co-vacanciers. La gestion des finances est une partie importante dans l’organisation du voyage et elle peut être à l’origine de conflits.</p>
 
       <h3>En cas de déséquilibre financier</h3>
 
-      <p>S’il est envisagé que j’assume davantage de dépenses que les autres, je dois y consentir pleinement et librement. Ce déséquilibre doit être justifié et rester en adéquation avec mes moyens financiers.</p>
-      <p>S’il est envisagé que j’assume moins de dépenses que les autres, je ne dois pas compenser par une suractivité qui pourrait nuire à ma santé. S’il m’est pénible de me sentir redevable, je dois l’exprimer clairement.</p>
+      <p id ="p_desequi_fi">S’il est envisagé que j’assume davantage de dépenses que les autres, je dois y consentir pleinement et librement. Ce déséquilibre doit être justifié et rester en adéquation avec mes moyens financiers.</p>
+      <p id ="p_desequi_fi">S’il est envisagé que j’assume moins de dépenses que les autres, je ne dois pas compenser par une suractivité qui pourrait nuire à ma santé. S’il m’est pénible de me sentir redevable, je dois l’exprimer clairement.</p>
 
       <h3>Le choix des activités</h3>
 
-      <p>Les choix d’activités doivent répondre le plus possible à des envies partagées. Si je consens à faire des concessions, elles doivent rester dans des limites qui ne compromettront pas la réussite de mon séjour.</p>
+      <p id="p_choix">Les choix d’activités doivent répondre le plus possible à des envies partagées. Si je consens à faire des concessions, elles doivent rester dans des limites qui ne compromettront pas la réussite de mon séjour.</p>
 
       <h2>Durant le séjour</h2>
-      <ul>
-        <li>Je respecte les engagements initiaux. S’ils doivent impérativement être reconsidérés, les principes de savoir-vivre s’appliquent de nouveau.</li>
-        <li>Je respecte l’intimité d’autrui et la propreté des lieux de vie partagés.</li>
-        <li>Je facilite le “bien-vivre ensemble” et je fais en sorte que mon comportement ne nuise pas à la (aux) personne(s) qui m’accompagne(nt).</li>
-        <li>La survenue d’un problème de santé est l’affaire de tous. Par souci de ne pas gâcher le séjour d’autrui, je ne dissimule pas un problème de santé au risque de le voir s’aggraver.</li>
-        <li>Je reste courtois(e) et aimable en toutes circonstances.</li>
-        <li>En groupe, je veille à ce qu’aucun vacancier ne se trouve marginalisé ou exclu.</li>
+      <ul id="ul_sejour">
+        <li id ="ul_li_sejour">Je respecte les engagements initiaux. S’ils doivent impérativement être reconsidérés, les principes de savoir-vivre s’appliquent de nouveau.</li>
+        <li id ="ul_li_sejour">Je respecte l’intimité d’autrui et la propreté des lieux de vie partagés.</li>
+        <li id ="ul_li_sejour">Je facilite le “bien-vivre ensemble” et je fais en sorte que mon comportement ne nuise pas à la (aux) personne(s) qui m’accompagne(nt).</li>
+        <li id ="ul_li_sejour">La survenue d’un problème de santé est l’affaire de tous. Par souci de ne pas gâcher le séjour d’autrui, je ne dissimule pas un problème de santé au risque de le voir s’aggraver.</li>
+        <li id ="ul_li_sejour">Je reste courtois(e) et aimable en toutes circonstances.</li>
+        <li id ="ul_li_sejour">En groupe, je veille à ce qu’aucun vacancier ne se trouve marginalisé ou exclu.</li>
       </ul>
       <br>
       <br>
-    </div>  
-    <div class="tuto">
-      <h1>Voici le tuto </h1>
-    </div>
-
-    <div class="inscription">
-   <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <h1>Utilisateur :</h1>
-                <input type="text" name="userdb" id="user" placeholder="Nom ?" class="form-control"/>
-                <input type="text" name="user" id="alias" placeholder="Surnom ?" class="form-control"/>
-                <input type="text" name="email" id="email" placeholder="Email ?" class="form-control"/>
-                <input type="password" name="user" id="passwd" placeholder="Mot de passe ?" class="form-control"/>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" id="get" class="btn btn-default">Lire</button>
-                <button type="button" id="post" class="btn btn-primary">Sauver</button>
-                <button type="button" id="list" class="btn btn-warning">Lister</button>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <h1>S'identifier :</h1>
-            <div id="login_form">
-                <input type="text" name="user" id="userlogin" placeholder="Login" class="form-control"/>
-                <input type="password" name="password" id="passwdlogin" placeholder="Password" class="form-control"/>
-                <br/>
-                <button id="login" class="btn btn-default">Login</button>
-                <br/>
-            </div>
-            <button id="profile" class="btn btn-default">Profile</button>
-        </div>
-    </div>
-    <div class="row" style="margin-top: 20px;">
-    </div>
+      <p style="text-align:center"><a href="doc/charte-co-vacanciers.pdf" download="charte-co-vacanciers.pdf"> Télécharger la charte des co-vacanciers en PDF </a></p>
 
     </div>
-  </body>
-  </html>
+  </div>  
+  <div class="tuto">     
+    <div class="frise">
+      <div class="col-md-offset-1">
+        <img src="images/ccm/frise.png" class="img-responsive hidden-xs" alt="Descriptif des étapes de PartEnS" usemap="#Map" />
+        <map name="Map" id="Map">
+          <area alt="Etape 1:Inscription" title="inscription" href="#inscription" shape="poly" coords="6,4,125,5,183,43,125,84,7,84" />
+          <area alt="Etape 2:Connexion" title="connexion" href="#connexion" shape="poly" coords="187,5,263,4,303,43,266,83,173,84"/>
+          <area alt="Etape 3:Souhaits de vacances" title="souhaits" href="#souhaits" shape="poly" coords="305,5,310,83,542,82,581,45,539,4" />
+          <area alt="Etape 4:Mise en relation" title="relation" href="#relation" shape="poly" coords="581,5,587,82,742,83,782,43,742,6" />
+          <area alt="Etape 5:Organisation des vacances" title="Organisation" href="#organisation" shape="poly" coords="789,83,790,5,947,4,984,42,949,83" />
+        </map>
+      </div>
+    </div>
+    <div class="row">  
+      <div class="col-md-8 col-md-offset-2">
+        <h2 id="inscription">Étape 1 : Inscription administrative</h2>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <img src="images/ccm/Inscription_administrative.jpg" class="img-responsive" class="img-circle" class="img-responsive hidden-xs">
+      </div>
+      <div class="col-md-6">  
+        <p>L'inscription auprès d'un agent assermenté du PASS Senior de Lille est obligatoire pour bénéficier du dispositif <strong>PartEnS</strong>. Contrairement aux sites de rencontre classiques, l'identité de chaque inscrit(e) est vérifiée. L'agent assermenté saisit des informations liées à votre identité et votre lieu de résidence. L'inscription prend environ un quart d'heure. La possession d'une adresse e-mail est obligatoire.</p>
+
+        <p style="text-align:center"><a target="blank" href="http://www.lille.fr/Senior/Mes-avantages">Trouver un bureau du Service PASS Senior sur Lille pour s'inscrire</a></p>
+      </div>  
+
+      <div class="col-md-8 col-md-offset-2">
+        <h2 id="connexion">Étape 2 : Connexion en ligne</h2>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <img src="images/ccm/connexion.png" class="img-responsive" class="img-circle" class="img-responsive hidden-xs">
+      </div>
+      <div class="col-md-6">
+        <p>Une fois finalisée, l'inscription génère automatiquement votre identifiant et votre mot de passe. C'est avec ces informations, délivrées par l'agent assermenté, que vous pourrez ensuite vous <a href="">connecter</a> à votre compte utilisateur personnel sur le site <strong>PartEnS</strong>.</p>
+      </div>        
+      <div class="col-md-8 col-md-offset-2">
+        <h2 id="souhaits">Étape 3 : Déterminer votre profil et projet de vacances</h2>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <img class="img-responsive" class="img-circle" src="images/ccm/A_la_maison.jpg" class="img-responsive hidden-xs">
+      </div>
+      <div class="col-md-6">
+        <p>Lors de votre connexion, vous pouvez renseigner votre <a href="">profil</a> utilisateur et formuler votre <a href="">projet de vacances</a> avec vos préférences. Les projets de vacances peuvent être larges ou précis (exemples : Une semaine en été à la mer ; Du 20 au 27 décembre 2017 à Toulouse), à vous de renseigner les informations selon vos envies et besoins.</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h2 id="relation">Étape 4 : Mise en relation des co-vacanciers</h2>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <img class="img-responsive" class="img-circle" src="images/ccm/Rencontre_des_co-vacanciers.jpg" class="img-responsive hidden-xs">
+      </div>
+      <div class="col-md-6">
+        <p>Grâce aux préférences que vous aurez définies, vous pouvez entrer en relation avec une ou des personnes ayant un projet de vacances compatible avec le vôtre. La <a href="">messagerie</a> du tableau de bord <strong>PartEnS</strong> vous permettra, si vous le souhaitez, d’échanger anonymement (seul votre prénom sera mentionné) avec elle(s). Libre à vous ensuite de lever l’anonymat quand vous le désirez (donner votre nom de famille et vos coordonnées). Vous pourrez ensuite convenir d’une première rencontre, via les activités proposées par le PASS Senior de Lille par exemple, ou encore échanger par Skype.</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h2 id="organisation">Étape 5 : Organisation du séjour et départ</h2>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <img class="img-responsive" class="img-circle" src="images/ccm/organisation.png" class="img-responsive hidden-xs">
+      </div>
+      <div class="col-md-6">
+        <p>Afin de partir dans des conditions optimales, à vous et votre ou vos co-vacancier(s) d’organiser au mieux votre séjour. Pour cela, pensez à prévoir les transports (en commun, covoiturage, etc.), l’hébergement (hôtel, gîte, résidence secondaire, etc.), l’intendance, les activités/sorties, etc. Dernière étape : profitez de votre séjour !</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="inscription">
+    <form>
+      <h1>Inscription</h1>
+
+      <form id="formInscr" >
+        Nom : <input type="text" name="nom"> <br>
+        Prénom : <input type="text" name="prenom"> <br>
+        Email : <input type="text" name="email"> <br>
+        Login : <input type="text" name="login"> <br>
+        Password : <input type="password" name="password"> <br>
+        <input type="button" name="submit" value="Submit"> <br>
+      </form>
+
+    </form>
+  </div>
+
+  <div class="contact">
+    <div class="col-md-7 col-md-offset-2">
+      <p>Si vous avez des questions, remarques, suggestions concernant <strong>BlablaVacances </strong>, ou si vous avez un quelconque problème, veuillez remplir le formulaire de contact ci-dessous.</p>
+    </div>
+    <div class="col-md-8 col-md-offset-3">
+      <div id="contact">
+        <form action="" method="POST" enctype="multipart/form-data">
+          <p>Votre nom<font color="red">*</font></p>
+          <input name="nom" size="80" type="text" required />
+          <p>Votre e-mail<font color="red">*</font></p>
+          <input name="email" size="80" type="text" required />
+          <p>Votre numéro de téléphone</p>
+          <input name="telephone" size="80" type="tel" pattern="^[0-9]{10}" maxlength="10" />
+          <p>Sujet de votre requête<font color="red">*</font></p>
+          <input name="sujet" size="80" type="text" required />
+          <p>Votre message<font color="red">*</font></p>  
+          <textarea name="message" rows="6" cols="80" required ></textarea>
+          <br/>
+          <br/>
+          <input value="Envoyer" type="submit">
+        </form>
+        <p>Les champs marqués d’un <font color="red">*</font> sont obligatoires.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="connexion">
+    <form>
+      <h1>Connection</h1>
+      <div id="formul">        
+        <form id="formConnec" >
+        Login : <input type="text" name="login" id="login"> <br>
+          Password : <input type="password" name="password"> <br>
+          <input type="button" name="submit" value="Se connecter" id="submit"> <br>
+        </form>
+      </div>
+    </form>      
+  </div>
+</body>
+</html>
