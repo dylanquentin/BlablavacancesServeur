@@ -8,20 +8,21 @@ Connexion Admin et création d'utilisateur sur Android
 Vérification des connexions utilisateurs
 
 ## Ce que nous allons faire durant le prochain sprint
-
+Nous allons chercher à visualiser les voyages et utilisateurs sur web et android
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ? 
-
+Nous avons testé les ressources voyages sur le seveur REST et 
+nous avons corrigé celle qui n'etait pas fonctionnelle
 
 ### Qu'avons nous observé ? 
-la methode PUT fonctionne mais creer des bugs
+Nous avons observé que le serveur est fonctionnel sans aucun bug
 
 ### Quelle décision prenons nous suite à cette expérience ? 
-nous allons nous occuper de debugger le code
+Nous allons désormais nous concentrer sur les pages webs
 
 ### Qu'allons nous tester durant les 2 prochaines heures ? 
-Nous allons corriger les erreurs
+Nous allons faire le javascript
 
 ### À quoi verra-t-on que celà à fonctionné ?
-Lorsque nous lancerons le server et que nous entrerons un voyage il n'y aura plus d'erreur.
+Les pages web s'affichent sur serveur
