@@ -138,4 +138,34 @@ public class UserResourceTest extends JerseyTest {
         List<UserDto> users = target(PATH + "/").queryParam("q", "fsf").request().get(listUserResponseType);
         assertEquals(2, users.size());
     }
+    
+    @Test
+	public void testModifyInexistantUser() {
+        createUserWithName("foo");
+        UserDto utilisateur = target(PATH + "/foo").request().get(UserDto.class);
+        Entity<UserDto> userEntity = Entity.entity(utilisateur, MediaType.APPLICATION_JSON);
+		int notFound = target(PATH +"/foo").request().put(userEntity).getStatus();
+		assertEquals(404, notFound);
+	}
+
+	/**
+	 *
+	 * Vérifie que la modification d'une ressource est effective
+	 */
+	@Test
+	public void testModifyUSer() {
+        createUserWithName("foo");
+        UserDto utilisateur = target(PATH + "/foo").request().get(UserDto.class);
+        Entity<UserDto> pizzaEntity = Entity.entity(pizza, MediaType.APPLICATION_JSON);
+		target.path("/pizzas").request().post(pizzaEntity);
+
+		Pizza modified = new Pizza("petite", "royale", "mozarella");
+		pizzaEntity = Entity.entity(modified, MediaType.APPLICATION_JSON);
+
+		int noContent = target.path("/pizzas").path("vegetarienne").request().put(pizzaEntity).getStatus();
+		assertEquals(204, noContent);
+
+		Pizza retrieved = target.path("/pizzas").path("royale").request().get(Pizza.class);
+		assertEquals(modified, retrieved);
+	}
 }
