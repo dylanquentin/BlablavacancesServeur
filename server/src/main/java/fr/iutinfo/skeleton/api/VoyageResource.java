@@ -41,7 +41,10 @@ public class VoyageResource {
             logger.debug("Create table voyage");
             dao.createVoyageTable();
             dao.insert(new Voyage(1, 1 , "Petit weekend à Paris","Paris"));
+            dao.insert(new Voyage(2, 2 , "Soirée dans Marseille","Marseille"));
+
         }
+
     }
     
     
@@ -56,7 +59,15 @@ public class VoyageResource {
         }
         return voyages.stream().map(Voyage::convertToDto).collect(Collectors.toList());
     }
-    
+    @GET
+    @Path("/{ville}")
+    public VoyageDto getVoyageVille(@PathParam("ville") String ville) {
+        Voyage voyage = dao.findByCity(ville);
+        if (voyage == null) {
+            throw new WebApplicationException(404);
+        }
+        return voyage.convertToDto();
+    }	
     
  /*   @POST
     public Response createVoyage(Voyage voyage) {      
@@ -122,7 +133,7 @@ public class VoyageResource {
     public Response modifVoyage(@PathParam("id") int id, Voyage voyage) {
         // Si l'utilisateur est inconnu, on renvoie 404
         if (id != voyage.getId()) {
-	    throw new NotFoundException();
+        	throw new NotFoundException();
         }
         else {
         	dao.update(id, voyage);

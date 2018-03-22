@@ -19,6 +19,10 @@ public interface VoyageDao {
 	@SqlQuery("select * from voyages where name = :name")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Voyage findByName(@Bind("name") String name);
+	
+	@SqlQuery("select * from voyages where ville = :ville")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Voyage findByCity(@Bind("ville") String ville);
 
 	@SqlQuery("select * from voyages where search like :name")
 	@RegisterMapperFactory(BeanMapperFactory.class)
