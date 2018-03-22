@@ -23,6 +23,7 @@ import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import fr.iutinfo.skeleton.common.dto.UserDto;
 import fr.iutinfo.skeleton.common.dto.VoyageDto;
 
 @Path("/voyage")
@@ -39,12 +40,21 @@ public class VoyageResource {
         if (!tableExist("voyages")) {
             logger.debug("Create table voyage");
             dao.createVoyageTable();
-            
             dao.insert(new Voyage(1, 1 , "Petit weekend à Paris","Paris"));
-
         }
+        dao.insert(new Voyage(1, 1 , "Petit weekend à Paris","Paris"));
     }
-
+    
+    @POST
+    public VoyageDto createVoyage(VoyageDto dto) {
+        Voyage voyage = new Voyage();
+        voyage.initFromDto(dto);
+        int id = dao.insert(voyage);
+        dto.setId(id);
+        return dto;
+    }
+    
+    /*
     @POST
     public Response createVoyage(Voyage voyage) {      
     	   if ( voyages.containsKey(voyage.getId()) ) {
@@ -58,11 +68,13 @@ public class VoyageResource {
                return Response.created(instanceURI).build();
            }
     }
+    */
 	@GET
 	public List<Voyage> getVoyage() {
+		System.out.println(dao.all());
 		return new ArrayList<Voyage>(voyages.values());
 	}
-
+/*
   @GET
     @Path("/{ville}")
     public VoyageDto getVoyageVille(@PathParam("ville") String ville) {
@@ -72,7 +84,7 @@ public class VoyageResource {
         }
         return voyage.convertToDto();
     }
-    
+   
     @GET
 	@Path("/{name}")
 	    public VoyageDto getVoyage(@PathParam("name") String name) {
@@ -94,7 +106,7 @@ public class VoyageResource {
 	        }
 	        return voyages.stream().map(Voyage::convertToDto).collect(Collectors.toList());
 	    }
-
+*/
     @DELETE
     @Path("/{id}")
     public void deleteVoyage(@PathParam("id") int id) {
@@ -113,5 +125,4 @@ public class VoyageResource {
 	    return Response.status(Response.Status.NO_CONTENT).build();
         }
     }
-
 }
