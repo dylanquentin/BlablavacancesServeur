@@ -32,7 +32,7 @@ public class VoyageResourceTest extends JerseyTest {
         Helper.initDb();
     }
 
-    @Test
+/*    @Test
     public void read_should_return_a_Voyage_as_object() {
         createVoyageWithName("test", "Lille");
         VoyageDto utilisateur = target(PATH + "/test").request().get(VoyageDto.class);
