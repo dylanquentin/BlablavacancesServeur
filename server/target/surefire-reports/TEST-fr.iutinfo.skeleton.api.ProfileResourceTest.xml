@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.iutinfo.skeleton.api.ProfileResourceTest" time="1.109" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="fr.iutinfo.skeleton.api.ProfileResourceTest" time="0.8" tests="2" errors="2" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-8-oracle-x64/jre/lib/amd64"/>
     <property name="java.vm.version" value="25.71-b15"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/infoetu/quentind/s4/BlablaVacancesServeur"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/infoetu/dutoitp/Bureau/BlablaVacancesServeur"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/infoetu/quentind/s4/BlablaVacancesServeur"/>
+    <property name="user.dir" value="/home/infoetu/dutoitp/Bureau/BlablaVacancesServeur"/>
     <property name="java.runtime.version" value="1.8.0_71-b15"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/jdk-8-oracle-x64/jre/lib/endorsed"/>
@@ -31,12 +31,12 @@
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="4.9.0-5-amd64"/>
-    <property name="user.home" value="/home/infoetu/quentind"/>
+    <property name="user.home" value="/home/infoetu/dutoitp"/>
     <property name="user.timezone" value="Europe/Paris"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="user.name" value="quentind"/>
+    <property name="user.name" value="dutoitp"/>
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -58,6 +58,62 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="should_return_forbiden_status_for_bad_user" classname="fr.iutinfo.skeleton.api.ProfileResourceTest" time="0.988"/>
-  <testcase name="should_return_forbiden_headers_without_authorization_header" classname="fr.iutinfo.skeleton.api.ProfileResourceTest" time="0.121"/>
+  <testcase name="should_return_forbiden_status_for_bad_user" classname="fr.iutinfo.skeleton.api.ProfileResourceTest" time="0.734">
+    <error message="java.sql.SQLException: [SQLITE_READONLY]  Attempt to write a readonly database (attempt to write a readonly database) [statement:&quot;drop table if exists users&quot;, located:&quot;drop table if exists users&quot;, rewritten:&quot;drop table if exists users&quot;, arguments:{ positional:{}, named:{}, finder:[]}]" type="org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException"><![CDATA[org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: java.sql.SQLException: [SQLITE_READONLY]  Attempt to write a readonly database (attempt to write a readonly database) [statement:"drop table if exists users", located:"drop table if exists users", rewritten:"drop table if exists users", arguments:{ positional:{}, named:{}, finder:[]}]
+	at org.sqlite.core.DB.newSQLException(DB.java:890)
+	at org.sqlite.core.DB.newSQLException(DB.java:901)
+	at org.sqlite.core.DB.execute(DB.java:810)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:50)
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1328)
+	at org.skife.jdbi.v2.Update.execute(Update.java:56)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler$2.value(UpdateHandler.java:60)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:72)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:175)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$1.intercept(SqlObject.java:75)
+	at org.skife.jdbi.v2.sqlobject.CloseInternalDoNotUseThisClass$$EnhancerByCGLIB$$ce8f8a2f.dropUserTable(<generated>)
+	at fr.iutinfo.skeleton.api.Helper.initDb(Helper.java:24)
+	at fr.iutinfo.skeleton.api.ProfileResourceTest.init(ProfileResourceTest.java:28)
+]]></error>
+    <system-out><![CDATA[11:34:04,115 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+11:34:04,115 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+11:34:04,115 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/home/infoetu/dutoitp/Bureau/BlablaVacancesServeur/server/target/classes/logback.xml]
+11:34:04,151 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+11:34:04,163 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+11:34:04,165 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+11:34:04,184 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+11:34:04,184 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+11:34:04,184 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+11:34:04,185 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+11:34:04,185 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+11:34:04,185 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [fr.iutinfo.skeleton] to DEBUG
+11:34:04,185 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+11:34:04,185 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@53fb3dab - Registering current configuration as safe fallback point
+
+11:34:04.369 [main] DEBUG fr.iutinfo.skeleton.api.BDDFactory - user.dir : /home/infoetu/dutoitp/Bureau/BlablaVacancesServeur/server
+11:34:04.370 [main] DEBUG fr.iutinfo.skeleton.api.BDDFactory - java.io.tmpdir : /tmp
+]]></system-out>
+    <system-err><![CDATA[mars 22, 2018 11:34:03 AM org.glassfish.jersey.test.simple.SimpleTestContainerFactory$SimpleTestContainer <init>
+INFOS: Creating SimpleTestContainer configured at the base URI http://localhost:9998/
+]]></system-err>
+  </testcase>
+  <testcase name="should_return_forbiden_headers_without_authorization_header" classname="fr.iutinfo.skeleton.api.ProfileResourceTest" time="0.066">
+    <error message="java.sql.SQLException: [SQLITE_READONLY]  Attempt to write a readonly database (attempt to write a readonly database) [statement:&quot;drop table if exists users&quot;, located:&quot;drop table if exists users&quot;, rewritten:&quot;drop table if exists users&quot;, arguments:{ positional:{}, named:{}, finder:[]}]" type="org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException"><![CDATA[org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: java.sql.SQLException: [SQLITE_READONLY]  Attempt to write a readonly database (attempt to write a readonly database) [statement:"drop table if exists users", located:"drop table if exists users", rewritten:"drop table if exists users", arguments:{ positional:{}, named:{}, finder:[]}]
+	at org.sqlite.core.DB.newSQLException(DB.java:890)
+	at org.sqlite.core.DB.newSQLException(DB.java:901)
+	at org.sqlite.core.DB.execute(DB.java:810)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:50)
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1328)
+	at org.skife.jdbi.v2.Update.execute(Update.java:56)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler$2.value(UpdateHandler.java:60)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:72)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:175)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$1.intercept(SqlObject.java:75)
+	at org.skife.jdbi.v2.sqlobject.CloseInternalDoNotUseThisClass$$EnhancerByCGLIB$$ce8f8a2f.dropUserTable(<generated>)
+	at fr.iutinfo.skeleton.api.Helper.initDb(Helper.java:24)
+	at fr.iutinfo.skeleton.api.ProfileResourceTest.init(ProfileResourceTest.java:28)
+]]></error>
+    <system-err><![CDATA[mars 22, 2018 11:34:04 AM org.glassfish.jersey.test.simple.SimpleTestContainerFactory$SimpleTestContainer <init>
+INFOS: Creating SimpleTestContainer configured at the base URI http://localhost:9998/
+]]></system-err>
+  </testcase>
 </testsuite>

@@ -1,4 +1,52 @@
 -------------------------------------------------------------------------------
 Test set: fr.iutinfo.skeleton.api.LoginResourceTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.306 sec - in fr.iutinfo.skeleton.api.LoginResourceTest
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.103 sec <<< FAILURE! - in fr.iutinfo.skeleton.api.LoginResourceTest
+should_return_current_user_with_authorization_header(fr.iutinfo.skeleton.api.LoginResourceTest)  Time elapsed: 0.021 sec  <<< ERROR!
+org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: java.sql.SQLException: [SQLITE_READONLY]  Attempt to write a readonly database (attempt to write a readonly database) [statement:"drop table if exists users", located:"drop table if exists users", rewritten:"drop table if exists users", arguments:{ positional:{}, named:{}, finder:[]}]
+	at org.sqlite.core.DB.newSQLException(DB.java:890)
+	at org.sqlite.core.DB.newSQLException(DB.java:901)
+	at org.sqlite.core.DB.execute(DB.java:810)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:50)
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1328)
+	at org.skife.jdbi.v2.Update.execute(Update.java:56)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler$2.value(UpdateHandler.java:60)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:72)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:175)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$1.intercept(SqlObject.java:75)
+	at org.skife.jdbi.v2.sqlobject.CloseInternalDoNotUseThisClass$$EnhancerByCGLIB$$ce8f8a2f.dropUserTable(<generated>)
+	at fr.iutinfo.skeleton.api.Helper.initDb(Helper.java:24)
+	at fr.iutinfo.skeleton.api.LoginResourceTest.init(LoginResourceTest.java:25)
+
+should_return_anonymous_user_without_authorization_header(fr.iutinfo.skeleton.api.LoginResourceTest)  Time elapsed: 0.046 sec  <<< ERROR!
+org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: java.sql.SQLException: [SQLITE_READONLY]  Attempt to write a readonly database (attempt to write a readonly database) [statement:"drop table if exists users", located:"drop table if exists users", rewritten:"drop table if exists users", arguments:{ positional:{}, named:{}, finder:[]}]
+	at org.sqlite.core.DB.newSQLException(DB.java:890)
+	at org.sqlite.core.DB.newSQLException(DB.java:901)
+	at org.sqlite.core.DB.execute(DB.java:810)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:50)
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1328)
+	at org.skife.jdbi.v2.Update.execute(Update.java:56)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler$2.value(UpdateHandler.java:60)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:72)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:175)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$1.intercept(SqlObject.java:75)
+	at org.skife.jdbi.v2.sqlobject.CloseInternalDoNotUseThisClass$$EnhancerByCGLIB$$ce8f8a2f.dropUserTable(<generated>)
+	at fr.iutinfo.skeleton.api.Helper.initDb(Helper.java:24)
+	at fr.iutinfo.skeleton.api.LoginResourceTest.init(LoginResourceTest.java:25)
+
+should_return_anonymous_user_for_bad_user(fr.iutinfo.skeleton.api.LoginResourceTest)  Time elapsed: 0.033 sec  <<< ERROR!
+org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: java.sql.SQLException: [SQLITE_READONLY]  Attempt to write a readonly database (attempt to write a readonly database) [statement:"drop table if exists users", located:"drop table if exists users", rewritten:"drop table if exists users", arguments:{ positional:{}, named:{}, finder:[]}]
+	at org.sqlite.core.DB.newSQLException(DB.java:890)
+	at org.sqlite.core.DB.newSQLException(DB.java:901)
+	at org.sqlite.core.DB.execute(DB.java:810)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:50)
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1328)
+	at org.skife.jdbi.v2.Update.execute(Update.java:56)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler$2.value(UpdateHandler.java:60)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:72)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:175)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$1.intercept(SqlObject.java:75)
+	at org.skife.jdbi.v2.sqlobject.CloseInternalDoNotUseThisClass$$EnhancerByCGLIB$$ce8f8a2f.dropUserTable(<generated>)
+	at fr.iutinfo.skeleton.api.Helper.initDb(Helper.java:24)
+	at fr.iutinfo.skeleton.api.LoginResourceTest.init(LoginResourceTest.java:25)
+
