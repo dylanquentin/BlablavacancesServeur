@@ -1,11 +1,11 @@
  .btn-voyage{
-	 background: #ff770d;
-	 color:white;
-	 font-family: Helvetica, sans-serif;
-	 width:60%;
-	 float:right;
-	 margin-top: 10px;
-	 margin-bottom: 10px;
+  background: #ff770d;
+  color:white;
+  font-family: Helvetica, sans-serif;
+  width:60%;
+  float:right;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .btn-voyage a:hover{
@@ -19,22 +19,22 @@
 .fontsize{
 	display:none;
 }
- 
+
 body {
-    background-color: white; 
-    font-family:helvetica, sans-serif;
-    color: black;
+  background-color: white; 
+  font-family:helvetica, sans-serif;
+  color: black;
 }
- 
+
 .rect {
-    width: 88%;
-    border: 5px solid black;
-    padding: 10px;
-    padding-top: 15px;
+  width: 88%;
+  border: 5px solid black;
+  padding: 10px;
+  padding-top: 15px;
 }
 
 .rect p{
-    padding-bottom:0px!important;
+  padding-bottom:0px!important;
 }
 
 .carousel{
@@ -50,15 +50,17 @@ img{
 }
 
 /*Titre*/
- 
+
 h1 {
 	font-family:lucida sans unicode, sans-serif;
 	display:block;
 	text-align:center;
 	padding-bottom: 10px;
-    font-weight: bold;
- }
-	
+  font-weight: bold;
+}
+.form{
+  margin-left: 15em;
+}
 h2 {
  font-size: 150%;
  font-family: Open Sans, sans-serif; 
@@ -76,13 +78,13 @@ ul,li,td,p {
 }
 
 #menu{
-    /* couleur menu navigation */
-	background: rgb(82, 137, 191);
-	opacity:10%;
-	color:white;
+  /* couleur menu navigation */
+  background: rgb(82, 137, 191);
+  opacity:10%;
+  color:white;
   height: 3em;
-	text-align: center;
-	font-family:Helvetica, sans-serif;
+  text-align: center;
+  font-family:Helvetica, sans-serif;
 }
 
 #menu li{
@@ -98,10 +100,32 @@ ul,li,td,p {
 #menu li:hover{
 	background: #75c1fc;	
 }
+#charte1 h3, h2{
 
+background-color:rgb(82,137,191);
+border: solid 2px;
+text-align:center;  
+
+}
+#charte1{
+border: none 2px;
+margin: 5px 100px;
+padding:10px;
+font-family: "Times New Roman", Times, sans-serif;
+}
+
+
+#charte1 > h1{
+  text-align: center;
+  text-decoration: underline;
+}
+
+#charte1 #ul_questionnaire{
+  text-spacing
+}
 #menu ,#menu li{
-    /* couleur menu navigation */
-	background: rgb(82, 137, 191);
+  /* couleur menu navigation */
+  background: rgb(82, 137, 191);
 
 
 }
@@ -122,12 +146,60 @@ ul,li,td,p {
   margin: 0.5em;
   
 }
+
+.inscription{
+  border: 3px solid black;
+  margin-left: 14.5em;
+  margin-right: 14.5em;
+  margin-top: 4em;
+
+}
+.inscription form input{
+  margin:1em; 
+}
+.inscription form {
+  margin:1em; 
+}
+
+.connexion{
+  border: 3px solid black;
+  margin-left: 14.5em;
+  margin-right: 14.5em;
+  margin-top: 4em;
+
+}
+.connexion form input{
+  margin:1em; 
+}
+.connexion form{
+  margin:1em;
+}
+
+#formul{
+margin-left: 26em;
+}
+#formul #login{
+  margin-left: 3.1em; 
+}
+#submit{
+  margin-left: 7em;
+}
+#inscri{
+  margin-left: 27em;
+}
+#inscri input{
+  margin-left: 3em;
+}
+.tuto{
+  width: 80em;
+  margin-left: 15em;
+}
 #footer{
 	color:white;
 	text-align: center;
 	font-family:Helvetica, sans-serif;
-    margin-top: 0;
-    margin-left: -15px;
+  margin-top: 0;
+  margin-left: -15px;
 }
 #footer a{
 	color:white;
@@ -168,46 +240,46 @@ ul,li,td,p {
 		padding:0;
 	}
 	#menu ul {
-        margin-top: 0px;
-		margin-bottom: 0px;
-}
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 
-img{
-	width:90%;
-}
+  img{
+   width:90%;
+ }
 
-.logo img{
-	width:140px;
-	margin-top: 35px;
-    margin-left: 25px;
-}
-	
-.rect {
-    width:96%;
+ .logo img{
+   width:140px;
+   margin-top: 35px;
+   margin-left: 25px;
+ }
+
+ .rect {
+  width:96%;
 }
 
 .carou {
-    width:100%;
+  width:100%;
 }
- 
+
 .btn-voyage{
-    background: #ff770d;
-    color: white;
-    font-family: Helvetica, sans-serif;
-    width:80%;
-    margin-right:30px;
-    margin-top: -5px;
-    margin-bottom: 0px;
+  background: #ff770d;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  width:80%;
+  margin-right:30px;
+  margin-top: -5px;
+  margin-bottom: 0px;
 }
 
 .faq{
-    background: #ff770d;
-    color: white;
-    font-family: Helvetica, sans-serif;
-    margin-bottom: 15px;
+  background: #ff770d;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  margin-bottom: 15px;
 }
 .faq a { 
-    width: 90%;
+  width: 90%;
 }
 .faq a:hover{
 	background-color:#0d95ff;
@@ -216,66 +288,66 @@ img{
 	cursor: pointer;
 }
 .faqq non-display{
-    display:none;
+  display:none;
 }		
 .faqq display {
-    display:block;
+  display:block;
 }
 
 .fontsize {
-    display:block;
-    margin-right: -20px;
+  display:block;
+  margin-right: -20px;
 }
 .fontsize a {
-    font-size:150%; 
-    font-family: courier, sans-serif; 
-    color:#1400ff;
+  font-size:150%; 
+  font-family: courier, sans-serif; 
+  color:#1400ff;
 }
 .fontsize a:hover {
-    color:white!important;
-    text-decoration:none!important;
+  color:white!important;
+  text-decoration:none!important;
 }
 .fontsize a:focus {
-    color:white!important
+  color:white!important
 }
 .aa {
-    text-align: center;
-    margin-bottom: 0px;
-    width:40%;
-    /* background:lightgrey;*/
+  text-align: center;
+  margin-bottom: 0px;
+  width:40%;
+  /* background:lightgrey;*/
 }
 
 .qsn ul {
-    text-align: justify
+  text-align: justify
 }
-	
+
 h1 {
 	margin-bottom: 30px;
 	text-align: center;
 }
 
 h2 {
-    margin-top:30px;
-    margin-bottom: 25px;
-    padding-left: 0px;
+  margin-top:30px;
+  margin-bottom: 25px;
+  padding-left: 0px;
 }	
 
 #footer ul {
-    margin-bottom: 0px;
-    margin-left: 15px;
+  margin-bottom: 0px;
+  margin-left: 15px;
 }
 #footer ul li {
-    width:25%;
-    float:left;
-    margin-top:20px;
-    margin-bottom: 45px;
+  width:25%;
+  float:left;
+  margin-top:20px;
+  margin-bottom: 45px;
 }	
 /*.footer {
     clear: both;
-}*/
+    }*/
 
-#charte1 {
-  float:center;
+    #charte1 {
+      float:center;
   /*background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
   background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
   background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);*/
@@ -319,6 +391,7 @@ h2 {
 
 #charte1 p{
  text-align: justify;
+ border: none;
 }
 
 textarea#feedback {
@@ -352,19 +425,19 @@ textarea:focus, input:focus {
 }
 
 .pds h2{
-	 text-align:center;
+  text-align:center;
 }
 .pds li{
 }
-	
+
 .row2 {
 	text-align:center;
 }
 
 .rect {
-    padding-top: 35px;
+  padding-top: 35px;
 }
-	
+
 .carousel {
 	padding-bottom: 0%;
 	margin: 0 auto 2em; 
@@ -373,7 +446,7 @@ textarea:focus, input:focus {
 	display:block;
 }
 .carousel-control.left, .carousel-control.right {
-    background-image: none
+  background-image: none
 }
 
 .carousel2 {
@@ -384,7 +457,7 @@ textarea:focus, input:focus {
 	width: 100%;
 	display:block;
 }
-    
+
 .carousel2-control.left, .carousel2-control.right {
-    background-image: none
+  background-image: none
 }

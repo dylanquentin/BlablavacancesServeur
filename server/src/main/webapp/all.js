@@ -1,3 +1,5 @@
+
+
 function getUser(name) {
 	getUserGeneric(name, "v1/user/");
 }
@@ -10,7 +12,7 @@ function getUserGeneric(name, url) {
 
 function login() {
 	getWithAuthorizationHeader("v1/login", function(data){
-	    $("#login_form").hide();
+	    $("#formConnec").hide();
 	    afficheUser(data);
 	});
 }
@@ -19,15 +21,15 @@ function profile() {
 	getWithAuthorizationHeader("v1/profile", function (data) {afficheUser(data);});
 }
 
- function getWithAuthorizationHeader(url, callback) {
- if($("#userlogin").val() != "") {
+function getWithAuthorizationHeader(url, callback) {
+ if($("#formConnec #login").val() != "") {
      $.ajax
      ({
        type: "GET",
        url: url,
        dataType: 'json',
        beforeSend : function(req) {
-        req.setRequestHeader("Authorization", "Basic " + btoa($("#userlogin").val() + ":" + $("#passwdlogin").val()));
+        req.setRequestHeader("Authorization", "Basic " + btoa($("#formConnec #login").val() + ":" + $("#formConnec input[name=password]").val()));
        },
        success: callback,
        error : function(jqXHR, textStatus, errorThrown) {
@@ -40,6 +42,20 @@ function profile() {
         });
      }
  }
+
+
+$(function(){
+	$('#formInscr').submit(function(){
+		nom = $(this).find('input[name=nom]').val();
+		prenom = $(this).find('input[name=prenom]').val();
+		login = $(this).find('input[name=login]').val();
+		password = $(this).find('input[name=password]').val();
+		postUser(nom,prenom,login,password);
+	});
+
+});
+
+
 
 function postUser(name, alias, email, pwd) {
     postUserGeneric(name, alias, email, pwd, 'v1/user/')

@@ -6,7 +6,7 @@
       $(".charte").hide();
       $(".inscription").hide();
       $(".contact").hide();
-              $(".connexion").hide();
+      $(".connexion").hide();
 
       $("#charte").click(function(){
 
@@ -17,7 +17,7 @@
         $("#inscription").show();
         $( "#charte").classList.add("#menu li:hover");
         $(".contact").hide();
-                $(".connexion").hide();
+        $(".connexion").hide();
 
 
       });
@@ -31,7 +31,7 @@
         $(".inscription").hide();
         $("#inscription").show();
         $(".contact").hide();
-                $(".connexion").hide();
+        $(".connexion").hide();
 
       });
       $("#tuto").click(function(){
@@ -86,5 +86,17 @@
 
 
       });
+      $(".inscription input[name=submit]").click(function(){
+       postUser(
+        $('.inscription input[name=nom]').val(),
+        $('.inscription input[name=login]').val(),
+        $('.inscription input[name=email]').val(),
+        $('.inscription input[name=password]').val())
+     });
 
-    });
+   $("#submit").click(function(){
+          login();  
+     });
+
+ });
+
