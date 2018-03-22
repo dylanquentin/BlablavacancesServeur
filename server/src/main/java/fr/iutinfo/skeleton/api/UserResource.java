@@ -32,6 +32,7 @@ public class UserResource {
     }
 
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public UserDto createUser(UserDto dto) {
         User user = new User();
         user.initFromDto(dto);
