@@ -46,16 +46,6 @@ public class VoyageResource {
     }
     
     @POST
-    public VoyageDto createVoyage(VoyageDto dto) {
-        Voyage voyage = new Voyage();
-        voyage.initFromDto(dto);
-        int id = dao.insert(voyage);
-        dto.setId(id);
-        return dto;
-    }
-    
-    /*
-    @POST
     public Response createVoyage(Voyage voyage) {      
     	   if ( voyages.containsKey(voyage.getId()) ) {
                return Response.status(Response.Status.CONFLICT).build();
@@ -68,12 +58,12 @@ public class VoyageResource {
                return Response.created(instanceURI).build();
            }
     }
-    */
+  
 	@GET
 	public List<Voyage> getVoyage() {
-		System.out.println(dao.all());
 		return new ArrayList<Voyage>(voyages.values());
 	}
+	
 /*
   @GET
     @Path("/{ville}")
@@ -107,6 +97,7 @@ public class VoyageResource {
 	        return voyages.stream().map(Voyage::convertToDto).collect(Collectors.toList());
 	    }
 */
+	
     @DELETE
     @Path("/{id}")
     public void deleteVoyage(@PathParam("id") int id) {
