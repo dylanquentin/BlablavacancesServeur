@@ -40,7 +40,7 @@ public class VoyageResource {
         if (!tableExist("voyages")) {
             logger.debug("Create table voyage");
             dao.createVoyageTable();
-
+            
             dao.insert(new Voyage(1, 1 , "Petit weekend à Paris","Paris"));
 
         }

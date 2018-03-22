@@ -51,6 +51,7 @@ public class UserResource {
         return user.convertToDto();
     }
 
+
     @GET
     public List<UserDto> getAllUsers(@QueryParam("q") String query) {
         List<User> users;
