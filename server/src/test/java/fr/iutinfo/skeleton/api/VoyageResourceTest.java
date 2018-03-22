@@ -31,12 +31,12 @@ public class VoyageResourceTest extends JerseyTest {
     public void init() {
         Helper.initDb();
     }
-
-/*    @Test
+/*
+   @Test
     public void read_should_return_a_Voyage_as_object() {
         createVoyageWithName("test", "Lille");
-        VoyageDto utilisateur = target(PATH + "/test").request().get(VoyageDto.class);
-        assertEquals("foo", utilisateur.getName());
+        VoyageDto voyage = target(PATH + "/test").request().get(VoyageDto.class);
+        assertEquals("test", voyage.getName());
     }
 
 
@@ -45,7 +45,7 @@ public class VoyageResourceTest extends JerseyTest {
         Voyage voyage = new Voyage(0, 1,"test","Lille");
         Entity<Voyage> voyageEntity = Entity.entity(voyage, MediaType.APPLICATION_JSON);
         String json = target(PATH).request().post(voyageEntity).readEntity(String.class);
-        assertEquals("{\"id\":1,\"name\":\"test\"", json.substring(0, 23));
+        assertEquals("{\"id\":1,\"name\":\"test\"", json.substring(0, 45));
     }
 
     @Test
