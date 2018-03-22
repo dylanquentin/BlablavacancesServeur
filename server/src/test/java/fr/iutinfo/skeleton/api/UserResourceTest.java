@@ -138,4 +138,35 @@ public class UserResourceTest extends JerseyTest {
         List<UserDto> users = target(PATH + "/").queryParam("q", "fsf").request().get(listUserResponseType);
         assertEquals(2, users.size());
     }
+    
+    @Test
+	public void testModifyInexistantUser() {
+        createUserWithName("foo");
+        UserDto utilisateur = target(PATH + "/foo").request().get(UserDto.class);
+        Entity<UserDto> userEntity = Entity.entity(utilisateur, MediaType.APPLICATION_JSON);
+		int notFound = target(PATH +"/foo").request().put(userEntity).getStatus();
+		assertEquals(404, notFound);
+	}
+
+	/**
+	 *
+	 * Vérifie que la modification d'une ressource est effective
+	 */
+/*	@Test
+	public void testModifyUSer() {
+        createUserWithName("foo");
+        UserDto utilisateur = target(PATH + "/foo").request().get(UserDto.class);
+        Entity<UserDto> userEntity = Entity.entity(utilisateur, MediaType.APPLICATION_JSON);
+		target(PATH + "/foo").request().post(userEntity);
+
+        createUserWithName("mod");
+        UserDto modified = target(PATH + "/mod").request().get(UserDto.class);
+        userEntity = Entity.entity(modified, MediaType.APPLICATION_JSON);
+
+		int noContent = target(PATH + "/foo").request().put(userEntity).getStatus();
+		assertEquals(204, noContent);
+
+		UserDto retrieved = target(PATH + "/mod").request().get(UserDto.class);
+		assertEquals(modified, retrieved);
+	} */
 }
