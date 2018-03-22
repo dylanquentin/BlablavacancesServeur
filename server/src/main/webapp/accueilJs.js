@@ -2,11 +2,16 @@
       var accueil = true;
       var charte=false;
       var tuto=false;
+      ///
+
+      $(".connect").hide(); //
+      ///
       $(".tuto").hide();
       $(".charte").hide();
       $(".inscription").hide();
       $(".contact").hide();
       $(".connexion").hide();
+      $(".pageVoyage").hide();
 
       $("#charte").click(function(){
 
@@ -18,6 +23,7 @@
         $( "#charte").classList.add("#menu li:hover");
         $(".contact").hide();
         $(".connexion").hide();
+        $(".pageVoyage").hide();
 
 
       });
@@ -32,6 +38,7 @@
         $("#inscription").show();
         $(".contact").hide();
         $(".connexion").hide();
+        $(".pageVoyage").hide();
 
       });
       $("#tuto").click(function(){
@@ -44,6 +51,7 @@
         $("#inscription").show();
         $(".contact").hide();
         $(".connexion").hide();
+        $(".pageVoyage").hide();
 
 
       });
@@ -56,6 +64,7 @@
         $(".tuto").hide();
         $(".contact").hide();
         $(".connexion").hide();
+        $(".pageVoyage").hide();
 
 
       });
@@ -69,6 +78,7 @@
         $(".tuto").hide();
         $(".contact").show();
         $(".connexion").hide();
+        $(".pageVoyage").hide();
 
 
 
@@ -78,10 +88,12 @@
         $(".charte").hide();
         $(".accueil").hide();
         $(".inscription").hide();
-        $("#inscription").show();
+        $("#inscription").hide();
         $(".tuto").hide();
         $(".contact").hide();
         $(".connexion").show();
+        $(".pageVoyage").hide();
+        $("#connexion").hide();
 
 
 
@@ -92,11 +104,26 @@
         $('.inscription input[name=login]').val(),
         $('.inscription input[name=email]').val(),
         $('.inscription input[name=password]').val())
+
+       $(".inscription").hide();
+       $(".accueil").show();
+       $(".pageVoyage").hide();
+
      });
 
-   $("#submit").click(function(){
-          login();  
-     });
+      $("#submit").click(function(){
+        login(); 
+       // $(".connexion").hide();
+       //$(".connect").show(); 
+        $("connection").hide();
+        $("inscription").hide();
+        $("#inscription").hide();
+        $("#connexion").hide();
 
- });
+         //$(".connect").append(sessionStorage.getItem("login"));
+
+
+      });
+
+    });
 

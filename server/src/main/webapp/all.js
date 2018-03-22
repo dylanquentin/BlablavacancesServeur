@@ -12,36 +12,59 @@ function getUserGeneric(name, url) {
 
 function login() {
 	getWithAuthorizationHeader("v1/login", function(data){
-	    $("#formConnec").hide();
-	    afficheUser(data);
+		$("#formConnec").hide();
+		//afficheUser(data);
+		if(data.name === ($("#loginConnect")).val()){
+
+			var alias = data.alias;
+			var login = data.login;
+			var name = data.name;
+			var email = data.email;
+
+			sessionStorage.setItem("alias", alias);
+			sessionStorage.setItem("login", login);
+			sessionStorage.setItem("name", name);
+			sessionStorage.setItem("email", email);
+			$(".connexion").hide();
+			$(".connect").show(); 
+			$(".pageVoyage").show();
+
+
+		}else{
+			alert("Mot de passe ou login Incorrect");
+
+		}
 	});
 }
 
 function profile() {
-	getWithAuthorizationHeader("v1/profile", function (data) {afficheUser(data);});
+	getWithAuthorizationHeader("v1/profile", function (data) {
+		afficheUser(data);
+		
+	});
 }
 
 function getWithAuthorizationHeader(url, callback) {
- if($("#formConnec #login").val() != "") {
-     $.ajax
-     ({
-       type: "GET",
-       url: url,
-       dataType: 'json',
-       beforeSend : function(req) {
-        req.setRequestHeader("Authorization", "Basic " + btoa($("#formConnec #login").val() + ":" + $("#formConnec input[name=password]").val()));
-       },
-       success: callback,
-       error : function(jqXHR, textStatus, errorThrown) {
-       			alert('error: ' + textStatus);
-       		}
-     });
-     } else {
-     $.getJSON(url, function(data) {
-     	    afficheUser(data);
-        });
-     }
- }
+	if($("#loginConnect").val() != "") {
+		$.ajax
+		({
+			type: "GET",
+			url: url,
+			dataType: 'json',
+			beforeSend : function(req) {
+				req.setRequestHeader("Authorization", "Basic " + btoa($("#loginConnect").val() + ":" + $("#passwordConnect").val()));
+			},
+			success: callback,
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert('error: ' + textStatus);
+			}
+		});
+	} else {
+		$.getJSON(url, function(data) {
+			afficheUser(data);
+		});
+	}
+}
 
 
 $(function(){
@@ -58,7 +81,7 @@ $(function(){
 
 
 function postUser(name, alias, email, pwd) {
-    postUserGeneric(name, alias, email, pwd, 'v1/user/')
+	postUserGeneric(name, alias, email, pwd, 'v1/user/')
 }
 
 function postUserGeneric(name, alias, email, pwd, url) {
@@ -85,7 +108,7 @@ function postUserGeneric(name, alias, email, pwd, url) {
 }
 
 function listUsers() {
-    listUsersGeneric("v1/user/");
+	listUsersGeneric("v1/user/");
 }
 
 function listUsersGeneric(url) {
@@ -95,7 +118,7 @@ function listUsersGeneric(url) {
 }
 
 function afficheUser(data) {
-	console.log(data);
+	//console.log(data);
 	$("#reponse").html(userStringify(data));
 }
 
@@ -104,8 +127,8 @@ function afficheListUsers(data) {
 	ul.className = "list-group";
 	var index = 0;
 	for (index = 0; index < data.length; ++index) {
-	    var li = document.createElement('li');
-	    li.className = "list-group-item";
+		var li = document.createElement('li');
+		li.className = "list-group-item";
 		li.innerHTML = userStringify(data[index]);
 		ul.appendChild(li);
 	}
@@ -113,5 +136,5 @@ function afficheListUsers(data) {
 }
 
 function userStringify(user) {
-    return user.id + ". " + user.name + " &lt;" + user.email + "&gt;" + " (" + user.alias + ")";
+	return user.id + ". " + user.name + " &lt;" + user.email + "&gt;" + " (" + user.alias + ")";
 }

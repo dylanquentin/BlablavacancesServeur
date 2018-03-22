@@ -437,12 +437,148 @@
       <h1>Connection</h1>
       <div id="formul">        
         <form id="formConnec" >
-        Login : <input type="text" name="login" id="login"> <br>
-          Password : <input type="password" name="password"> <br>
+        Login : <input type="text" name="login" id="loginConnect"> <br>
+          Password : <input type="password" name="password" id="passwordConnect"> <br>
           <input type="button" name="submit" value="Se connecter" id="submit"> <br>
+          <p id=reponse>reponse: </p>
         </form>
       </div>
     </form>      
   </div>
+  <div class="connect">
+    
+  </div>
+
+
+
+
+  <div class="pageVoyage">
+    <div id="Voyage">
+       <h1>Creation d'un voyage</h1>
+      
+       <h2> Formulaire du voyage </h2>
+          <div id="creerVoyage"> 
+          <br>
+                Nom du voyage : <input type="text"/><br>
+                  Destination : <SELECT id="SelectRegion" name="nom" size="1">
+                    <OPTION>Auvergne-Rhône-Alpes</OPTION>
+                    <OPTION>Bourgogne-Franche-Comté</OPTION>
+                    <OPTION>Bretagne</OPTION>
+                    <OPTION>Centre-Val de Loire</OPTION>
+                    <OPTION>Corse</OPTION>  
+                    <OPTION>Grand-Est</OPTION>    
+                    <OPTION>Hauts-de-France</OPTION>
+                    <OPTION>Ile-de-France</OPTION>
+                    <OPTION>Normandie</OPTION>
+                    <OPTION>Nouvelle Aquitaine</OPTION>
+                    <OPTION>Pays de la Loire</OPTION>
+                    <OPTION>Provence-Alpes-Côtes D'Azur</OPTION>
+                    <OPTION>Région Occitanie</OPTION>
+                    </SELECT><br>       
+                  Date de départ : <input type="date"/><br>
+                  Date de retour : <input type="date"/><br>
+                  Nombre de voyageur : <input type="number" min=3 max=6 value=3 /><br>
+                  Description du voyage :<br> <textarea rows="4" cols="40" resize=none ></textarea><br>
+            Budget : <input type="text" id="textInput" value="" size="1px" style="text-align:right;"> €
+            <input type="range" name="rangeInput" min="1" max="2000" value="50" class="slider" id="myRange" onchange="updateTextInput(this.value);" ><br>
+                  <input type="button" name="submit" value="Submit" style="color : black;"><br><br>
+                </div>
+              
+      <h2>Préférence pour votre voyage</h2>
+        <table border="1" width="75%" id=tableVoyage>
+          
+          <form id=tableauForm >
+          <tr>
+            <th>Activité</th>
+            <th>:-)</th>
+            <th>:-|</th>
+            <th>:-(</th>
+          </tr>
+
+          <tr>
+            <form id=Randonnées >
+            <td>Randonnées</td>
+            <td><input type="radio" name="Rando" value="Rando1"></td>
+            <td><input type="radio" name="Rando" value="Rando2" checked></td>
+            <td><input type="radio" name="Rando" value="Rando3"></td>
+            </form> 
+          </tr>
+
+          <tr>
+            <form id=Golf >
+            <td>Golf</td>
+            <td><input type="radio" name="Golf" value="Golf1"></td>
+            <td><input type="radio" name="Golf" value="Golf2" checked></td>
+            <td><input type="radio" name="Golf" value="Golf3"></td>
+            </form> 
+          </tr>
+
+          <tr>
+            <form id=Tennis >
+            <td>Tennis</td>
+            <td><input type="radio" name="Tennis" value="Tennis1"></td>
+            <td><input type="radio" name="Tennis" value="Tennis2" checked></td>
+            <td><input type="radio" name="Tennis" value="Tennis3"></td>
+            </form>
+          </tr>
+      
+          <tr>
+            <form id=Camping >
+            <td>Camping</td>
+            <td><input type="radio" name="Camping" value="Camping1"></td>
+            <td><input type="radio" name="Camping" value="Camping2" checked></td>
+            <td><input type="radio" name="Camping" value="Camping3"></td>
+            </form> 
+          </tr>
+          
+          <tr>
+            <form id=Shopping >
+            <td>Shopping</td>
+            <td><input type="radio" name="Shopping" value="Shopping1"></td>
+            <td><input type="radio" name="Shopping" value="Shopping2" checked></td>
+            <td><input type="radio" name="Shopping" value="Shopping3"></td>
+            </form> 
+          </tr>
+      
+          <tr>
+            <form id=Casino >
+            <td>Casino</td>
+            <td><input type="radio" name="Casino" value="Casino1"></td>
+            <td><input type="radio" name="Casino" value="Casino2" checked></td>
+            <td><input type="radio" name="Casino" value="Casino3"></td>
+            </form> 
+          </tr>
+      
+          <tr>
+            <form id=Musee >
+            <td>Musee</td>
+              <td><input type="radio" name="Musee" value="Musee1"></td>
+              <td><input type="radio" name="Musee" value="Musee2" checked></td>
+              <td><input type="radio" name="Musee" value="Musee3"></td>
+            </form> 
+          </tr>
+      
+          <tr>
+            <form id=Zoo >
+            <td>Zoo</td>
+              <td><input type="radio" name="Zoo" value="Zoo1"></td>
+              <td><input type="radio" name="Zoo" value="Zoo2" checked></td>
+              <td><input type="radio" name="Zoo" value="Zoo3"></td>
+            </form> 
+          </tr>
+      
+          <tr>
+            <form id=Thalasso >
+            <td>Thalasso</td>
+              <td><input type="radio" name="Thalasso" value="Thalasso1"></td>
+              <td><input type="radio" name="Thalasso" value="Thalasso2" checked></td>
+              <td><input type="radio" name="Thalasso" value="Thalasso3"></td>
+            </form> 
+          </tr>
+      </form>
+      </table>
+      <input type="submit" value="Submit" style="color : black;">
+        
+</div>
 </body>
 </html>
