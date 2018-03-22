@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.iutinfo.skeleton.common.dto.UserDto;
+import fr.iutinfo.skeleton.common.dto.VoyageDto;
 
 public class Helper {
 	private final static Logger logger = LoggerFactory.getLogger(Helper.class);
@@ -17,7 +18,7 @@ public class Helper {
 
 	static GenericType<List<UserDto>> listUserResponseType = new GenericType<List<UserDto>>() {
 	};
-	static GenericType<List<UserDto>> listVoyageResponseType = new GenericType<List<UserDto>>() {
+	static GenericType<List<VoyageDto>> listVoyageResponseType = new GenericType<List<VoyageDto>>() {
 	};
 
 	public static void initDb() {
