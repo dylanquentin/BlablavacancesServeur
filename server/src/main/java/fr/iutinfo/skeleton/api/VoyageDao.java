@@ -12,7 +12,7 @@ public interface VoyageDao {
 	@SqlUpdate("create table voyages (id integer primary key autoincrement, iduser integer ,name varchar(1024), ville varchar(100), description text, dateD text, dateF text, capacite integer)")
 	void createVoyageTable();
 
-	@SqlUpdate("insert into voyages (iduser,name,ville,description, dateD, dateF, capacite) values (:idUser, :name, :ville, :description, :dateD, :dateF, :capacite)")
+	@SqlUpdate("insert into voyages (iduser,name,ville,description, dateD, dateF, capacite) values (:idUser, :name, :ville, :description, :depart, :retour, :capacite)")
 	@GetGeneratedKeys
 	int insert(@BindBean() Voyage voyage);
 

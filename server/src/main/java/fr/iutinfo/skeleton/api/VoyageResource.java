@@ -42,10 +42,23 @@ public class VoyageResource {
             dao.createVoyageTable();
             dao.insert(new Voyage(1, 1 , "Petit weekend à Paris","Paris"));
         }
-        dao.insert(new Voyage(1, 1 , "Petit weekend à Paris","Paris"));
     }
     
-    @POST
+    
+    @GET
+    public List<VoyageDto> getAllVoyages(@QueryParam("q") String query) {
+        List<Voyage> voyages;
+        if (query == null) {
+            voyages = dao.all();
+        } else {
+            logger.debug("Search voyages with query: " + query);
+            voyages = dao.search("%" + query + "%");
+        }
+        return voyages.stream().map(Voyage::convertToDto).collect(Collectors.toList());
+    }
+    
+    
+ /*   @POST
     public Response createVoyage(Voyage voyage) {      
     	   if ( voyages.containsKey(voyage.getId()) ) {
                return Response.status(Response.Status.CONFLICT).build();
@@ -64,7 +77,7 @@ public class VoyageResource {
 		return new ArrayList<Voyage>(voyages.values());
 	}
 	
-/*
+
   @GET
     @Path("/{ville}")
     public VoyageDto getVoyageVille(@PathParam("ville") String ville) {
