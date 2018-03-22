@@ -117,8 +117,8 @@
        //$(".connect").show(); 
         $("connection").hide();
         $("inscription").hide();
-        $("#inscription").hide();
-        $("#connexion").hide();
+        //$("#inscription").hide();
+        //$("#connexion").hide();
 
          //$(".connect").append(sessionStorage.getItem("login"));
 
