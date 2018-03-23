@@ -8,6 +8,7 @@ import javax.ws.rs.core.GenericType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import fr.iutinfo.skeleton.common.dto.PreferenceDto;
 import fr.iutinfo.skeleton.common.dto.UserDto;
 import fr.iutinfo.skeleton.common.dto.VoyageDto;
 
@@ -15,19 +16,38 @@ public class Helper {
 	private final static Logger logger = LoggerFactory.getLogger(Helper.class);
 	private static final UserDao daoU = BDDFactory.getDbi().open(UserDao.class);
 	private static final VoyageDao daoV = BDDFactory.getDbi().open(VoyageDao.class);
+	private static final PreferenceDao daoP = BDDFactory.getDbi().open(PreferenceDao.class);
+
 
 	static GenericType<List<UserDto>> listUserResponseType = new GenericType<List<UserDto>>() {
 	};
 	static GenericType<List<VoyageDto>> listVoyageResponseType = new GenericType<List<VoyageDto>>() {
 	};
-
+	static GenericType<List<PreferenceDto>> listPreferenceResponseType = new GenericType<List<PreferenceDto>>() {
+	};
+	
 	public static void initDb() {
 		daoU.dropUserTable();
 		daoU.createUserTable();
 		daoV.dropVoyageTable();
 		daoV.createVoyageTable();
+		daoP.dropPreferenceTable();
+		daoP.createPreferenceTable();
 	}
 
+
+	private static Preference createPreference(Preference preference) {
+		int id = daoP.insert(preference);
+		preference.setIdVoyage(id);
+		return preference;
+	}
+
+	private static Preference createFullPreference(int idVoyage, String motive, String neutre, String pasEnvie) {
+		Preference preference = new Preference(idVoyage, motive, neutre, pasEnvie);
+		return preference;
+	}
+
+	
 	static Voyage createVoyageWithName(String name, String ville) {
 		Voyage voyage = new Voyage(0, 0, name, ville);
 		return createVoyage(voyage);

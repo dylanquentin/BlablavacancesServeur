@@ -39,7 +39,7 @@ public interface PreferenceDao {
 		void update(@Bind("idVoyage") int idVoyage, @BindBean() Preference preference);
 
 		@SqlUpdate("drop table if exists preference")
-		void dropVoyageTable();
+		void dropPreferenceTable();
 
 		@SqlUpdate("delete from preference where idVoyage = :idVoyage")
 		void delete(@Bind("idVoyage") int idVoyage);
