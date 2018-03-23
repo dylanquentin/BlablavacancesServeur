@@ -20,7 +20,7 @@ public class Preference{
 
 
 	public Preference(int idVoyage) {
-		this.idVoyage = idVoyage;
+		this.idVoyage = idVoyage; 
 	}
 
 

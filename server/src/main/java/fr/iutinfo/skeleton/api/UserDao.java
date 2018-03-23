@@ -30,7 +30,7 @@ public interface UserDao {
     		+ " organisation = :user.organisation , coucher = :user.coucher, lever = :user.lever, voyage = :user.lever, religion = :user.religion where id = :user.id")
     void update(@Bind("id") int id, @BindBean() User user);
 
-    @SqlUpdate("drop table if exists users")
+    @SqlUpdate("drop table if exists users") 
     void dropUserTable();
 
     @SqlUpdate("delete from users where id = :id")
