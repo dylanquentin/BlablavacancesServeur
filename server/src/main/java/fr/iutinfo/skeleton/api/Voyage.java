@@ -11,7 +11,7 @@ public class Voyage{
     final static Logger logger = LoggerFactory.getLogger(Voyage.class);
 
 	private int id;
-	private int idUser;
+	private String idUser;
 	private String name;
 	private String ville;
 	private String description;
@@ -23,14 +23,14 @@ public class Voyage{
 	public Voyage() {
 	}
 
-	public Voyage(int id2, int idUser2, String name, String ville2) {
+	public Voyage(int id2, String idUser2, String name, String ville2) {
 		this.id = id2;
 		this.name = name;
 		idUser = idUser2;
 		ville = ville2;
 	}
 
-	public Voyage(int id, int idUser, String name, String ville, String description, String depart, String retour,
+	public Voyage(int id, String idUser, String name, String ville, String description, String depart, String retour,
 			int capacite) {
 		this(id, idUser, name, ville);
 		this.description = description;
@@ -55,11 +55,11 @@ public class Voyage{
 		this.id = id;
 	}
 
-	public int getIdUser() {
+	public String getIdUser() {
 		return idUser;
 	}
 
-	public void setIdUser(int idUser) {
+	public void setIdUser(String idUser) {
 		this.idUser = idUser;
 	}
 
@@ -108,7 +108,7 @@ public class Voyage{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + id;
-		result = prime * result + idUser;
+		result = prime * result + ((idUser == null) ? 0 : idUser.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((retour == null) ? 0 : retour.hashCode());
 		result = prime * result + ((ville == null) ? 0 : ville.hashCode());

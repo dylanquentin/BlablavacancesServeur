@@ -48,7 +48,7 @@ public class Helper {
 
 	*/
 	static Voyage createVoyageWithName(String name, String ville) {
-		Voyage voyage = new Voyage(0, 0, name, ville);
+		Voyage voyage = new Voyage(0, "0", name, ville);
 		return createVoyage(voyage);
 	}
 
@@ -58,7 +58,7 @@ public class Helper {
 		return voyage;
 	}
 
-	private static Voyage createFullVoyage(int id, int idUser, String name, String ville, String description,
+	private static Voyage createFullVoyage(int id, String idUser, String name, String ville, String description,
 			String depart, String retour, int capacite) {
 		Voyage voyage = new Voyage(id, idUser, name, ville);
 		voyage.setDescription(description);
@@ -70,19 +70,19 @@ public class Helper {
 	}
 
 	static void createvl() {
-		createFullVoyage(0, 10, "test", "Lille", "blabla", "2018-12-25", "2019-01-10" , 3);
+		createFullVoyage(0, "10", "test", "Lille", "blabla", "2018-12-25", "2019-01-10" , 3);
 	}
 
 	static Voyage createvp() {
-		return createFullVoyage(1, 10, "test", "Paris", "blabla", "2018-12-25", "2019-01-10", 3);
+		return createFullVoyage(1, "10", "test", "Paris", "blabla", "2018-12-25", "2019-01-10", 3);
 	}
 
 	static Voyage createvn() {
-		return createFullVoyage(2, 10, "test", "Nice", "blabla", "2018-12-25", "2019-01-10", 3);
+		return createFullVoyage(2, "10", "test", "Nice", "blabla", "2018-12-25", "2019-01-10", 3);
 	}
 
 	static Voyage createvb() {
-		return createFullVoyage(3, 10, "test", "Biarritz", "blabla", "2018-12-25", "2019-01-10", 3);
+		return createFullVoyage(3, "10", "test", "Biarritz", "blabla", "2018-12-25", "2019-01-10", 3);
 	}
 
 	static User createUserWithName(String name) {

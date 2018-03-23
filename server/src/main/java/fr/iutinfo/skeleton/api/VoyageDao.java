@@ -9,7 +9,7 @@ import java.util.List;
 public interface VoyageDao {
 
 	// ATTENTION format des dates en sqlite ("YYYY-MM-DD")
-	@SqlUpdate("create table voyages (id integer primary key autoincrement, iduser integer ,name varchar(1024), ville varchar(100), description text, dateD text, dateF text, capacite integer)")
+	@SqlUpdate("create table voyages (id integer primary key autoincrement, iduser varchar(20) ,name varchar(1024), ville varchar(100), description text, dateD text, dateF text, capacite integer)")
 	void createVoyageTable();
 
 	@SqlUpdate("insert into voyages (iduser,name,ville,description, dateD, dateF, capacite) values (:idUser, :name, :ville, :description, :depart, :retour, :capacite)")

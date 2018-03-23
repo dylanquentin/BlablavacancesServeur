@@ -42,10 +42,10 @@ public class VoyageResourceTest extends JerseyTest {
 
     @Test
     public void create_should_return_the_voyage_with_valid_id() {
-        Voyage voyage = new Voyage(0, 1,"test","Lille");
+        Voyage voyage = new Voyage(0, "1","test","Lille");
         Entity<Voyage> voyageEntity = Entity.entity(voyage, MediaType.APPLICATION_JSON);
         String json = target(PATH).request().post(voyageEntity).readEntity(String.class);
-        assertEquals("\"id\":1,\"idUser\":1,\"name\":\"test\"", json.substring(14, 45));
+        assertEquals("\"id\":1,\"idUser\":\"1\",\"name\":\"test\"", json.substring(14, 47));
     }
 
     @Test

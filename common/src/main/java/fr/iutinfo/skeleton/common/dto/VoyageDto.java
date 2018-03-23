@@ -1,6 +1,5 @@
 package fr.iutinfo.skeleton.common.dto;
 
-import java.time.LocalDate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +9,7 @@ public class VoyageDto {
     private String name;
     private String ville;
     private int id = 0;
-    private int idUser = 0;
+    private String idUser;
     private String description;
     private int capacite;
     private String depart;
@@ -73,11 +72,11 @@ public class VoyageDto {
 		this.capacite = capacite;
 	}
 
-	public int getIdUser() {
+	public String getIdUser() {
 		return idUser;
 	}
 
-	public void setIdUser(int idUser) {
+	public void setIdUser(String idUser) {
 		this.idUser = idUser;
 	}
  
