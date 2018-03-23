@@ -35,7 +35,7 @@ public class Helper {
 		daoP.createPreferenceTable();
 	}
 
-
+/*
 	private static Preference createPreference(Preference preference) {
 		int id = daoP.insert(preference);
 		preference.setIdVoyage(id);
@@ -47,7 +47,7 @@ public class Helper {
 		return preference;
 	}
 
-	
+	*/
 	static Voyage createVoyageWithName(String name, String ville) {
 		Voyage voyage = new Voyage(0, 0, name, ville);
 		return createVoyage(voyage);
