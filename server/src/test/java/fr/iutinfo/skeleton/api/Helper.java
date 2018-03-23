@@ -16,20 +16,23 @@ public class Helper {
 	private final static Logger logger = LoggerFactory.getLogger(Helper.class);
 	private static final UserDao daoU = BDDFactory.getDbi().open(UserDao.class);
 	private static final VoyageDao daoV = BDDFactory.getDbi().open(VoyageDao.class);
-
+	private static final PreferenceDao daoP = BDDFactory.getDbi().open(PreferenceDao.class);
 
 
 	static GenericType<List<UserDto>> listUserResponseType = new GenericType<List<UserDto>>() {
 	};
 	static GenericType<List<VoyageDto>> listVoyageResponseType = new GenericType<List<VoyageDto>>() {
 	};
-
+	static GenericType<List<PreferenceDto>> listPreferenceResponseType = new GenericType<List<PreferenceDto>>() {
+	};
 	
 	public static void initDb() {
 		daoU.dropUserTable();
 		daoU.createUserTable();
 		daoV.dropVoyageTable();
 		daoV.createVoyageTable();
+		daoP.dropPreferenceTable();
+		daoP.createPreferenceTable();
 	}
 
 /*
