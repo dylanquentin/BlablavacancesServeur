@@ -23,14 +23,17 @@ public interface PreferenceDao {
 
 		@SqlQuery("select * from preference where idVoyage = :idVoyage")
 		@RegisterMapperFactory(BeanMapperFactory.class)
-		Preference findByName(@Bind("idVoyage") int idVoyage);
+		Preference findById(@Bind("idVoyage") int idVoyage);
 		
 
 		@SqlQuery("select * from preference order by idVoyage")
 		@RegisterMapperFactory(BeanMapperFactory.class)
 		List<Preference> all();
 
-	
+		@SqlQuery("select * from voyages where idVoyage = :idVoyage")
+		@RegisterMapperFactory(BeanMapperFactory.class)
+		List<Preference> search(@Bind("idVoyage") String idVoyage);
+
 
 		@SqlUpdate("update preference set motive = :preference.motive, neutre = :preference.neutre, pasEnvie = :preference.pasEnvie")
 		void update(@Bind("idVoyage") int idVoyage, @BindBean() Preference preference);
