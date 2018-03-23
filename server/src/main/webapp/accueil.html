@@ -7,11 +7,14 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/custom-styles.css">
+
 	<link rel="stylesheet" type="text/css" href="css/style.css" >
 	<script src='jquery-2.1.3.js'></script>
 	<script src="accueilJs.js"></script>
 	<script src="all.js"></script>
 	<script src="Voyage.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 	<script>
 		var min = 18;
@@ -445,7 +448,6 @@
 				Login : <input type="text" name="login" id="loginConnect"> <br>
 				Password : <input type="password" name="password" id="passwordConnect"> <br>
 				<input type="button" name="submit" value="Se connecter" id="submit"> <br>
-				<p id=reponse>reponse: </p>
 			</form>
 		</div>
 	</form>      
@@ -464,7 +466,7 @@
 		<h2> Formulaire du voyage </h2>
 		<div id="creerVoyage"> 
 			<br>
-			Nom du voyage : <input type="text"/><br>
+			Nom du voyage : <input type="text" id="nomVoyage"/><br>
 			Destination : <SELECT id="SelectRegion" name="nom" size="1">
 				<OPTION>Auvergne-Rhône-Alpes</OPTION>
 				<OPTION>Bourgogne-Franche-Comté</OPTION>
@@ -480,14 +482,14 @@
 				<OPTION>Provence-Alpes-Côtes D'Azur</OPTION>
 				<OPTION>Région Occitanie</OPTION>
 			</SELECT><br>       
-			Date de départ : <input type="date"/><br>
-			Date de retour : <input type="date"/><br>
-			Nombre de voyageur : <input type="number" min=3 max=6 value=3 /><br>
-			Description du voyage :<br> <textarea rows="4" cols="40" resize=none ></textarea><br>
+			Date de départ : <input id="voyageDep" type="date"/><br>
+			Date de retour : <input id="voyageRet" type="date"/><br>
+			Nombre de voyageur : <input type="number" min=3 max=6 value=3 id="CapaciteVoyage"/><br>
+			Description du voyage :<br> <textarea id="descrVoyage" rows="4" cols="40" resize=none ></textarea><br>
 			Budget : <input type="text" id="textInput" value="1000" size="4px" style="text-align:right;" onchange="updateTxtSlider(this.value);" > €
 
 			<input type="range" name="rangeInput" min="1" max="2000" value="1000" class="slider" id="myRange" onchange="updateTextInput(this.value);" ><br>
-			<input type="button" name="submit" value="Submit" style="color : black;"><br><br>
+			<input type="button" name="submit" value="Submit" id="addVoyage" style="color : black;"><br><br>
 		</div>
 
 		<h2>Préférence pour votre voyage</h2>
@@ -778,7 +780,7 @@
 				</tr>
 			</form>
 		</table>
-		<input type="submit" value="Submit" style="color : black;">
+		<input type="button" value="Submit" id="addPreference" style="color : black;">
 
 	</div>
 </div>
@@ -793,6 +795,71 @@
 		Animal de compagnie : <input type="radio" name="animal" value="oui"> oui <input type="radio" name="animal" value="non"> non<br>
 		Heure de réveil : <input type="radio" name="animal" value="oui"> tot <input type="radio" name="animal" value="non"> tard<br>
 	</form>
+</div>
+
+<div class="accueilConnec">
+
+	<h2 id="titreVoyage">Mes Voyages</h2>
+	<nav>
+		<label>Mon profil</label> <img src="images/modifier.png" style="width:20px; height:20px;" id="modifier">
+		<form>
+			Nom :<label id="nomProfil" ></label> <br>
+			Login : <label id="monLogin" ></label><br>
+			Email : <label id="monEmail" ></label><br>
+		</form>
+	</nav>
+	<aside>
+		<table id="tabVoyages" class="table table-striped">
+			<thead>
+				<tr>
+					<th >Nom</th>
+					<th>Ville</th>
+					<th>Description</th>
+					<th>Départ</th>
+					<th>Retour</th>
+					<th>Capacité</th>
+				</tr>
+
+			</thead>
+
+		</table>
+	</aside>
+
+</div>
+
+
+<div class="pageProfil">
+
+		<div id="ProfilID">
+
+			 <h1>Profil de l'utilisateur</h1>
+
+			
+
+			 <h2> Profil </h2>
+
+					<div id="creerProfil"> 
+
+					<br>
+
+       				<form>
+
+						<div id="TxtProfil" >Nom : </div><input type="text" name="nom" value="" id="nomProfil"> <br>
+
+						<div id="TxtProfil" >Login : </div><input type="text" name="login" value=""><br>
+
+						<div id="TxtProfil" >Email : </div><input type="text" name="email" value=""><br>
+
+						<div id="TxtProfil" >Vehicule : </div><input type="radio" name="vehicule" value="oui"> Oui <input type="radio" name="vehicule" value="non"> Non<br>
+
+						<div id="TxtProfil" >Animal de compagnie : </div><input type="radio" name="animal" value="oui"> Oui <input type="radio" name="animal" value="non"> Non<br>
+
+					</form>
+
+          			</div>
+
+		</div>			
+
 </div>
 </body>
 </html>

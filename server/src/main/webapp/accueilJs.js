@@ -3,11 +3,13 @@
       $("#creeVoyage").hide();
       $("#mesVoyages").hide();
       $("#toutVoyage").hide();
+      $(".accueilConnec").hide();
+        $(".pageProfil").hide();
 
 
 
       $(".connect").hide(); 
-            $(".tuto").hide();
+      $(".tuto").hide();
       $(".charte").hide();
       $(".inscription").hide();
       $(".contact").hide();
@@ -26,7 +28,7 @@
         $(".contact").hide();
         $(".connexion").hide();
         $(".pageVoyage").hide();
-              $(".profil").hide();
+        $(".profil").hide();
 
 
 
@@ -57,7 +59,7 @@
         $(".contact").hide();
         $(".connexion").hide();
         $(".pageVoyage").hide();
-      $(".profil").hide();
+        $(".profil").hide();
 
 
       });
@@ -71,7 +73,7 @@
         $(".contact").hide();
         $(".connexion").hide();
         $(".pageVoyage").hide();
-      $(".profil").hide();
+        $(".profil").hide();
 
 
       });
@@ -86,7 +88,7 @@
         $(".contact").show();
         $(".connexion").hide();
         $(".pageVoyage").hide();
-      $(".profil").hide();
+        $(".profil").hide();
 
 
 
@@ -102,17 +104,20 @@
         $(".connexion").show();
         $(".pageVoyage").hide();
         $("#connexion").hide();
-      $(".profil").hide();
+        $(".profil").hide();
+        $(".pageProfil").hide();
+
+
 
 
 
       });
       $(".inscription input[name=submit]").click(function(){
        postUser(
-        $('.inscription input[name=nom]').val() + " "+$('.inscription input[name=prenom]').val(),
         $('.inscription input[name=login]').val(),
+        $('.inscription input[name=nom]').val() + " "+$('.inscription input[name=prenom]').val(),
         $('.inscription input[name=email]').val(),
-        $('.inscription input[name=password]').val())
+        $('.inscription input[name=password]').val());
 
        $(".inscription").hide();
        $(".accueil").show();
@@ -131,14 +136,37 @@
         $(".pageVoyage").show();
       });
       $("#profil").click(function(){
-        $(".profil").show();
+        $(".pageProfil").hide();
+                $(".accueilConnec").show();
+
         $(".pageVoyage").hide();
         $(".accueil").hide();
         $(".charte").hide();
         $(".contact").hide();
         $(".tuto").hide();
 
+
       });
+
+      $("#addVoyage").click(function(){
+       postVoyage(
+        $('#nomVoyage').val(),
+        $('#SelectRegion').val(),
+        $('#descrVoyage').val(),
+        $('#voyageDep').val(),
+        $('#voyageRet').val(),
+        $('#CapaciteVoyage').val(),
+        "v1/voyages/"
+        );
+     });
+      $("#modifier").click(function(){
+        $(".accueilConnec").hide();
+        $(".pageProfil").show();
+
+
+      });
+
+
 
 
     });

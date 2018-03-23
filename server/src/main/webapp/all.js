@@ -2,7 +2,7 @@ var log;
 var password;
 var name;
 var mail;
-
+var idUser;
 function getUser(name) {
 	getUserGeneric(name, "v1/user/");
 }
@@ -22,29 +22,31 @@ function login() {
 			log = data.alias;
 			name = data.name;
 			mail = data.email;
-			psswd = data.password;
-			console.log(psswd);
+			idUser=data.id;
+			console.log("idUser qd il se co "+idUser);
 			$(".connexion").hide();
 			$(".connect").show(); 
 			//$(".pageVoyage").show();
 			$("#profil").show();
-			$(".profil").show();
+			$(".accueilConnec").show();
 			$("#creeVoyage").show();
 			$("#mesVoyages").show();
 			$("#toutVoyage").show();
-			$(".profil input[name=nom]").attr("value",name);
-			$(".profil input[name=login]").attr("value",log);
-			$(".profil input[name=email]").attr("value",mail);
-			$(".profil input[name=password]").attr("value",password);
+			$("#accueil").hide();
+			$("#charte").hide();
+			$("#tuto").hide();
+			$("#contact").hide();
 
 
+			$(".accueilConnec #nomProfil").append(name);
+			$(".accueilConnec #monLogin").append(log);
+			$(".accueilConnec #monEmail").append(mail);
+			listerVoyage();
+	}else{
+		alert("Mot de passe ou login Incorrect");
 
-
-		}else{
-			alert("Mot de passe ou login Incorrect");
-
-		}
-	});
+	}
+});
 }
 
 
@@ -148,4 +150,64 @@ function afficheListUsers(data) {
 
 function userStringify(user) {
 	return user.id + ". " + user.name + " &lt;" + user.email + "&gt;" + " (" + user.alias + ")";
+}
+
+function postVoyage(nomVoyage, ville, description, depart, retour,voyageurs,url) {
+	console.log("postVoyage" + url)
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : url,
+		dataType : "json",
+		data : JSON.stringify({
+			"id" : 0,
+			"idUser" : idUser,
+			"name" : nomVoyage,
+			"ville" : ville,
+			"description" : description,
+			"depart" : depart,
+			"retour" : retour,
+			"capacite" : voyageurs
+		}),
+		success : function(data, textStatus, jqXHR) {
+			afficheUser(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postVoyage error: ' + textStatus);
+		}
+	});
+}
+function listerVoyage(){
+	$.getJSON("v1/voyages", function(data) {
+		var str="<tbody>";
+		var index = 0;
+		for (index = 0; index < data.length; ++index) {
+			if(data[index].idUser===idUser){
+				str+="<tr>"
+				str+="<td>"+data[index].name+"</td>";
+				str+="<td>"+data[index].ville+"</td>";
+				str+="<td>"+data[index].description+"</td>";
+				console.log(data[index].depart);
+				if(data[index].depart===undefined){
+									str+="<td> - </td>";
+
+				}else{
+					str+="<td>"+data[index].depart+"</td>";
+				}
+					if(data[index].retour===undefined){
+									str+="<td> - </td>";
+
+				}else{
+					str+="<td>"+data[index].retour+"</td>";
+				}
+				
+				str+="<td>"+data[index].capacite+"</td>";
+				str+="</tr>"
+			}
+		}
+		str+="</tbody>"
+		$("#tabVoyages").append(str);
+
+	});
+	
 }
