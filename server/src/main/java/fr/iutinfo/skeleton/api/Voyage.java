@@ -1,6 +1,7 @@
 package fr.iutinfo.skeleton.api;
 
-import java.util.Calendar;
+import java.sql.Date;
+import java.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,8 +15,8 @@ public class Voyage{
 	private String name;
 	private String ville;
 	private String description;
-	private Calendar depart;
-	private Calendar retour;
+	private String depart;
+	private String retour;
 	private int capacite;
 
 
@@ -29,7 +30,7 @@ public class Voyage{
 		ville = ville2;
 	}
 
-	public Voyage(int id, int idUser, String name, String ville, String description, Calendar depart, Calendar retour,
+	public Voyage(int id, int idUser, String name, String ville, String description, String depart, String retour,
 			int capacite) {
 		this(id, idUser, name, ville);
 		this.description = description;
@@ -78,19 +79,19 @@ public class Voyage{
 		this.description = description;
 	}
 
-	public Calendar getDepart() {
+	public String getDepart() {
 		return depart;
 	}
 
-	public void setDepart(Calendar depart) {
+	public void setDepart(String depart) {
 		this.depart = depart;
 	}
 
-	public Calendar getRetour() {
+	public String getRetour() {
 		return retour;
 	}
 
-	public void setRetour(Calendar retour) {
+	public void setRetour(String retour) {
 		this.retour = retour;
 	}
 
@@ -169,6 +170,8 @@ public void initFromDto(VoyageDto dto) {
 		this.setIdUser(dto.getIdUser());
 		this.setDescription(dto.getDescription());
 		this.setCapacite(dto.getCapacite());
+		this.setDepart(dto.getDepart());
+		this.setRetour(dto.getRetour());
 	}
 	
 	public VoyageDto convertToDto() {
@@ -179,6 +182,9 @@ public void initFromDto(VoyageDto dto) {
         dto.setIdUser(this.getIdUser());
         dto.setDescription(this.getDescription());
         dto.setCapacite(this.getCapacite());
+        dto.setDepart(this.getDepart());
+        dto.setRetour(this.getRetour());
+        
         return dto;
     }
 

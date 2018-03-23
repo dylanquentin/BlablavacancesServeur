@@ -1,6 +1,6 @@
 package fr.iutinfo.skeleton.common.dto;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,23 +13,23 @@ public class VoyageDto {
     private int idUser = 0;
     private String description;
     private int capacite;
-    private Calendar depart ;
-    private Calendar retour;
+    private String depart;
+    private String retour;
     
     
-	public Calendar getDepart() {
+	public String getDepart() {
 		return depart;
 	}
 
-	public void setDepart(Calendar depart) {
+	public void setDepart(String depart) {
 		this.depart = depart;
 	}
 
-	public Calendar getRetour() {
+	public String getRetour() {
 		return retour;
 	}
 
-	public void setRetour(Calendar retour) {
+	public void setRetour(String retour) {
 		this.retour = retour;
 	}
 
