@@ -84,17 +84,6 @@ public class VoyageResourceTest extends JerseyTest {
         int status = target(PATH + "/unexisting").request().delete().getStatus();
         assertEquals(404, status);
     }
-/*
-    @Test
-    public void list_should_search_in_name_field() {
-        createVoyageWithName("test", "Lille");
-        createVoyageWithName("done", "Paris");
-
-        List<VoyageDto> voyages = target(PATH + "/").queryParam("q", "do").request().get(listVoyageResponseType);
-        assertEquals("done", voyages.get(0).getName());
-    }
-*/
-
     
     @Test
 	public void testModifyInexistantVoyage() {

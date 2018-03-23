@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import fr.iutinfo.skeleton.common.dto.VoyageDto;
 
-public class Voyage {
+public class Voyage{
     final static Logger logger = LoggerFactory.getLogger(Voyage.class);
 
 	private int id;
