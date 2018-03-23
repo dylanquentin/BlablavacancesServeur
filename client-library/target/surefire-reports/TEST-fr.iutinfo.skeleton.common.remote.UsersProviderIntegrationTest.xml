@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.iutinfo.skeleton.common.remote.UsersProviderIntegrationTest" time="1.28" tests="3" errors="0" skipped="0" failures="0">
+<testsuite name="fr.iutinfo.skeleton.common.remote.UsersProviderIntegrationTest" time="1.249" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-8-oracle-x64/jre/lib/amd64"/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="should_read_remote_user" classname="fr.iutinfo.skeleton.common.remote.UsersProviderIntegrationTest" time="0.88"/>
-  <testcase name="should_read_all_remote_user" classname="fr.iutinfo.skeleton.common.remote.UsersProviderIntegrationTest" time="0.23"/>
-  <testcase name="should_add_remote_user" classname="fr.iutinfo.skeleton.common.remote.UsersProviderIntegrationTest" time="0.17"/>
+  <testcase name="should_read_remote_user" classname="fr.iutinfo.skeleton.common.remote.UsersProviderIntegrationTest" time="0.863"/>
+  <testcase name="should_read_all_remote_user" classname="fr.iutinfo.skeleton.common.remote.UsersProviderIntegrationTest" time="0.22"/>
+  <testcase name="should_add_remote_user" classname="fr.iutinfo.skeleton.common.remote.UsersProviderIntegrationTest" time="0.166"/>
 </testsuite>

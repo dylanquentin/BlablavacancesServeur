@@ -1,6 +1,5 @@
 package fr.iutinfo.skeleton.api;
 
-import java.util.Calendar;
 import java.util.List;
 
 import javax.ws.rs.core.GenericType;
@@ -60,7 +59,7 @@ public class Helper {
 	}
 
 	private static Voyage createFullVoyage(int id, int idUser, String name, String ville, String description,
-			Calendar depart, Calendar retour, int capacite) {
+			String depart, String retour, int capacite) {
 		Voyage voyage = new Voyage(id, idUser, name, ville);
 		voyage.setDescription(description);
 		voyage.setDepart(depart);
@@ -71,19 +70,19 @@ public class Helper {
 	}
 
 	static void createvl() {
-		createFullVoyage(0, 10, "test", "Lille", "blabla", Calendar.getInstance(), Calendar.getInstance(), 3);
+		createFullVoyage(0, 10, "test", "Lille", "blabla", "2018-12-25", "2019-01-10" , 3);
 	}
 
 	static Voyage createvp() {
-		return createFullVoyage(1, 10, "test", "Paris", "blabla", Calendar.getInstance(), Calendar.getInstance(), 3);
+		return createFullVoyage(1, 10, "test", "Paris", "blabla", "2018-12-25", "2019-01-10", 3);
 	}
 
 	static Voyage createvn() {
-		return createFullVoyage(2, 10, "test", "Nice", "blabla", Calendar.getInstance(), Calendar.getInstance(), 3);
+		return createFullVoyage(2, 10, "test", "Nice", "blabla", "2018-12-25", "2019-01-10", 3);
 	}
 
 	static Voyage createvb() {
-		return createFullVoyage(3, 10, "test", "Biarritz", "blabla", Calendar.getInstance(), Calendar.getInstance(), 3);
+		return createFullVoyage(3, 10, "test", "Biarritz", "blabla", "2018-12-25", "2019-01-10", 3);
 	}
 
 	static User createUserWithName(String name) {
