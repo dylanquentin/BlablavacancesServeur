@@ -23,10 +23,22 @@ function login() {
 			name = data.name;
 			mail = data.email;
 			psswd = data.password;
+			console.log(psswd);
 			$(".connexion").hide();
 			$(".connect").show(); 
-			$(".pageVoyage").show();
-			$(".profil").append(" Lo : "+log+ " name = "+name);
+			//$(".pageVoyage").show();
+			$("#profil").show();
+			$(".profil").show();
+			$("#creeVoyage").show();
+			$("#mesVoyages").show();
+			$("#toutVoyage").show();
+			$(".profil input[name=nom]").attr("value",name);
+			$(".profil input[name=login]").attr("value",log);
+			$(".profil input[name=email]").attr("value",mail);
+			$(".profil input[name=password]").attr("value",password);
+
+
+
 
 		}else{
 			alert("Mot de passe ou login Incorrect");

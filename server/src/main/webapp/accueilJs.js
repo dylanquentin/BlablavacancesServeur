@@ -1,17 +1,19 @@
     $(document).ready(function(){
-      var accueil = true;
-      var charte=false;
-      var tuto=false;
-      ///
+      $("#profil").hide();
+      $("#creeVoyage").hide();
+      $("#mesVoyages").hide();
+      $("#toutVoyage").hide();
 
-      $(".connect").hide(); //
-      ///
-      $(".tuto").hide();
+
+
+      $(".connect").hide(); 
+            $(".tuto").hide();
       $(".charte").hide();
       $(".inscription").hide();
       $(".contact").hide();
       $(".connexion").hide();
       $(".pageVoyage").hide();
+      $(".profil").hide();
 
       $("#charte").click(function(){
 
@@ -24,6 +26,8 @@
         $(".contact").hide();
         $(".connexion").hide();
         $(".pageVoyage").hide();
+              $(".profil").hide();
+
 
 
       });
@@ -38,7 +42,8 @@
         $("#inscription").show();
         $(".contact").hide();
         $(".connexion").hide();
-        $(".pageVoyage").hide();
+        $(".pageVoyage").hide();      $(".profil").hide();
+
 
       });
       $("#tuto").click(function(){
@@ -52,6 +57,7 @@
         $(".contact").hide();
         $(".connexion").hide();
         $(".pageVoyage").hide();
+      $(".profil").hide();
 
 
       });
@@ -65,6 +71,7 @@
         $(".contact").hide();
         $(".connexion").hide();
         $(".pageVoyage").hide();
+      $(".profil").hide();
 
 
       });
@@ -79,6 +86,7 @@
         $(".contact").show();
         $(".connexion").hide();
         $(".pageVoyage").hide();
+      $(".profil").hide();
 
 
 
@@ -94,13 +102,14 @@
         $(".connexion").show();
         $(".pageVoyage").hide();
         $("#connexion").hide();
+      $(".profil").hide();
 
 
 
       });
       $(".inscription input[name=submit]").click(function(){
        postUser(
-        $('.inscription input[name=nom]').val(),
+        $('.inscription input[name=nom]').val() + " "+$('.inscription input[name=prenom]').val(),
         $('.inscription input[name=login]').val(),
         $('.inscription input[name=email]').val(),
         $('.inscription input[name=password]').val())
@@ -115,10 +124,22 @@
         login();
         $("connection").hide();
         $("inscription").hide();
-        $("")
+      });
 
+      $("#creeVoyage").click(function(){
+        $(".profil").hide();
+        $(".pageVoyage").show();
+      });
+      $("#profil").click(function(){
+        $(".profil").show();
+        $(".pageVoyage").hide();
+        $(".accueil").hide();
+        $(".charte").hide();
+        $(".contact").hide();
+        $(".tuto").hide();
 
       });
+
 
     });
 
