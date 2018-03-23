@@ -12,7 +12,34 @@ public class UserDto {
     private int id = 0;
     private String email;
     private String password;
+	private String adresse;
+    private String tel;
+	private String prenom;
+	
+    public String getPrenom() {
+		return prenom;
+	}
 
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+    
+    public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+    
     public String getEmail() {
         return email;
     }

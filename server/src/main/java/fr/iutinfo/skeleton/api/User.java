@@ -283,6 +283,9 @@ public class User implements Principal {
         this.setId(dto.getId());
         this.setName(dto.getName());
         this.setPassword(dto.getPassword());
+        this.setTel(dto.getTel());
+        this.setAdresse(dto.getAdresse());
+        this.setPrenom(dto.getPrenom());
     }
 
     public UserDto convertToDto() {
@@ -292,6 +295,9 @@ public class User implements Principal {
         dto.setId(this.getId());
         dto.setName(this.getName());
         dto.setPassword(this.getPassword());
+        dto.setTel(this.getTel());
+        dto.setAdresse(this.getAdresse());
+        dto.setPrenom(this.getPrenom());
         return dto;
     }
 }
