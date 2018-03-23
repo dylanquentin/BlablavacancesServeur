@@ -112,15 +112,10 @@
      });
 
       $("#submit").click(function(){
-        login(); 
-       // $(".connexion").hide();
-       //$(".connect").show(); 
+        login();
         $("connection").hide();
         $("inscription").hide();
-        //$("#inscription").hide();
-        //$("#connexion").hide();
-
-         //$(".connect").append(sessionStorage.getItem("login"));
+        $(".profil").append("Login : "+login+ " name = "+name);
 
 
       });

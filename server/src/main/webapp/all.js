@@ -1,4 +1,7 @@
-var 
+var log;
+var password;
+var name;
+var mail;
 
 function getUser(name) {
 	getUserGeneric(name, "v1/user/");
@@ -16,13 +19,16 @@ function login() {
 		//afficheUser(data);
 		if(data.name === ($("#loginConnect")).val()){
 
-			var alias = data.alias;
-			var name = data.name;
-			var email = data.email;
+			var alias1 = data.alias;
+			var name1 = data.name;
+			var email1 = data.email;
+			var psswd1 = data.password;
+			attributProfil(alias1,name1,email1,psswd1);
+			console.log("login:"+log + "name="+name );
 			$(".connexion").hide();
 			$(".connect").show(); 
 			$(".pageVoyage").show();
-
+			$(".profil").append("Login : "+log+ " name = "+name);
 
 		}else{
 			alert("Mot de passe ou login Incorrect");
@@ -31,8 +37,11 @@ function login() {
 	});
 }
 
-function attributProfil(alias, , name, email){
-
+function attributProfil(alias,psswd , nom, email){
+	log=alias;
+	password=psswd;
+	name=nom;
+	mail=email;
 }
 
 function profile() {
