@@ -115,7 +115,7 @@
         login();
         $("connection").hide();
         $("inscription").hide();
-        $(".profil").append("Login : "+login+ " name = "+name);
+        $("")
 
 
       });
