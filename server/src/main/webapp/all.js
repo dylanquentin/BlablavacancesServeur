@@ -1,4 +1,4 @@
-
+var 
 
 function getUser(name) {
 	getUserGeneric(name, "v1/user/");
@@ -17,14 +17,8 @@ function login() {
 		if(data.name === ($("#loginConnect")).val()){
 
 			var alias = data.alias;
-			var login = data.login;
 			var name = data.name;
 			var email = data.email;
-
-			sessionStorage.setItem("alias", alias);
-			sessionStorage.setItem("login", login);
-			sessionStorage.setItem("name", name);
-			sessionStorage.setItem("email", email);
 			$(".connexion").hide();
 			$(".connect").show(); 
 			$(".pageVoyage").show();
@@ -35,6 +29,10 @@ function login() {
 
 		}
 	});
+}
+
+function attributProfil(alias, , name, email){
+
 }
 
 function profile() {
