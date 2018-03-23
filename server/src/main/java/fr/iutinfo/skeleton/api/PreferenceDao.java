@@ -14,7 +14,7 @@ public interface PreferenceDao {
 	
 
 		// ATTENTION format des dates en sqlite ("YYYY-MM-DD HH:MM:SS.SSS")
-		@SqlUpdate("create table preference (idVoyage integer primary key , motive text, neutre text, pasEnvie text")
+		@SqlUpdate("create table preference (idVoyage integer primary key , motive text, neutre text, pasEnvie text)")
 		void createPreferenceTable();
 
 		@SqlUpdate("insert into preference (idVoyage , motive , neutre , pasEnvie) values (:idVoyage , :motive , :neutre , :pasEnvie)")
