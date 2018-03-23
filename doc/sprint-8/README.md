@@ -8,7 +8,9 @@ Connexion Admin et création d'utilisateur sur Android
 Vérification des connexions utilisateurs
 
 ## Ce que nous allons faire durant le prochain sprint
-Nous allons chercher à visualiser les voyages et utilisateurs sur web et android
+Modifier la base de données USERS
+Supprimer un voyage en tant qu'admin
+Ajouter et lister un voyage
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ? 
