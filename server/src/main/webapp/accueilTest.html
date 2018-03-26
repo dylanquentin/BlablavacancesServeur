@@ -1074,9 +1074,9 @@
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton3();" checked><br>
 					Nombre de voyageur : <input type="number" min=3 max=6 value=3 id="Qte de populace" />
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton4();" checked><br>
-					Budget : <input type="text" id="Budget" value="" size="1px" style="text-align:right;"> € 
+					Budget : <input type="text" id="Budget" value="" size="1px" style="text-align:right" onchange="updateTxtSlider(this.value);"> € 
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton5();" checked>
-					<input type="range" name="rangeInput" min="1" max="2000" value="50" class="slider" id="myRange" onchange="updateTextInput(this.value);" ><br>
+					<input type="range" name="rangeInput" min="1" max="2000" value="50" class="slider" id="myRangeBudget" onchange="updateTextInput(this.value);" ><br>
 					<input type="button" name="submit" value="Submit" style="color : black;" onClick="listUsersTest();">
 					<input type="button" name="clear" value="Clear" style="color : black;" onClick="clearListUsersTest();"><br><br>
 				</div>

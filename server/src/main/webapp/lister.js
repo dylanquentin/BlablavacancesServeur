@@ -253,3 +253,11 @@ function afficheListUsersTest(data) {
 function userStringifyTest(voyages) {
 	return voyages.name + "-" + voyages.iduser + "-" + voyages.ville + "-" + voyages.description + "-" + voyages.dateD + "-" + voyages.dateF + "-" + voyages.capacite/* + "-" + voyages.budget*/;
 }
+
+function updateTextInput(val) {
+    document.getElementById('Budget').value=val; 
+}
+
+function updateTxtSlider(val) {
+    document.getElementById('myRangeBudget').value=val; 
+}
