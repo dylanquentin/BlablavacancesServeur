@@ -27,7 +27,7 @@ public interface UserDao {
     
     @SqlUpdate("update users set name = :name, alias = :alias, email = :email, passwdHash = :passwdHash, salt = :salt, search = :search, tel = :tel, adresse = :adresse, prenom = :prenom, "
     		+ " vehicule = :vehicule, conduire = :conduire, anneenaissance = :anneenaissance, animal = :animal, cuisine = :cuisine, menage = :menage, marche = :marche, musique = :musique, lecture = :lecture, sexe = :sexe, "
-    		+ " organisation = :organisation , coucher = :coucher, lever = :lever, voyage = :lever, religion = :religion")
+    		+ " organisation = :organisation , coucher = :coucher, lever = :lever, voyage = :lever, religion = :religion where id = :id")
     void update(@Bind("id") int id, @BindBean() User user);
 
     @SqlUpdate("drop table if exists users") 
