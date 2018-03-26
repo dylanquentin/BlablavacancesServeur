@@ -14,7 +14,7 @@ public class VoyageDto {
     private int capacite;
     private String depart;
     private String retour;
-    
+    private int budget;
     
 	public String getDepart() {
 		return depart;
@@ -78,6 +78,14 @@ public class VoyageDto {
 
 	public void setIdUser(String idUser) {
 		this.idUser = idUser;
+	}
+	
+	public int getBudget() {
+		return budget;
+	}
+
+	public void setBudget(int budget) {
+		this.budget = budget;
 	}
  
 }

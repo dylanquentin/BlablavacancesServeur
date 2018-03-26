@@ -35,7 +35,7 @@ public interface PreferenceDao {
 		List<Preference> search(@Bind("idVoyage") String idVoyage);
 
 
-		@SqlUpdate("update preference set motive = :preference.motive, neutre = :preference.neutre, pasEnvie = :preference.pasEnvie")
+		@SqlUpdate("update preference set motive = :motive, neutre = :neutre, pasEnvie = :pasEnvie")
 		void update(@Bind("idVoyage") int idVoyage, @BindBean() Preference preference);
 
 		@SqlUpdate("drop table if exists preference")
