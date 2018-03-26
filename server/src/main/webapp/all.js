@@ -181,8 +181,11 @@ function listerVoyage(){
 	$.getJSON("v1/voyages", function(data) {
 		var str="<tbody>";
 		var index = 0;
+		console.log(data.length);
+		console.log(data[index].idUser);
 		for (index = 0; index < data.length; ++index) {
-			if(data[index].idUser===idUser){
+			if(data[index].idUser==idUser){
+				console.log("tamere");
 				str+="<tr>"
 				str+="<td>"+data[index].name+"</td>";
 				str+="<td>"+data[index].ville+"</td>";
@@ -205,6 +208,7 @@ function listerVoyage(){
 				str+="</tr>"
 			}
 		}
+		console.log(str);
 		str+="</tbody>"
 		$("#tabVoyages").append(str);
 
