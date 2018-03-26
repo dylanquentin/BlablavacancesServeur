@@ -220,6 +220,8 @@ function listerVoyage(){
 
 function postPreference(aime, moyen, aimePas) {
 	console.log("postPreference" + "/v1/preference/");
+	//idVoyage=getVoyage($("#nomVoyage").val());
+    //console.log("voici mon id"+idVoyage.data.id.toString());
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
