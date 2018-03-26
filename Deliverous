@@ -1,5 +1,5 @@
 java:
-  image: quentindylan/blablavacances
+  image: quentindylan/blablavacancesserveur
   ports:
   - ip: 178.32.240.91 
     container_port: 8080
