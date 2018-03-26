@@ -48,7 +48,7 @@ public class PreferenceUserResource {
     	PreferenceUser PreferenceUser = new PreferenceUser();
     	PreferenceUser.initFromDto(dto);
         int id = dao.insert(PreferenceUser);
-        dto.setidUser(id);
+        //dto.setidUser(id);
         return dto;
     }
 
