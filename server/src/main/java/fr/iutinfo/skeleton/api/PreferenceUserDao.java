@@ -18,7 +18,6 @@ public interface PreferenceUserDao {
 		void createpreferenceUserTable();
 
 		@SqlUpdate("insert into preferenceUser (idUser , motive , neutre , pasEnvie) values (:idUser , :motive , :neutre , :pasEnvie)")
-		@GetGeneratedKeys
 		int insert(@BindBean() PreferenceUser preferenceUser);
 
 		@SqlQuery("select * from preferenceUser where idUser = :idUser")
