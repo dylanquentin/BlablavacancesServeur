@@ -3,13 +3,15 @@ var password;
 var name;
 var mail;
 var idUser;
+var idVoyage=new Object();
+
 function getUser(name) {
 	getUserGeneric(name, "v1/user/");
 }
 
 function getUserGeneric(name, url) {
 	$.getJSON(url + name, function(data) {
-		afficheUser(data);
+		afficheUser(data); 
 	});
 }
 
@@ -170,10 +172,11 @@ function postVoyage(nomVoyage, ville, description, depart, retour,voyageurs,url)
 			"capacite" : voyageurs
 		}),
 		success : function(data, textStatus, jqXHR) {
-			afficheUser(data);
+			console.log('postVoyage : success', data.id, data);
+			idVoyage=data.id;
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
-			console.log('postVoyage error: ' + textStatus);
+			console.log('postVoyage error: ', textStatus);
 		}
 	});
 }
@@ -185,7 +188,6 @@ function listerVoyage(){
 		console.log(data[index].idUser);
 		for (index = 0; index < data.length; ++index) {
 			if(data[index].idUser==idUser){
-				console.log("tamere");
 				str+="<tr>"
 				str+="<td>"+data[index].name+"</td>";
 				str+="<td>"+data[index].ville+"</td>";
@@ -208,10 +210,32 @@ function listerVoyage(){
 				str+="</tr>"
 			}
 		}
-		console.log(str);
+		//console.log(str);
 		str+="</tbody>"
 		$("#tabVoyages").append(str);
 
 	});
 	
+}
+
+function postPreference(aime, moyen, aimePas) {
+	console.log("postPreference" + "/v1/preference/");
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : "v1/preference/",
+		dataType : "json",
+		data : JSON.stringify({
+			"idVoyage" : idVoyage,
+			"motive" : aime,
+			"neutre" : moyen,
+			"pasEnvie" : aimePas
+		}),
+		success : function(data, textStatus, jqXHR) {
+			afficheUser(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postPreference error: ' + textStatus);
+		}
+	});
 }
