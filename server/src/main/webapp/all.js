@@ -44,11 +44,11 @@ function login() {
 			$(".accueilConnec #monLogin").append(log);
 			$(".accueilConnec #monEmail").append(mail);
 			listerVoyage();
-	}else{
-		alert("Mot de passe ou login Incorrect");
+		}else{
+			alert("Mot de passe ou login Incorrect");
 
-	}
-});
+		}
+	});
 }
 
 
@@ -182,7 +182,7 @@ function postVoyage(nomVoyage, ville, description, depart, retour,voyageurs,url)
 }
 function listerVoyage(){
 	$.getJSON("v1/voyages", function(data) {
-		var str="<tbody>";
+		var str="";
 		var index = 0;
 		console.log(data.length);
 		console.log(data[index].idUser);
@@ -194,13 +194,13 @@ function listerVoyage(){
 				str+="<td>"+data[index].description+"</td>";
 				console.log(data[index].depart);
 				if(data[index].depart===undefined){
-									str+="<td> - </td>";
+					str+="<td> - </td>";
 
 				}else{
 					str+="<td>"+data[index].depart+"</td>";
 				}
-					if(data[index].retour===undefined){
-									str+="<td> - </td>";
+				if(data[index].retour===undefined){
+					str+="<td> - </td>";
 
 				}else{
 					str+="<td>"+data[index].retour+"</td>";
@@ -211,8 +211,8 @@ function listerVoyage(){
 			}
 		}
 		//console.log(str);
-		str+="</tbody>"
-		$("#tabVoyages").append(str);
+		
+		$("#tbody").append(str);
 
 	});
 	
@@ -236,6 +236,52 @@ function postPreference(aime, moyen, aimePas) {
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log('postPreference error: ' + textStatus);
+		}
+	});
+
+}
+function postPreferenceUser(aime,moyen,aimePas) {
+	console.log("postPreferenceUser" + "/v1/PreferenceUser/");
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : "v1/PreferenceUser/",
+		dataType : "json",
+		data : JSON.stringify({
+			"idUser" : idUser,
+			"motive" : aime,
+			"neutre" : moyen,
+			"pasEnvie" : aimePas
+		}),
+		success : function(data, textStatus, jqXHR) {
+			afficheUser(data);
+		},
+		error :function(jqXHR, textStatus, errorThrown) {
+			console.log('postPreference error: ' + textStatus);
+		}
+
+	});
+}
+
+function putUser(aime,moyen,aimePas) {
+	console.log("postPreferenceUser" + "/v1/PreferenceUser/"+idUser);
+	$.ajax({
+		type : 'PUT',
+		contentType : 'application/json',
+		url : "v1/PreferenceUser/"+idUser,
+		dataType : "json",
+		data : JSON.stringify({
+			"motive" : aime,
+			"neutre" : moyen,
+			"pasEnvie" : aimePas
+		}),
+		success : function(data, textStatus, jqXHR) {
+			afficheUser(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postPreference error: ' + textStatus);
+
+			
 		}
 	});
 }

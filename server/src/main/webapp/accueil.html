@@ -13,6 +13,8 @@
 	<script src="accueilJs.js"></script>
 	<script src="all.js"></script>
 	<script src="Voyage.js"></script>
+	<script src="lister2.js"></script>
+
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
@@ -781,8 +783,6 @@
 			</form>
 		</table>
 		<input type="button" value="Submit" id="addPreference" style="color : black;">
-		<p id="ladivcache">
-		<p>
 	</div>
 </div>
 
@@ -820,7 +820,8 @@
 					<th>Retour</th>
 					<th>Capacité</th>
 				</tr>
-
+				<tbody id="tbody">
+				</tbody>
 			</thead>
 
 		</table>
@@ -831,36 +832,280 @@
 
 <div class="pageProfil">
 
-		<div id="ProfilID">
+	<div id="ProfilID">
 
-			 <h1>Profil de l'utilisateur</h1>
+		<h1>Profil de l'utilisateur</h1>
 
-			
 
-			 <h2> Profil </h2>
 
-					<div id="creerProfil"> 
+		<h2> Profil </h2>
 
+		<div id="creerProfil"> 
+			<form id=tableauForm >
+				<table>
+					<tr>
+						<th>Activité</th>
+						<th>:-)</th>
+						<th>:-|</th>
+						<th>:-(</th>
+					</tr>
+					<tr>
+
+						<form id=Vehicule >
+							<td>Véhicule</td>
+							<td><input type="radio" name="Vehicule" value="Vehicule1"></td>
+							<td><input type="radio" name="Vehicule" value="Vehicule2" checked></td>
+							<td><input type="radio" name="Vehicule" value="Vehicule3"></td>
+						</form>	
+					</tr>
+					<tr>
+
+						<form id=Conduire >
+
+							<td>Conduire</td>
+
+							<td><input type="radio" name="Conduire" value="Conduire1"></td>
+
+							<td><input type="radio" name="Conduire" value="Conduire2" checked></td>
+
+							<td><input type="radio" name="Conduire" value="Conduire3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Animal >
+
+							<td>Animal de compagnie</td>
+
+							<td><input type="radio" name="Animal" value="Animal1"></td>
+
+							<td><input type="radio" name="Animal" value="Animal2" checked></td>
+
+							<td><input type="radio" name="Animal" value="Animal3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Cuisine >
+
+							<td>Cuisine</td>
+
+							<td><input type="radio" name="Cuisine" value="Cuisine1"></td>
+
+							<td><input type="radio" name="Cuisine" value="Cuisine2" checked></td>
+
+							<td><input type="radio" name="Cuisine" value="Cuisine3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Menage >
+
+							<td>Ménage</td>
+
+							<td><input type="radio" name="Menage" value="Menage1"></td>
+
+							<td><input type="radio" name="Menage" value="Menage2" checked></td>
+
+							<td><input type="radio" name="Menage" value="Menage3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Marche >
+
+							<td>Marche</td>
+
+							<td><input type="radio" name="Marche" value="Marche1"></td>
+
+							<td><input type="radio" name="Marche" value="Marche2" checked></td>
+
+							<td><input type="radio" name="Marche" value="Marche3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Musique >
+
+							<td>Musique</td>
+
+							<td><input type="radio" name="Musique" value="Musique1"></td>
+
+							<td><input type="radio" name="Musique" value="Musique2" checked></td>
+
+							<td><input type="radio" name="Musique" value="Musique3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Lecture >
+
+							<td>Lecture</td>
+
+							<td><input type="radio" name="Lecture" value="Lecture1"></td>
+
+							<td><input type="radio" name="Lecture" value="Lecture2" checked></td>
+
+							<td><input type="radio" name="Lecture" value="Lecture3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Randonnees >
+
+							<td>Randonnées</td>
+
+							<td><input type="radio" name="Rando" value="Rando1"></td>
+
+							<td><input type="radio" name="Rando" value="Rando2" checked></td>
+
+							<td><input type="radio" name="Rando" value="Rando3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Voyage >
+
+							<td>Voyage</td>
+
+							<td><input type="radio" name="Voyage" value="Voyage1"></td>
+
+							<td><input type="radio" name="Voyage" value="Voyage2" checked></td>
+
+							<td><input type="radio" name="Voyage" value="Voyage3"></td>
+
+						</form>	
+
+					</tr>
+
+
+
+					<tr>
+
+						<form id=Religion >
+
+							<td>Religion</td>
+
+							<td><input type="radio" name="Religion" value="Religion1"></td>
+
+							<td><input type="radio" name="Religion" value="Religion2" checked></td>
+
+							<td><input type="radio" name="Religion" value="Religion3"></td>
+
+						</form>	
+
+					</tr>
+
+				</form>
+			</table>
+			<input type="button" name="ajoutPreference" value="Confirmer" id="modifProfil">
+		</div>
+
+	</div>			
+
+</div>
+
+
+<div class="recherche">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="btn-group" role="group">
 					<br>
-
-       				<form>
-
-						<div id="TxtProfil" >Nom : </div><input type="text" name="nom" value="" id="nomProfil"> <br>
-
-						<div id="TxtProfil" >Login : </div><input type="text" name="login" value=""><br>
-
-						<div id="TxtProfil" >Email : </div><input type="text" name="email" value=""><br>
-
-						<div id="TxtProfil" >Vehicule : </div><input type="radio" name="vehicule" value="oui"> Oui <input type="radio" name="vehicule" value="non"> Non<br>
-
-						<div id="TxtProfil" >Animal de compagnie : </div><input type="radio" name="animal" value="oui"> Oui <input type="radio" name="animal" value="non"> Non<br>
-
-					</form>
-
-          			</div>
-
-		</div>			
-
+					<select name="select" size="1" id="select" onchange="selection();">
+						<OPTION>Toulouse</OPTION>					
+						<OPTION>Corse</OPTION>
+						<OPTION>Marseille</OPTION>
+						<OPTION>Lyon</OPTION>
+						<OPTION>Nice</OPTION>  
+						<OPTION>Nantes</OPTION>    
+						<OPTION>Paris</OPTION>
+						<OPTION>Montpellier</OPTION>
+						<OPTION>Bordeaux</OPTION>
+						<OPTION>Rennes</OPTION>
+						<OPTION>Hauts-de-France</OPTION>
+						<OPTION>Saint-Etienne</OPTION>
+						<OPTION>Reims</OPTION>
+					</select>
+					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton1();" checked><br>   
+					Date de départ : <input type="text" id="DateD"/>
+					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton2();" checked><br>
+					Date de retour : <input type="text" id="DateF"/>
+					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton3();" checked><br>
+					Nombre de voyageur : <input type="number" min=3 max=6 value=3 id="Qte de populace" />
+					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton4();" checked><br>
+					Budget : <input type="text" id="Budget" value="" size="1px" style="text-align:right;"> € 
+					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton5();" checked>
+					<input type="range" name="rangeInput" min="1" max="2000" value="50" class="slider" id="myRange" onchange="updateTextInput(this.value);" ><br>
+					<input type="button" name="submit" value="Submit" style="color : black;" onClick="listUsersTest();">
+					<input type="button" name="clear" value="Clear" style="color : black;" onClick="clearListUsersTest();"><br><br>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+		</div>
+		<div class="row" style="margin-top: 1em;">
+			<div class="panel panel-info">
+				<div class="panel-heading">Réponse</div>
+				<div class="panel-body" id="reponse">
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+		</div>
+		<div class="row" style="margin-top: 1em;">
+			<div class="panel panel-info">
+				<div class="panel-heading">RéponseTest</div>
+				<div class="panel-body" id="reponseTest">
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				listUsers()
+			});
+		</script>
+	</div>
 </div>
 </body>
 </html>

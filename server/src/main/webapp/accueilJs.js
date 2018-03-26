@@ -5,8 +5,7 @@
       $("#toutVoyage").hide();
       $(".accueilConnec").hide();
       $(".pageProfil").hide();
-
-
+      $(".recherche").hide();
 
       $(".connect").hide(); 
       $(".tuto").hide();
@@ -134,16 +133,24 @@
       $("#creeVoyage").click(function(){
         $(".profil").hide();
         $(".pageVoyage").show();
+        $(".recherche").hide();
+        $(".accueilConnec").hide();
+        $(".pageProfil").hide();
+
+
       });
       $("#profil").click(function(){
         $(".pageProfil").hide();
         $(".accueilConnec").show();
+        $(".recherche").hide();
 
         $(".pageVoyage").hide();
         $(".accueil").hide();
         $(".charte").hide();
         $(".contact").hide();
         $(".tuto").hide();
+        $("#tbody").empty();
+        listerVoyage();
 
 
       });
@@ -162,6 +169,9 @@
       $("#modifier").click(function(){
         $(".accueilConnec").hide();
         $(".pageProfil").show();
+        $(".recherche").hide();
+        $(".pageVoyage").hide();
+
 
 
       });
@@ -200,8 +210,55 @@
 
 
       });
+      $("#toutVoyage").click(function(){
+        $(".recherche").show();
+        $(".pageProfil").hide();
+        $(".accueilConnec").hide();
+        $(".pageVoyage").hide();
 
 
+      });
+
+
+      $("#modifProfil").click(function(){
+       var str1="";
+       var str2="";
+       var str3=""; 
+
+       var t= [];
+       t.push($("input[name=Vehicule]:checked").val());
+       t.push($("input[name=Conduire]:checked").val());
+
+       t.push($("input[name=Animal]:checked").val());
+       t.push($("input[name=Religion]:checked").val());
+       t.push($("input[name=Cuisine]:checked").val());
+       t.push($("input[name=Menage]:checked").val());
+       t.push($("input[name=Marche]:checked").val());
+       t.push($("input[name=Musique]:checked").val());
+
+       t.push($("input[name=Lecture]:checked").val());
+       t.push($("input[name=Rando]:checked").val());
+
+       t.push($("input[name=Voyage]:checked").val());
+
+       var i=0;
+       console.log(t[0]);
+       for(i;i<t.length;i++){
+        console.log(t[i]);
+        if(t[i].charAt(t[i].length-1)==="1"){
+          str1+=t[i].substring(0,t[i].length-1)+",";
+        }else if(t[i].charAt(t[i].length-1)==="2"){
+          str2+=t[i].substring(0,t[i].length-1)+",";
+        }else{
+          str3+=t[i].substring(0,t[i].length-1)+",";
+        }
+      }
+      postPreferenceUser(str1,str2,str3);
+      putUser(str1,str2,str3);
+
+
+
+    });
 
 
     });
