@@ -42,7 +42,7 @@ public class VoyageResource {
             logger.debug("Create table voyage");
             dao.createVoyageTable();
             dao.insert(new Voyage(1, "1" , "Petit weekend à Paris","Paris"));
-            dao.insert(new Voyage(2, "2" , "Soirée dans Marseille","Marseille", "un beau voyage a marseille avec un beau paysage", "2018-05-12", "2018-05-12" , 20));
+            dao.insert(new Voyage(2, "2" , "Soirée dans Marseille","Marseille", "un beau voyage a marseille avec un beau paysage", "2018-05-12", "2018-05-12" , 20, 200));
             
         }
         
@@ -79,61 +79,6 @@ public class VoyageResource {
         return dto;
     }
     
-    
-    /*@POST
-    public Response createVoyage(Voyage voyage) {      
-    	   if ( voyages.containsKey(voyage.getId()) ) {
-               return Response.status(Response.Status.CONFLICT).build();
-           }
-           else {
-               voyages.put(voyage.getId(), voyage);
-               // On renvoie 201 et l'instance de la ressource dans le Header HTTP 'Location'
-               String tp = "" + voyage.getId();
-               URI instanceURI = uriInfo.getAbsolutePathBuilder().path(tp).build();
-               return Response.created(instanceURI).build();
-           }
-    }
-    /*
-  
-	@GET
-	public List<Voyage> getVoyage() {
-		return new ArrayList<Voyage>(voyages.values());
-	}
-	
-
-  @GET
-    @Path("/{ville}")
-    public VoyageDto getVoyageVille(@PathParam("ville") String ville) {
-        Voyage voyage = dao.findByName(ville);
-        if (ville == null) {
-            throw new WebApplicationException(404);
-        }
-        return voyage.convertToDto();
-    }
-   
-    @GET
-	@Path("/{name}")
-	    public VoyageDto getVoyage(@PathParam("name") String name) {
-	        Voyage voyage = dao.findByName(name);
-	        if (voyage == null) {
-	            throw new WebApplicationException(404);
-	        }
-	        return voyage.convertToDto();
-	    }
-
-   @GET
-	    public List<VoyageDto> getAllVoyages(@QueryParam("q") String query) {
-	        List<Voyage> voyages;
-	        if (query == null) {
-	            voyages = dao.all();
-	        } else {
-	            logger.debug("Search voyages with query: " + query);
-	            voyages = dao.search("%" + query + "%");
-	        }
-	        return voyages.stream().map(Voyage::convertToDto).collect(Collectors.toList());
-	    }
-*/
-	
     @DELETE
     @Path("/{id}")
     public void deleteVoyage(@PathParam("id") int id) {

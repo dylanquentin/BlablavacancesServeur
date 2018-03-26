@@ -2,8 +2,6 @@ package fr.iutinfo.skeleton.api;
 
 
 import fr.iutinfo.skeleton.common.dto.MessagerieDto;
-import fr.iutinfo.skeleton.common.dto.PreferenceDto;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

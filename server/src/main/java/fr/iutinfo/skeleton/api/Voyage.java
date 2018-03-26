@@ -16,6 +16,7 @@ public class Voyage{
 	private String depart;
 	private String retour;
 	private int capacite;
+	private int budget;
 
 
 	public Voyage() {
@@ -29,12 +30,13 @@ public class Voyage{
 	}
 
 	public Voyage(int id, String idUser, String name, String ville, String description, String depart, String retour,
-			int capacite) {
+			int capacite, int budget) {
 		this(id, idUser, name, ville);
 		this.description = description;
 		this.depart = depart;
 		this.retour = retour;
 		this.capacite = capacite;
+		this.budget = budget;
 	}
 
 	public String getName() {
@@ -101,18 +103,27 @@ public class Voyage{
 		this.capacite = capacite;
 	}
 
+	public int getBudget() {
+		return budget;
+	}
+
+	public void setBudget(int budget) {
+		this.budget = budget;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + budget;
+		result = prime * result + capacite;
+		result = prime * result + ((depart == null) ? 0 : depart.hashCode());
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((idUser == null) ? 0 : idUser.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((retour == null) ? 0 : retour.hashCode());
 		result = prime * result + ((ville == null) ? 0 : ville.hashCode());
-		result = prime * result + capacite;
-		result = prime * result + ((depart == null) ? 0 : depart.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		return result;
 	}
 
@@ -126,6 +137,8 @@ public class Voyage{
 		if (getClass() != obj.getClass())
 			return false;
 		Voyage other = (Voyage) obj;
+		if (budget != other.budget)
+			return false;
 		if (capacite != other.capacite)
 			return false;
 		if (depart == null) {
@@ -140,7 +153,10 @@ public class Voyage{
 			return false;
 		if (id != other.id)
 			return false;
-		if (idUser != other.idUser)
+		if (idUser == null) {
+			if (other.idUser != null)
+				return false;
+		} else if (!idUser.equals(other.idUser))
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -170,6 +186,7 @@ public void initFromDto(VoyageDto dto) {
 		this.setCapacite(dto.getCapacite());
 		this.setDepart(dto.getDepart());
 		this.setRetour(dto.getRetour());
+		this.setBudget(dto.getBudget());
 	}
 	
 	public VoyageDto convertToDto() {
@@ -182,6 +199,7 @@ public void initFromDto(VoyageDto dto) {
         dto.setCapacite(this.getCapacite());
         dto.setDepart(this.getDepart());
         dto.setRetour(this.getRetour());
+        dto.setBudget(this.getBudget());
         
         return dto;
     }
