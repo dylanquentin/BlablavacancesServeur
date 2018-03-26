@@ -28,7 +28,7 @@ public interface VoyageDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Voyage> search(@Bind("name") String name);
 
-	@SqlUpdate("update voyages set name = :voyage.name, ville = :voyage.ville, description = :voyage.description, depart = :voyage.depart, retour = :voyage.retour, capacite = :voyage.capacite where id = :voyage.id")
+	@SqlUpdate("update voyages set name = :name, ville = :ville, description = :description, depart = :depart, retour = :retour, capacite = :capacite where id = :id")
 	void update(@Bind("id") int id, @BindBean() Voyage voyage);
 
 	@SqlUpdate("drop table if exists voyages")
