@@ -9,10 +9,10 @@ import java.util.List;
 public interface VoyageDao {
 
 	// ATTENTION format des dates en sqlite ("YYYY-MM-DD")
-	@SqlUpdate("create table voyages (id integer primary key autoincrement, iduser varchar(20) ,name varchar(1024), ville varchar(100), description text, dateD text, dateF text, capacite integer)")
+	@SqlUpdate("create table voyages (id integer primary key autoincrement, iduser varchar(20) ,name varchar(1024), ville varchar(100), description text, depart varchar(100), retour varvhar(100), capacite integer)")
 	void createVoyageTable();
 
-	@SqlUpdate("insert into voyages (iduser,name,ville,description, dateD, dateF, capacite) values (:idUser, :name, :ville, :description, :depart, :retour, :capacite)")
+	@SqlUpdate("insert into voyages (iduser,name,ville,description, depart, retour, capacite) values (:idUser, :name, :ville, :description, :depart, :retour, :capacite)")
 	@GetGeneratedKeys
 	int insert(@BindBean() Voyage voyage);
 
@@ -28,7 +28,7 @@ public interface VoyageDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Voyage> search(@Bind("name") String name);
 
-	@SqlUpdate("update voyages set name = :voyage.name, ville = :voyage.ville, description = :voyage.description, dateD = :voyage.dateD, dateF = :voyage.dateF, capacite = :voyage.capacite where id = :voyage.id")
+	@SqlUpdate("update voyages set name = :voyage.name, ville = :voyage.ville, description = :voyage.description, depart = :voyage.depart, retour = :voyage.retour, capacite = :voyage.capacite where id = :voyage.id")
 	void update(@Bind("id") int id, @BindBean() Voyage voyage);
 
 	@SqlUpdate("drop table if exists voyages")
