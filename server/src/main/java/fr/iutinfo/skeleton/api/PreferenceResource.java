@@ -38,7 +38,7 @@ public class PreferenceResource {
     	Preference preference = new Preference();
     	preference.initFromDto(dto);
         int id = dao.insert(preference);
-        dto.setIdVoyage(id);
+     //   dto.setIdVoyage(id);
         return dto;
     }
 
