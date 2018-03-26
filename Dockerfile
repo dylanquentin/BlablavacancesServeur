@@ -1,5 +1,3 @@
-docker build --build-arg http_proxy=http://cache.univ-lille1.fr:3128 \
---build-arg https_proxy=http://cache.univ-lille1.fr:3128 -t quentindylan/blablavacancesserveur .
 from debian:sid
 env DEBIAN_FRONTEND noninteractive
 run sed -e 's/deb.debian.org/debian.mirrors.ovh.net/g' -i /etc/apt/sources.list
