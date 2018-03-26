@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.iutinfo.skeleton.common.dto.PreferenceDto;
+import fr.iutinfo.skeleton.common.dto.PreferenceUserDto;
 import fr.iutinfo.skeleton.common.dto.UserDto;
 import fr.iutinfo.skeleton.common.dto.VoyageDto;
 
@@ -16,6 +17,7 @@ public class Helper {
 	private static final UserDao daoU = BDDFactory.getDbi().open(UserDao.class);
 	private static final VoyageDao daoV = BDDFactory.getDbi().open(VoyageDao.class);
 	private static final PreferenceDao daoP = BDDFactory.getDbi().open(PreferenceDao.class);
+	private static final PreferenceUserDao daoPU = BDDFactory.getDbi().open(PreferenceUserDao.class);
 
 
 	static GenericType<List<UserDto>> listUserResponseType = new GenericType<List<UserDto>>() {
@@ -24,7 +26,8 @@ public class Helper {
 	};
 	static GenericType<List<PreferenceDto>> listPreferenceResponseType = new GenericType<List<PreferenceDto>>() {
 	};
-	
+	static GenericType<List<PreferenceUserDto>> listPreferenceUserResponseType = new GenericType<List<PreferenceUserDto>>() {
+	};
 	public static void initDb() {
 		daoU.dropUserTable();
 		daoU.createUserTable();
@@ -32,6 +35,8 @@ public class Helper {
 		daoV.createVoyageTable();
 		daoP.dropPreferenceTable();
 		daoP.createPreferenceTable();
+		daoPU.dropPreferenceUserTable();
+		daoPU.createpreferenceUserTable();
 	}
 
 /*
