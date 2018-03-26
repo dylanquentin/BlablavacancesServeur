@@ -144,8 +144,6 @@
         $(".charte").hide();
         $(".contact").hide();
         $(".tuto").hide();
-        $("tbody").empty();
-        listerVoyage();
 
 
       });
