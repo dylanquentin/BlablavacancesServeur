@@ -254,7 +254,7 @@
         }
       }
       postPreferenceUser(str1,str2,str3);
-      putUser(str1,str2,str3);
+      //putUser(str1,str2,str3);
 
 
 

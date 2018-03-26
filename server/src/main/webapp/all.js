@@ -241,6 +241,7 @@ function postPreference(aime, moyen, aimePas) {
 
 }
 function postPreferenceUser(aime,moyen,aimePas) {
+	console.log(idUser+"=iduser");
 	console.log("postPreferenceUser" + "/v1/PreferenceUser/");
 	$.ajax({
 		type : 'POST',
