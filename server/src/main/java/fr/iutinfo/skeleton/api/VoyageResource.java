@@ -26,7 +26,6 @@ import org.slf4j.LoggerFactory;
 
 import fr.iutinfo.skeleton.common.dto.UserDto;
 import fr.iutinfo.skeleton.common.dto.VoyageDto;
-import javafx.util.converter.LocalDateStringConverter;
 
 @Path("/voyages")
 @Produces(MediaType.APPLICATION_JSON)
@@ -45,7 +44,7 @@ public class VoyageResource {
             dao.insert(new Voyage(2, "2" , "Soirée dans Marseille","Marseille", "un beau voyage a marseille avec un beau paysage", "2018-05-12", "2018-05-12" , 20, 200));
             
         }
-        
+        	
     }
     
     
