@@ -3,26 +3,29 @@
 Nom du scrum master du sprint : Maxence OURIZAT
 
 ## Ce que nous avons fait durant ce sprint
-Supprimer un voyage sur l'appli mobile
-Ajouter les Préférences lors des créations de voyages
-Possibilité de trier les voyages listé avec filtres spécifiques (version complexe)
+Continuer les filtres groupés
+Finir le docker
+Modifier son profil
+Recevoir un message (tchat)
 
 ## Ce que nous allons faire durant le prochain sprint
-Continuer d'implementer les filtres spécifiques
-Récupérer les Préférences lors des créations de voyages
+Supprimer un voyage
+Modifier un voyage en temps qu'admin (android)
+Supprimer un voyage en temps qu'admin (android)
+Bouton rejoindre voyage
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ? 
-Nous avons tester la page création de voyage et le choix des préférences
+Nous avons testé la modification de son profil et des filtres
 
 ### Qu'avons nous observé ? 
-Nous ne récupérons pas les données des préférences lors de la création d'un voyage
+On peut modifier son profil sur le site et filtrer nos recherches
 
 ### Quelle décision prenons nous suite à cette expérience ? 
-Nous allons donc trouver le moyen de récupérer ces informations
+Permettre aux personnes de communiquer entre-eux
 
 ### Qu'allons nous tester durant les 2 prochaines heures ? 
-Nous allons implementer les filtres et récupérer les informations des préférences
+Nous allons ajouter un bouton "rejoindre voyage" et supprimer un voyage
 
 ### À quoi verra-t-on que celà à fonctionné ?
-Les préférences seront ajoutées aux voyages
+Nous pourrons ainsi rejoindre un voyage et le supprimer
