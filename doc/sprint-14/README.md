@@ -3,26 +3,30 @@
 Nom du scrum master du sprint : Maxence OURIZAT
 
 ## Ce que nous avons fait durant ce sprint
-Supprimer un voyage sur l'appli mobile
-Ajouter les Préférences lors des créations de voyages
-Possibilité de trier les voyages listé avec filtres spécifiques (version complexe)
+Commencer le Docker
+Filtre groupé
+Connection Admin BDD
+Stocker message BDD
+Envoie du message
 
 ## Ce que nous allons faire durant le prochain sprint
-Continuer d'implementer les filtres spécifiques
-Récupérer les Préférences lors des créations de voyages
+Continuer les filtres groupés
+Finir le docker
+Modifier son profil
+Recevoir un message (tchat)
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ? 
-Nous avons tester la page création de voyage et le choix des préférences
+On a testé l'envoie et l'affichage d'un message
 
 ### Qu'avons nous observé ? 
-Nous ne récupérons pas les données des préférences lors de la création d'un voyage
+On arrive à envoyer un mesage sur le serveur et l'afficher
 
 ### Quelle décision prenons nous suite à cette expérience ? 
-Nous allons donc trouver le moyen de récupérer ces informations
+Permettre aux personnes de communiquer entre-eux
 
 ### Qu'allons nous tester durant les 2 prochaines heures ? 
-Nous allons implementer les filtres et récupérer les informations des préférences
+La modification de son profil, l'amélioration du tchat et des filtres
 
 ### À quoi verra-t-on que celà à fonctionné ?
-Les préférences seront ajoutées aux voyages
+Le tchat et les filtres seront fonctionnels sur le site 
