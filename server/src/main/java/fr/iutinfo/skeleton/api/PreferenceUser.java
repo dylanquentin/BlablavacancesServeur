@@ -120,7 +120,7 @@ public class PreferenceUser{
 	
 public void initFromDto(PreferenceUserDto dto) {
 		this.setidUser(dto.getIdUser());
-		this.setMotive(dto.getMotive());;
+		this.setMotive(dto.getMotive());
 		this.setNeutre(dto.getNeutre());
 		this.setPasEnvie(dto.getPasEnvie());
 	}

@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 public class PreferenceUserDto {
     final static Logger logger = LoggerFactory.getLogger(PreferenceDto.class);
-    private int idUser = 1;
+    private int idUser;
     private String motive;
     private String neutre;
     private String pasEnvie;

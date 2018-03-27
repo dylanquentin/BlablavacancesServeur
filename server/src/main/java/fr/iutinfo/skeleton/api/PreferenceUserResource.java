@@ -33,7 +33,8 @@ import fr.iutinfo.skeleton.common.dto.PreferenceUserDto;
 public class PreferenceUserResource {
     final static Logger logger = LoggerFactory.getLogger(PreferenceUserResource.class);
     private static PreferenceUserDao dao = getDbi().open(PreferenceUserDao.class);
-
+    private int cpt = 2;
+    
     public PreferenceUserResource() throws SQLException {
         if (!tableExist("PreferenceUser")) {
             logger.debug("Create table PreferenceUser");
@@ -45,10 +46,11 @@ public class PreferenceUserResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public PreferenceUserDto createPreferenceUser(PreferenceUserDto dto) {
-    	PreferenceUser PreferenceUser = new PreferenceUser();
-    	PreferenceUser.initFromDto(dto);
-        int id = dao.insert(PreferenceUser);
-        //dto.setidUser(id);
+    	PreferenceUser preferenceUser = new PreferenceUser();
+        dto.setidUser(cpt);
+    	preferenceUser.initFromDto(dto);
+        int id = dao.insert(preferenceUser);
+        cpt ++;
         return dto;
     }
 
@@ -65,14 +67,14 @@ public class PreferenceUserResource {
 
     @GET
     public List<PreferenceUserDto> getAllPreferenceUser(@QueryParam("q") String query) {
-        List<PreferenceUser> PreferenceUsers;
+        List<PreferenceUser> preferenceUsers;
         if (query == null) {
-            PreferenceUsers = dao.all();
+            preferenceUsers = dao.all();
         } else {
             logger.debug("Search PreferenceUser with query: " + query);
-            PreferenceUsers = dao.search("%" + query + "%");
+            preferenceUsers = dao.search("%" + query + "%");
         }
-        return PreferenceUsers.stream().map(PreferenceUser::convertToDto).collect(Collectors.toList());
+        return preferenceUsers.stream().map(PreferenceUser::convertToDto).collect(Collectors.toList());
     }
 
     @DELETE
@@ -83,13 +85,13 @@ public class PreferenceUserResource {
     
 	@PUT
     @Path("/{IdUser}")
-    public Response modifyUser(@PathParam("IdUser") int IdUser, PreferenceUser PreferenceUser) {
+    public Response modifyUser(@PathParam("IdUser") int IdUser, PreferenceUser preferenceUser) {
         // Si l'utilisateur est inconnu, on renvoie 404
         if (dao.findById(IdUser) == null) {
 	    throw new NotFoundException();
         }
         else {
-        	dao.update(IdUser, PreferenceUser);
+        	dao.update(IdUser, preferenceUser);
 	    return Response.status(Response.Status.NO_CONTENT).build();
         }
     }
