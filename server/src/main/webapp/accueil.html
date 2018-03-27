@@ -14,6 +14,7 @@
 	<script src="all.js"></script>
 	<script src="Voyage.js"></script>
 	<script src="lister2.js"></script>
+	<script src="lister.js"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -491,7 +492,7 @@
 			Budget : <input type="text" id="textInput" value="1000" size="4px" style="text-align:right;" onchange="updateTxtSlider(this.value);" > €
 
 			<input type="range" name="rangeInput" min="1" max="2000" value="1000" class="slider" id="myRange" onchange="updateTextInput(this.value);" ><br>
-			<input type="button" name="submit" value="Submit" id="addVoyage" style="color : black;"><br><br>
+			<!--<input type="button" name="submit" value="Submit" id="addVoyage" style="color : black;"><br><br>  -->
 		</div>
 
 		<h2>Préférence pour votre voyage</h2>
@@ -1053,19 +1054,19 @@
 				<div class="btn-group" role="group">
 					<br>
 					<select name="select" size="1" id="select" onchange="selection();">
-						<OPTION>Toulouse</OPTION>					
-						<OPTION>Corse</OPTION>
-						<OPTION>Marseille</OPTION>
-						<OPTION>Lyon</OPTION>
-						<OPTION>Nice</OPTION>  
-						<OPTION>Nantes</OPTION>    
-						<OPTION>Paris</OPTION>
-						<OPTION>Montpellier</OPTION>
-						<OPTION>Bordeaux</OPTION>
-						<OPTION>Rennes</OPTION>
+						<OPTION>Auvergne-Rhône-Alpes</OPTION>
+						<OPTION>Bourgogne-Franche-Comté</OPTION>
+						<OPTION>Bretagne</OPTION>
+						<OPTION>Centre-Val de Loire</OPTION>
+						<OPTION>Corse</OPTION>  
+						<OPTION>Grand-Est</OPTION>    
 						<OPTION>Hauts-de-France</OPTION>
-						<OPTION>Saint-Etienne</OPTION>
-						<OPTION>Reims</OPTION>
+						<OPTION>Ile-de-France</OPTION>
+						<OPTION>Normandie</OPTION>
+						<OPTION>Nouvelle Aquitaine</OPTION>
+						<OPTION>Pays de la Loire</OPTION>
+						<OPTION>Provence-Alpes-Côtes D'Azur</OPTION>
+						<OPTION>Région Occitanie</OPTION>
 					</select>
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton1();" checked><br>   
 					Date de départ : <input type="text" id="DateD"/>
@@ -1074,9 +1075,9 @@
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton3();" checked><br>
 					Nombre de voyageur : <input type="number" min=3 max=6 value=3 id="Qte de populace" />
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton4();" checked><br>
-					Budget : <input type="text" id="Budget" value="" size="1px" style="text-align:right;"> € 
+					Budget : <input type="text" id="Budget" value="" size="5px" style="text-align:right" onchange="updateTxtSlider(this.value);"> € 
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton5();" checked>
-					<input type="range" name="rangeInput" min="1" max="2000" value="50" class="slider" id="myRange" onchange="updateTextInput(this.value);" ><br>
+					<input type="range" name="rangeInput" min="1" max="2000" value="50" class="slider" id="myRangeBudget" onchange="updateTextInput(this.value);" ><br>
 					<input type="button" name="submit" value="Submit" style="color : black;" onClick="listUsersTest();">
 					<input type="button" name="clear" value="Clear" style="color : black;" onClick="clearListUsersTest();"><br><br>
 				</div>
@@ -1084,13 +1085,7 @@
 		</div>
 		<div class="row" style="margin-top: 20px;">
 		</div>
-		<div class="row" style="margin-top: 1em;">
-			<div class="panel panel-info">
-				<div class="panel-heading">Réponse</div>
-				<div class="panel-body" id="reponse">
-				</div>
-			</div>
-		</div>
+		
 		<div class="row" style="margin-top: 20px;">
 		</div>
 		<div class="row" style="margin-top: 1em;">

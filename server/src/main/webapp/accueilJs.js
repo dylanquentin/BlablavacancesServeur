@@ -155,72 +155,77 @@
 
       });
 
-      $("#addVoyage").click(function(){
-       postVoyage(
-        $('#nomVoyage').val(),
-        $('#SelectRegion').val(),
-        $('#descrVoyage').val(),
-        $('#voyageDep').val(),
-        $('#voyageRet').val(),
-        $('#CapaciteVoyage').val(),
-        "v1/voyages/"
-        );
-     });
-      $("#modifier").click(function(){
-        $(".accueilConnec").hide();
-        $(".pageProfil").show();
-        $(".recherche").hide();
-        $(".pageVoyage").hide();
+     //  $("#addVoyage").click(function(){
+
+     // });
+     $("#modifier").click(function(){
+      $(".accueilConnec").hide();
+      $(".pageProfil").show();
+      $(".recherche").hide();
+      $(".pageVoyage").hide();
 
 
 
-      });
+    });
 
-      $("#addPreference").click(function(){
-        var str1="";
-        var str2="";
-        var str3=""; 
-        var t= [];
-        t.push($("input[name=Casino]:checked").val());
-        t.push($("input[name=Cine]:checked").val());
-        t.push($("input[name=Golf]:checked").val());
-        t.push($("input[name=JeuxSociete]:checked").val());
-        t.push($("input[name=Musee]:checked").val());
-        t.push($("input[name=Natation]:checked").val());
-        t.push($("input[name=Promenade]:checked").val());
-        t.push($("input[name=Rando]:checked").val());
-        t.push($("input[name=Shopping]:checked").val());
-        t.push($("input[name=Tele]:checked").val());
-        t.push($("input[name=Tennis]:checked").val());
-        t.push($("input[name=Thalasso]:checked").val());
-        t.push($("input[name=Velo]:checked").val());
-        t.push($("input[name=Zoo]:checked").val());
+     $("#addPreference").click(function(){
+      if (confirm("Voulez-vous vraiment ajouter ce voyage?")) {
+  // Action à entreprendre.
+  // Code ou appel de fonction
+  postVoyage(
+    $('#nomVoyage').val(),
+    $('#SelectRegion').val(),
+    $('#descrVoyage').val(),
+    $('#voyageDep').val(),
+    $('#voyageRet').val(),
+    $('#CapaciteVoyage').val(),
+    "v1/voyages/"
+    );
 
-        var i=0;
-        for(i;i<t.length;i++){
-          if(t[i].charAt(t[i].length-1)==="1"){
-            str1+=t[i]+",";
-          }else if(t[i].charAt(t[i].length-1)==="2"){
-            str2+=t[i]+",";
-          }else{
-            str3+=t[i]+",";
-          }
-        }
-        postPreference(str1, str2, str3); 
+  var str1="";
+  var str2="";
+  var str3=""; 
+  var t= [];
+  t.push($("input[name=Casino]:checked").val());
+  t.push($("input[name=Cine]:checked").val());
+  t.push($("input[name=Golf]:checked").val());
+  t.push($("input[name=JeuxSociete]:checked").val());
+  t.push($("input[name=Musee]:checked").val());
+  t.push($("input[name=Natation]:checked").val());
+  t.push($("input[name=Promenade]:checked").val());
+  t.push($("input[name=Rando]:checked").val());
+  t.push($("input[name=Shopping]:checked").val());
+  t.push($("input[name=Tele]:checked").val());
+  t.push($("input[name=Tennis]:checked").val());
+  t.push($("input[name=Thalasso]:checked").val());
+  t.push($("input[name=Velo]:checked").val());
+  t.push($("input[name=Zoo]:checked").val());
+
+  var i=0;
+  for(i;i<t.length;i++){
+    if(t[i].charAt(t[i].length-1)==="1"){
+      str1+=t[i]+",";
+    }else if(t[i].charAt(t[i].length-1)==="2"){
+      str2+=t[i]+",";
+    }else{
+      str3+=t[i]+",";
+    }
+  }
+  postPreference(str1, str2, str3); 
+
+}
+});
+     $("#toutVoyage").click(function(){
+      $(".recherche").show();
+      $(".pageProfil").hide();
+      $(".accueilConnec").hide();
+      $(".pageVoyage").hide();
 
 
-      });
-      $("#toutVoyage").click(function(){
-        $(".recherche").show();
-        $(".pageProfil").hide();
-        $(".accueilConnec").hide();
-        $(".pageVoyage").hide();
+    });
 
 
-      });
-
-
-      $("#modifProfil").click(function(){
+     $("#modifProfil").click(function(){
        var str1="";
        var str2="";
        var str3=""; 
@@ -261,5 +266,5 @@
     });
 
 
-    });
+   });
 
