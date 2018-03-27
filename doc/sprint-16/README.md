@@ -1,28 +1,28 @@
 # Rétrospective de sprint
 
-Nom du scrum master du sprint : Maxence OURIZAT
+Nom du scrum master du sprint : Florent Rousselle
 
 ## Ce que nous avons fait durant ce sprint
-Supprimer un voyage sur l'appli mobile
-Ajouter les Préférences lors des créations de voyages
-Possibilité de trier les voyages listé avec filtres spécifiques (version complexe)
+Supprimer un voyage sur l'appli mobile et sur le site web
+
 
 ## Ce que nous allons faire durant le prochain sprint
-Continuer d'implementer les filtres spécifiques
-Récupérer les Préférences lors des créations de voyages
+Corriger tous les bugs et faire l'affiche
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ? 
-Nous avons tester la page création de voyage et le choix des préférences
+Nous avons essayer de supprimer des voyages depuis la page web et l'application mobile
 
 ### Qu'avons nous observé ? 
-Nous ne récupérons pas les données des préférences lors de la création d'un voyage
+IL est possible de supprimer des voyages
+Mais impossible de le modifier.
+et il reste quelques bugs.
 
 ### Quelle décision prenons nous suite à cette expérience ? 
-Nous allons donc trouver le moyen de récupérer ces informations
+Nous allons donc trouver le moyen de corriger le plus de bugs possible.
 
 ### Qu'allons nous tester durant les 2 prochaines heures ? 
-Nous allons implementer les filtres et récupérer les informations des préférences
+Correction des bugs et création de l'affiche.
 
 ### À quoi verra-t-on que celà à fonctionné ?
-Les préférences seront ajoutées aux voyages
+Le site n'affichera plus d'erreur.
