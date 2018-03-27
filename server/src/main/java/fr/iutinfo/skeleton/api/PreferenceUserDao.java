@@ -20,6 +20,11 @@ public interface PreferenceUserDao {
 		@SqlUpdate("insert into preferenceUser (idUser , motive , neutre , pasEnvie) values (:idUser , :motive , :neutre , :pasEnvie)")
 		int insert(@BindBean() PreferenceUser preferenceUser);
 
+		@SqlQuery("select max(id) from users")
+		@RegisterMapperFactory(BeanMapperFactory.class)
+		int maxId();
+
+		
 		@SqlQuery("select * from preferenceUser where idUser = :idUser")
 		@RegisterMapperFactory(BeanMapperFactory.class)
 		PreferenceUser findById(@Bind("idUser") int idUser);

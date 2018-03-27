@@ -26,6 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.iutinfo.skeleton.common.dto.PreferenceUserDto;
+import fr.iutinfo.skeleton.common.dto.UserDto;
 
 @Path("/PreferenceUser")
 @Produces(MediaType.APPLICATION_JSON)
@@ -33,7 +34,6 @@ import fr.iutinfo.skeleton.common.dto.PreferenceUserDto;
 public class PreferenceUserResource {
     final static Logger logger = LoggerFactory.getLogger(PreferenceUserResource.class);
     private static PreferenceUserDao dao = getDbi().open(PreferenceUserDao.class);
-    private int cpt = 2;
     
     public PreferenceUserResource() throws SQLException {
         if (!tableExist("PreferenceUser")) {
@@ -41,16 +41,16 @@ public class PreferenceUserResource {
             dao.createpreferenceUserTable();
             dao.insert(new PreferenceUser(0, "Marche", "Dormir", "Sport"));
         }
+        
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public PreferenceUserDto createPreferenceUser(PreferenceUserDto dto) {
+    	dto.setidUser(dao.maxId());
     	PreferenceUser preferenceUser = new PreferenceUser();
-        dto.setidUser(cpt);
     	preferenceUser.initFromDto(dto);
         int id = dao.insert(preferenceUser);
-        cpt ++;
         return dto;
     }
 
