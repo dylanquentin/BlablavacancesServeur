@@ -15,6 +15,16 @@ public class VoyageDto {
     private String depart;
     private String retour;
     private int budget;
+	private String idParticipe;
+	
+	
+    public String getIdParticipe() {
+		return idParticipe;
+	}
+
+	public void setIdParticipe(String idParticipe) {
+		this.idParticipe = idParticipe;
+	}
     
 	public String getDepart() {
 		return depart;

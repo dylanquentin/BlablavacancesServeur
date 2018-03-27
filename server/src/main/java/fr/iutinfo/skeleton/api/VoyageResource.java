@@ -41,7 +41,7 @@ public class VoyageResource {
             logger.debug("Create table voyage");
             dao.createVoyageTable();
             dao.insert(new Voyage(1, "1" , "Petit weekend à Paris","Paris"));
-            dao.insert(new Voyage(2, "2" , "Soirée dans Marseille","Marseille", "un beau voyage a marseille avec un beau paysage", "2018-05-12", "2018-05-12" , 20, 200));
+            dao.insert(new Voyage(2, "2" , "Soirée dans Marseille","Marseille", "un beau voyage a marseille avec un beau paysage", "2018-05-12", "2018-05-12" , 20, 200, ""));
             
         }
         	

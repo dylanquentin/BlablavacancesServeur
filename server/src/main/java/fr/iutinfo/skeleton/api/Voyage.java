@@ -15,6 +15,7 @@ public class Voyage{
 	private String description;
 	private String depart;
 	private String retour;
+	private String idParticipe;
 	private int capacite;
 	private int budget;
 
@@ -30,13 +31,22 @@ public class Voyage{
 	}
 
 	public Voyage(int id, String idUser, String name, String ville, String description, String depart, String retour,
-			int capacite, int budget) {
+			int capacite, int budget, String participe) {
 		this(id, idUser, name, ville);
 		this.description = description;
 		this.depart = depart;
 		this.retour = retour;
 		this.capacite = capacite;
 		this.budget = budget;
+		this.idParticipe = participe;
+	}
+	
+	public String getIdParticipe() {
+		return idParticipe;
+	}
+
+	public void setIdParticipe(String idParticipe) {
+		this.idParticipe = idParticipe;
 	}
 
 	public String getName() {
@@ -124,6 +134,7 @@ public class Voyage{
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((retour == null) ? 0 : retour.hashCode());
 		result = prime * result + ((ville == null) ? 0 : ville.hashCode());
+		result = prime * result + ((idParticipe == null) ? 0 : idParticipe.hashCode());
 		return result;
 	}
 
@@ -173,6 +184,11 @@ public class Voyage{
 				return false;
 		} else if (!ville.equals(other.ville))
 			return false;
+		if (idParticipe == null) {
+			if (other.idParticipe != null)
+				return false;
+		} else if (!idParticipe.equals(other.idParticipe))
+			return false;
 		return true;
 	}
 
@@ -187,6 +203,7 @@ public void initFromDto(VoyageDto dto) {
 		this.setDepart(dto.getDepart());
 		this.setRetour(dto.getRetour());
 		this.setBudget(dto.getBudget());
+		this.setIdParticipe(dto.getIdParticipe());
 	}
 	
 	public VoyageDto convertToDto() {
@@ -200,7 +217,7 @@ public void initFromDto(VoyageDto dto) {
         dto.setDepart(this.getDepart());
         dto.setRetour(this.getRetour());
         dto.setBudget(this.getBudget());
-        
+        dto.setIdParticipe(this.getIdParticipe());
         return dto;
     }
 
