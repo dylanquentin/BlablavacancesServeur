@@ -53,7 +53,7 @@ function afficheListUsers(data) {
 }
 
 function userStringify(voyages) {
-	return voyages.name + "-" + voyages.iduser + "-" + voyages.ville + "-" + voyages.description + "-" + voyages.dateD + "-" + voyages.dateF + "-" + voyages.capacite/* + "-" voyages.budget;*/
+	return "nom du voyage = " + voyages.name + "|id du createur du voyage = " + voyages.idUser + "|destination = " + voyages.ville + "|description du voyage = " + voyages.description + "|date du depart = " + voyages.depart + "|date du retour = " + voyages.retour + "|nombre de participants = " + voyages.capacite + "|budget necessaire = " + voyages.budget;
 }
 
 function selection(){
@@ -251,7 +251,7 @@ function afficheListUsersTest(data) {
 }
 
 function userStringifyTest(voyages) {
-	return voyages.name + "-" + voyages.iduser + "-" + voyages.ville + "-" + voyages.description + "-" + voyages.dateD + "-" + voyages.dateF + "-" + voyages.capacite/* + "-" + voyages.budget*/;
+	return "nom du voyage = " + voyages.name + "|id du createur du voyage = " + voyages.idUser + "|destination = " + voyages.ville + "|description du voyage = " + voyages.description + "|date du depart = " + voyages.depart + "|date du retour = " + voyages.retour + "|nombre de participants = " + voyages.capacite + "|budget necessaire = " + voyages.budget;
 }
 
 function updateTextInput(val) {

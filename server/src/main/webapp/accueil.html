@@ -13,7 +13,6 @@
 	<script src="accueilJs.js"></script>
 	<script src="all.js"></script>
 	<script src="Voyage.js"></script>
-	<script src="lister2.js"></script>
 	<script src="lister.js"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -405,11 +404,11 @@
 		<h1>Inscription</h1>
 		<div id="inscri">
 			<form id="formInscr" >
-				Nom : <input type="text" name="nom"> <br>
-				Prénom : <input type="text" name="prenom" > <br>
-				Email : <input type="text" name="email"> <br>
-				Login : <input type="text" name="login"> <br>
-				Password : <input type="password" name="password"> <br>
+				<label>Nom :</label><input type="text" name="nom"> <br>
+				<label>Prénom :</label><input type="text" name="prenom" > <br>
+				<label>Email :</label><input type="text" name="email"> <br>
+				<label>Login :</label><input type="text" name="login"> <br>
+				<label>Password :</label><input type="password" name="password"> <br>
 				<input type="button" name="submit" value="Submit"> <br>
 			</form>
 		</div>
@@ -448,8 +447,8 @@
 		<h1>Connection</h1>
 		<div id="formul">        
 			<form id="formConnec" >
-				Login : <input type="text" name="login" id="loginConnect"> <br>
-				Password : <input type="password" name="password" id="passwordConnect"> <br>
+				<label>Login :</label> <input type="text" name="login" id="loginConnect"> <br>
+				<label>Password :</label><input type="password" name="password" id="passwordConnect"> <br>
 				<input type="button" name="submit" value="Se connecter" id="submit"> <br>
 			</form>
 		</div>
@@ -469,8 +468,8 @@
 		<h2> Formulaire du voyage </h2>
 		<div id="creerVoyage"> 
 			<br>
-			Nom du voyage : <input type="text" id="nomVoyage"/><br>
-			Destination : <SELECT id="SelectRegion" name="nom" size="1">
+			<label>Nom du voyage :</label> <input type="text" id="nomVoyage"/><br>
+			<label>Destination : </label> <SELECT id="SelectRegion" name="nom" size="1">
 				<OPTION>Auvergne-Rhône-Alpes</OPTION>
 				<OPTION>Bourgogne-Franche-Comté</OPTION>
 				<OPTION>Bretagne</OPTION>
@@ -485,13 +484,13 @@
 				<OPTION>Provence-Alpes-Côtes D'Azur</OPTION>
 				<OPTION>Région Occitanie</OPTION>
 			</SELECT><br>       
-			Date de départ : <input id="voyageDep" type="date"/><br>
-			Date de retour : <input id="voyageRet" type="date"/><br>
-			Nombre de voyageur : <input type="number" min=3 max=6 value=3 id="CapaciteVoyage"/><br>
-			Description du voyage :<br> <textarea id="descrVoyage" rows="4" cols="40" resize=none ></textarea><br>
-			Budget : <input type="text" id="textInput" value="1000" size="4px" style="text-align:right;" onchange="updateTxtSlider(this.value);" > €
+			<label>Date de départ :</label> <input id="voyageDep" type="date"/><br>
+			<label>Date de retour :</label> <input id="voyageRet" type="date"/><br>
+			<label>Nombre de voyageur :</label> <input type="number" min=3 max=6 value=3 id="CapaciteVoyage"/><br>
+			<label>Description du voyage :</label><br> <textarea id="descrVoyage" rows="4" cols="40" resize=none ></textarea><br>
+			<label>Budget :</label><input type="text" id="textInput" value="1000" size="4px" style="text-align:right;" onchange="updateTxtSliderVoyage(this.value);" > €
 
-			<input type="range" name="rangeInput" min="1" max="2000" value="1000" class="slider" id="myRange" onchange="updateTextInput(this.value);" ><br>
+			<input type="range" name="rangeInput" min="1" max="2000" value="1000" class="slider" id="myRangeBudgetCreation" onchange="updateTextInputVoyage(this.value);" ><br>
 			<!--<input type="button" name="submit" value="Submit" id="addVoyage" style="color : black;"><br><br>  -->
 		</div>
 
@@ -783,19 +782,19 @@
 				</tr>
 			</form>
 		</table>
-		<input type="button" value="Submit" id="addPreference" style="color : black;">
+		<input type="button" value="Confirmer" id="addPreference" style="color : black;">
 	</div>
 </div>
 
 <div class="profil">
 	<h2>Profil</h2>
 	<form>
-		Nom :<input type="text" name="nom" value="" id="nomProfil"> <br>
-		Login : <input type="text" name="login" value=""><br>
-		Email : <input type="text" name="email" value=""><br>
-		Vehicule : <input type="radio" name="vehicule" value="oui"> oui <input type="radio" name="vehicule" value="non"> non<br>
-		Animal de compagnie : <input type="radio" name="animal" value="oui"> oui <input type="radio" name="animal" value="non"> non<br>
-		Heure de réveil : <input type="radio" name="animal" value="oui"> tot <input type="radio" name="animal" value="non"> tard<br>
+		<label>Nom :</label><input type="text" name="nom" value="" id="nomProfil"> <br>
+		<label>Login :</label><input type="text" name="login" value=""><br>
+		<label>Email :</label><input type="text" name="email" value=""><br>
+		<label>Vehicule :</label><input type="radio" name="vehicule" value="oui"> oui <input type="radio" name="vehicule" value="non"> non<br>
+		<label>Animal de compagnie :</label> <input type="radio" name="animal" value="oui"> oui <input type="radio" name="animal" value="non"> non<br>
+		<label>Heure de réveil :</label><input type="radio" name="animal" value="oui"> tot <input type="radio" name="animal" value="non"> tard<br>
 	</form>
 </div>
 
@@ -803,11 +802,11 @@
 
 	<h2 id="titreVoyage">Mes Voyages</h2>
 	<nav>
-		<label>Mon profil</label> <img src="images/modifier.png" style="width:20px; height:20px;" id="modifier">
+		Mon profil<img src="images/modifier.png" style="width:20px; height:20px;" id="modifier">
 		<form>
-			Nom :<label id="nomProfil" ></label> <br>
-			Login : <label id="monLogin" ></label><br>
-			Email : <label id="monEmail" ></label><br>
+			Nom :<label id="monProfil" ></label> <br>
+			Login :<label id="monLogin" ></label><br>
+			Email :<label id="monEmail" ></label><br>
 		</form>
 	</nav>
 	<aside>
@@ -828,8 +827,15 @@
 		</table>
 	</aside>
 
-</div>
 
+</div>
+<form id = "deletence" style="text-align: left;">
+		
+		Saisissez le nom du Voyage à supprimer
+		<input id="saisieDelete" value="" placeholder="Ex: Voyage à Marseille ...">
+		<input id="delete" type="button" value="OK">
+
+	</form>
 
 <div class="pageProfil">
 
@@ -1069,16 +1075,16 @@
 						<OPTION>Région Occitanie</OPTION>
 					</select>
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton1();" checked><br>   
-					Date de départ : <input type="text" id="DateD"/>
+					<label>Date de départ:</label> <input type="text" id="DateD"/>
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton2();" checked><br>
-					Date de retour : <input type="text" id="DateF"/>
+					<label>Date de retour:</label> <input type="text" id="DateF"/>
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton3();" checked><br>
-					Nombre de voyageur : <input type="number" min=3 max=6 value=3 id="Qte de populace" />
+					<label>Nombre de voyageur:</label><input type="number" min=3 max=6 value=3 id="Qte de populace" />
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton4();" checked><br>
-					Budget : <input type="text" id="Budget" value="" size="5px" style="text-align:right" onchange="updateTxtSlider(this.value);"> € 
+					<label>Budget:</label> <input type="text" id="Budget" value="" size="5px" style="text-align:right" onchange="updateTxtSlider(this.value);"> € 
 					<input type="checkbox" name="skip" value="Skip" style="color : black;" onClick="skipBouton5();" checked>
 					<input type="range" name="rangeInput" min="1" max="2000" value="50" class="slider" id="myRangeBudget" onchange="updateTextInput(this.value);" ><br>
-					<input type="button" name="submit" value="Submit" style="color : black;" onClick="listUsersTest();">
+					<input type="button" name="submit" value="Confirmer" style="color : black;" onClick="listUsersTest();">
 					<input type="button" name="clear" value="Clear" style="color : black;" onClick="clearListUsersTest();"><br><br>
 				</div>
 			</div>

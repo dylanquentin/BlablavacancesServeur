@@ -15,6 +15,9 @@
       $(".connexion").hide();
       $(".pageVoyage").hide();
       $(".profil").hide();
+      $("#deletence").hide();
+
+
 
       $("#charte").click(function(){
 
@@ -28,6 +31,7 @@
         $(".connexion").hide();
         $(".pageVoyage").hide();
         $(".profil").hide();
+        $("#deletence").hide();
 
 
 
@@ -43,7 +47,9 @@
         $("#inscription").show();
         $(".contact").hide();
         $(".connexion").hide();
-        $(".pageVoyage").hide();      $(".profil").hide();
+        $(".pageVoyage").hide();      
+        $(".profil").hide();
+        $("#deletence").hide();
 
 
       });
@@ -59,6 +65,7 @@
         $(".connexion").hide();
         $(".pageVoyage").hide();
         $(".profil").hide();
+        $("#deletence").hide();
 
 
       });
@@ -73,6 +80,8 @@
         $(".connexion").hide();
         $(".pageVoyage").hide();
         $(".profil").hide();
+        $("#deletence").hide();
+
 
 
       });
@@ -88,7 +97,7 @@
         $(".connexion").hide();
         $(".pageVoyage").hide();
         $(".profil").hide();
-
+        $("#deletence").hide();
 
 
       });
@@ -105,7 +114,7 @@
         $("#connexion").hide();
         $(".profil").hide();
         $(".pageProfil").hide();
-
+        $("#deletence").hide();
 
 
 
@@ -128,6 +137,7 @@
         login();
         $("connection").hide();
         $("inscription").hide();
+        $("#deletence").show();
       });
 
       $("#creeVoyage").click(function(){
@@ -136,7 +146,7 @@
         $(".recherche").hide();
         $(".accueilConnec").hide();
         $(".pageProfil").hide();
-
+        $("#deletence").hide();
 
       });
       $("#profil").click(function(){
@@ -151,7 +161,7 @@
         $(".tuto").hide();
         $("#tbody").empty();
         listerVoyage();
-
+        $("#deletence").show();
 
       });
 
@@ -164,7 +174,7 @@
       $(".recherche").hide();
       $(".pageVoyage").hide();
 
-
+      $("#deletence").hide();
 
     });
 
@@ -220,6 +230,8 @@
       $(".pageProfil").hide();
       $(".accueilConnec").hide();
       $(".pageVoyage").hide();
+      $("#deletence").hide();
+
 
 
     });
@@ -264,6 +276,26 @@
 
 
     });
+
+
+
+     $("#delete").click(function(){
+      console.log($('#saisieDelete').val());
+      if($('#saisieDelete').val() === ""){
+        alert("Veuillez entrer un voyage valide");
+      }else{
+        var bcl = document.querySelectorAll('#tabVoyages td');
+        for(var i=0;i<bcl.length;i++){
+          if($("#saisieDelete").val() === bcl[i].innerText){
+            /****/ 
+            getVoyage($("#saisieDelete").val());
+            
+
+          }
+        }
+      }
+    });
+
 
 
    });

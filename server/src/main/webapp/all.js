@@ -40,8 +40,8 @@ function login() {
 			$("#contact").hide();
 
 
-			$(".accueilConnec #nomProfil").append(name);
-			$(".accueilConnec #monLogin").append(log);
+			$(".accueilConnec #monProfil").append(log);
+			$(".accueilConnec #monLogin").append(name);
 			$(".accueilConnec #monEmail").append(mail);
 			listerVoyage();
 		}else{
@@ -285,4 +285,36 @@ function putUser(aime,moyen,aimePas) {
 			
 		}
 	});
+}
+
+
+
+function deleteVoyage(id) {
+
+	console.log("deleteVoyage" + "/v1/voyages/");
+	console.log(id);
+	$.ajax({
+		type : 'DELETE',
+		url: "/v1/voyages/"+id,
+
+		dataType : "json",
+		success : function(data, textStatus, jqXHR) {
+			$("#tbody").empty();
+            listerVoyage();
+			alert("Voyage supprimé");
+			},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postPreference error: ' + textStatus);
+			alert("Pas de Voyages correspondants");
+		}
+	});
+}
+
+
+
+function getVoyage(nom){
+	$.getJSON("v1/voyages/"+nom, function(data) {
+		deleteVoyage(data.id);
+	});
+	
 }

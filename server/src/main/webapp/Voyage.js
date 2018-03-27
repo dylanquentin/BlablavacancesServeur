@@ -1,11 +1,7 @@
-function updateTextInput(val) {
-
+function updateTextInputVoyage(val) {
     document.getElementById('textInput').value=val; 
-
 }
 
-function updateTxtSlider(val) {
-
-    document.getElementById('myRange').value=val; 
-
+function updateTxtSliderVoyage(val) {
+    document.getElementById('myRangeBudgetCreation').value=val; 
 }
